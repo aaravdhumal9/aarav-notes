@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aarav Dhumal's Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<style>
+:root{ --text:#1F2937; --muted:#6B7280; --bg:#FFFFFF; --line:#E5E7EB; --err:#B91C1C; --ok:#15803D; }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Lexend",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight:300;font-size:19px;line-height:1.6;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px}
+h1{font-size:clamp(34px,7vw,60px);font-weight:600;letter-spacing:-.02em;line-height:1.15;
+  text-align:center;margin:0 0 44px}
+.card{width:100%;max-width:400px}
+.tabs{display:flex;border-bottom:1px solid var(--line);margin-bottom:22px}
+.tabs button{flex:1;background:none;border:0;border-bottom:2px solid transparent;font:inherit;
+  font-size:18px;padding:10px 0;cursor:pointer;color:var(--muted)}
+.tabs button.on{color:var(--text);font-weight:600;border-bottom-color:var(--text)}
+label{display:block;font-size:15px;color:var(--muted);margin:14px 0 6px}
+input{width:100%;font:inherit;font-size:18px;padding:12px 14px;border:1px solid var(--line);
+  border-radius:10px;background:var(--bg);color:var(--text);outline:none}
+input:focus{border-color:var(--text)}
+button.go{width:100%;margin-top:22px;font:inherit;font-size:18px;font-weight:600;padding:13px;
+  border:0;border-radius:10px;background:var(--text);color:#fff;cursor:pointer}
+button.go:disabled{opacity:.5;cursor:default}
+.msg{min-height:24px;margin-top:14px;font-size:15.5px}
+.msg.err{color:var(--err)} .msg.ok{color:var(--ok)}
+.small{background:none;border:0;font:inherit;font-size:15px;color:var(--muted);text-decoration:underline;cursor:pointer;padding:4px 0}
+.row{display:flex;justify-content:space-between;gap:10px;margin-top:6px}
+</style>
+</head>
+<body>
+
+<h1>Aarav Dhumal's Notes</h1>
+
+<div class="card">
+  <div class="tabs" role="tablist">
+    <button id="tabIn" class="on" role="tab" type="button">Log in</button>
+    <button id="tabUp" role="tab" type="button">Sign up</button>
+  </div>
+
+  <form id="form" novalidate>
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="email" required>
+    <label for="pw">Password</label>
+    <input id="pw" type="password" autocomplete="current-password" minlength="6" required>
+    <button class="go" id="submit" type="submit">Log in</button>
+    <div class="msg" id="msg" role="status" aria-live="polite"></div>
+    <div class="row">
+      <button class="small" id="forgot" type="button">Forgot password?</button>
+    </div>
+  </form>
+</div>
+
+<script>
+const cfg = window.IBDP_CONFIG || {};
+const sb = (cfg.url && cfg.anonKey && window.supabase) ? window.supabase.createClient(cfg.url, cfg.anonKey) : null;
+const DASH = 'dashboard.html';
+
+const $ = id => document.getElementById(id);
+let mode = 'in';
+
+function setMode(m){
+  mode = m;
+  $('tabIn').classList.toggle('on', m === 'in');
+  $('tabUp').classList.toggle('on', m === 'up');
+  $('submit').textContent = m === 'in' ? 'Log in' : 'Create account';
+  $('pw').autocomplete = m === 'in' ? 'current-password' : 'new-password';
+  $('forgot').style.display = m === 'in' ? 'inline' : 'none';
+  msg('');
+}
+function msg(t, cls){ const m = $('msg'); m.textContent = t || ''; m.className = 'msg' + (cls ? ' ' + cls : ''); }
+
+$('tabIn').addEventListener('click', () => setMode('in'));
+$('tabUp').addEventListener('click', () => setMode('up'));
+
+if (!sb){
+  msg('Supabase is not connected yet. Add your keys in config.js.', 'err');
+} else {
+  /* Already signed in? Go straight to the notes. */
+  sb.auth.getSession().then(({ data }) => { if (data.session) location.href = DASH; });
+}
+
+$('form').addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!sb){ msg('Supabase is not connected yet. Add your keys in config.js.', 'err'); return; }
+  const email = $('email').value.trim(), pw = $('pw').value;
+  if (!email || !pw){ msg('Enter your email and password.', 'err'); return; }
+  if (mode === 'up' && pw.length < 6){ msg('Password needs at least 6 characters.', 'err'); return; }
+  const btn = $('submit'); btn.disabled = true; msg('');
+  try {
+    if (mode === 'in'){
+      const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+      if (error) throw error;
+      location.href = DASH;
+    } else {
+      const { data, error } = await sb.auth.signUp({ email, password: pw,
+        options: { emailRedirectTo: location.origin + location.pathname.replace(/[^/]*$/, '') + DASH } });
+      if (error) throw error;
+      if (data.session) location.href = DASH;
+      else msg('Account created. Check your email to confirm, then log in.', 'ok');
+    }
+  } catch (err){
+    msg(err.message || 'Something went wrong. Try again.', 'err');
+  } finally { btn.disabled = false; }
+});
+
+$('forgot').addEventListener('click', async () => {
+  if (!sb){ msg('Supabase is not connected yet.', 'err'); return; }
+  const email = $('email').value.trim();
+  if (!email){ msg('Type your email above first.', 'err'); return; }
+  const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.href });
+  if (error) msg(error.message, 'err'); else msg('Password reset email sent.', 'ok');
+});
+
+setMode('in');
+</script>
+</body>
+</html>

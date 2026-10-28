@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IBDP Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<style>
+:root{
+  --text:#1F2937; --muted:#6B7280; --bg:#FFFFFF; --line:#E5E7EB; --track:#EEF0F3;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Lexend",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight:300;line-height:1.7;font-size:19px}
+b,strong,summary,.name{font-weight:600}
+.wrap{max-width:860px;margin:0 auto;padding:40px 20px 90px}
+h1{font-size:34px;font-weight:600;margin:0 0 6px}
+.lead{color:var(--muted);margin:0 0 28px;font-size:17px}
+
+/* Overall */
+.overall{border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:26px}
+.overall .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.overall .big{font-size:30px;font-weight:600}
+
+/* Progress bar (the only filled colour on the page) */
+.bar{height:12px;border-radius:99px;background:var(--track);overflow:hidden;margin-top:10px}
+.bar > i{display:block;height:100%;width:0;border-radius:99px;transition:width .35s ease}
+
+/* Subject card */
+details.subject{border:1px solid var(--line);border-radius:12px;margin:14px 0;background:var(--bg)}
+details.subject > summary{list-style:none;cursor:pointer;padding:18px 22px;display:block}
+details.subject > summary::-webkit-details-marker{display:none}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.name{font-size:23px}
+.count{color:var(--muted);font-size:16px}
+.pct{font-size:23px;font-weight:600}
+.chev{display:inline-block;margin-left:8px;transition:transform .2s;color:var(--muted)}
+details[open] > summary .chev{transform:rotate(90deg)}
+.body{padding:0 22px 20px;border-top:1px solid var(--line)}
+.empty{color:var(--muted);padding:16px 0 0;font-size:17px}
+
+/* Units and sub units */
+.unit{margin-top:18px}
+.unit h3{font-size:19px;font-weight:600;margin:0 0 6px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.unit h3 small{font-weight:300;color:var(--muted);font-size:15px}
+.sub{display:flex;align-items:center;gap:12px;padding:8px 4px;border-radius:8px}
+.sub:hover{background:#FAFAFA}
+.sub input{width:22px;height:22px;flex:0 0 22px;cursor:pointer;margin:0}
+.sub a{color:var(--text);text-decoration:none;flex:1}
+.sub a:hover{text-decoration:underline}
+.sub .num{font-weight:600;margin-right:8px}
+.sub.done a{color:var(--muted);text-decoration:line-through}
+.tools{margin-top:14px;text-align:right}
+button.link{background:none;border:0;font:inherit;font-size:15px;color:var(--muted);cursor:pointer;text-decoration:underline;padding:4px}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+  padding-bottom:18px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+.topbar .brand{font-weight:600;font-size:19px}
+.topbar .who{color:var(--muted);font-size:15px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.banner{border:1px solid var(--line);border-radius:10px;padding:10px 16px;margin-bottom:20px;
+  color:var(--muted);font-size:15.5px}
+.banner.err{color:#B91C1C}
+.footer{margin-top:36px;color:var(--muted);font-size:15px}
+@media (max-width:600px){
+  body{font-size:18px} h1{font-size:28px}
+  .overall .big{font-size:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <span class="brand">Aarav Dhumal's Notes</span>
+    <span class="who"><span id="who"></span><button class="link" id="logout" style="display:none">Log out</button></span>
+  </div>
+  <div id="banner"></div>
+  <h1>Your subjects</h1>
+  <p class="lead">Tap a subject to open it. Tick each sub unit when you have finished it.</p>
+
+  <div class="overall" id="overall"></div>
+  <div id="subjects"></div>
+
+  <p class="footer" id="footer"></p>
+</div>
+
+<script>
+/* =====================================================================
+   DATA: edit only this block.
+   - One entry per subject. `color` is the subject text colour.
+   - Add each finished unit under `units`, with its HTML file name.
+   - Each sub unit `id` must match the section id in that unit's page,
+     for example sub unit 1.2 uses section id "s1-2".
+   ===================================================================== */
+const SUBJECTS = [
+  { id:'bm',  name:'Business Management HL', color:'#1D4ED8', status:'ready', units:[] },
+  { id:'eco', name:'Economics HL', color:'#0F766E', status:'ready', units:[
+      { title:'Unit 1 Introduction to markets (sample)', file:'example-economics-1.1.html', subs:[
+          { id:'s1-1', num:'1.1', title:'Demand' },
+          { id:'s1-2', num:'1.2', title:'Supply' }
+      ]}
+  ]},
+  { id:'ess', name:'ESS SL', color:'#4D7C0F', status:'ready', units:[] },
+  { id:'maths', name:'Maths AI HL', color:'#6D28D9', status:'soon', units:[] },
+  { id:'eng', name:'English Lang and Lit SL', color:'#BE123C', status:'soon', units:[] }
+];
+
+/* ---------- saved ticks ---------- */
+const KEY = 'ibdp-notes-progress-v1';
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { saved = {}; }
+function persist(){ try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} }
+
+/* ---------- Supabase (set the keys in config.js) ---------- */
+const cfg = window.IBDP_CONFIG || {};
+const sb = (cfg.url && cfg.anonKey && window.supabase) ? window.supabase.createClient(cfg.url, cfg.anonKey) : null;
+let userId = null;
+function banner(msg, isErr){
+  document.getElementById('banner').innerHTML = msg ? '<div class="banner' + (isErr ? ' err' : '') + '">' + msg + '</div>' : '';
+}
+async function setTicks(keys, on){
+  keys.forEach(x => { if (on) saved[x] = true; else delete saved[x]; });
+  persist();
+  if (!sb || !userId) return;
+  let res;
+  if (on) res = await sb.from('progress').upsert(keys.map(x => ({ user_id: userId, item_key: x })));
+  else res = await sb.from('progress').delete().eq('user_id', userId).in('item_key', keys);
+  if (res.error) banner('Could not save to your account: ' + esc(res.error.message), true);
+  else banner('');
+}
+async function init(){
+  if (sb){
+    const { data } = await sb.auth.getSession();
+    if (!data.session){ location.href = 'index.html'; return; }
+    userId = data.session.user.id;
+    document.getElementById('who').textContent = data.session.user.email;
+    const out = document.getElementById('logout');
+    out.style.display = 'inline';
+    out.addEventListener('click', async () => { await sb.auth.signOut(); try { localStorage.removeItem(KEY); } catch (e) {} location.href = 'index.html'; });
+    const { data: rows, error } = await sb.from('progress').select('item_key').eq('user_id', userId);
+    if (error) banner('Could not load your progress: ' + esc(error.message), true);
+    else { saved = {}; rows.forEach(r => { saved[r.item_key] = true; }); persist(); }
+    document.getElementById('footer').textContent = 'Your ticks are saved to your account.';
+  } else {
+    banner('Not connected to Supabase yet, so ticks save only in this browser. Add your keys in config.js.');
+    document.getElementById('footer').textContent = 'Your ticks are saved in this browser on this device.';
+  }
+  render();
+}
+const k = (s,u,b) => s.id + '|' + u.file + '|' + b.id;
+
+/* ---------- helpers ---------- */
+function totals(s){
+  let total = 0, done = 0;
+  s.units.forEach(u => u.subs.forEach(b => { total++; if (saved[k(s,u,b)]) done++; }));
+  return { total, done, pct: total ? Math.round(done / total * 100) : 0 };
+}
+function el(tag, cls, html){
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (html !== undefined) n.innerHTML = html;
+  return n;
+}
+function esc(t){ return String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* ---------- render ---------- */
+const openIds = new Set();
+
+function render(){
+  /* overall */
+  let T = 0, D = 0;
+  SUBJECTS.forEach(s => { const t = totals(s); T += t.total; D += t.done; });
+  const op = T ? Math.round(D / T * 100) : 0;
+  document.getElementById('overall').innerHTML =
+    '<div class="row"><span><b>Overall progress</b></span><span class="big">' + op + '%</span></div>' +
+    '<div class="bar"><i style="width:' + op + '%;background:#1F2937"></i></div>' +
+    '<div class="count" style="margin-top:8px">' + D + ' of ' + T + ' sub units done</div>';
+
+  /* subjects */
+  const host = document.getElementById('subjects');
+  host.innerHTML = '';
+  SUBJECTS.forEach(s => {
+    const t = totals(s);
+    const d = el('details', 'subject');
+    d.dataset.id = s.id;
+    if (openIds.has(s.id)) d.open = true;
+    d.addEventListener('toggle', () => { d.open ? openIds.add(s.id) : openIds.delete(s.id); });
+
+    const label = s.status === 'soon' ? 'Not set up yet'
+                : t.total ? t.done + ' of ' + t.total + ' sub units'
+                : 'No units added yet';
+    const sum = el('summary', '',
+      '<div class="head"><span class="name" style="color:' + s.color + '">' + esc(s.name) + '<span class="chev">›</span></span>' +
+      '<span class="pct" style="color:' + s.color + '">' + t.pct + '%</span></div>' +
+      '<div class="bar"><i style="width:' + t.pct + '%;background:' + s.color + '"></i></div>' +
+      '<div class="count" style="margin-top:8px">' + label + '</div>');
+    d.appendChild(sum);
+
+    const body = el('div', 'body');
+    if (!s.units.length){
+      body.appendChild(el('p', 'empty', s.status === 'soon'
+        ? 'Notes for this subject are not set up yet.'
+        : 'Send a unit and its sub units will appear here.'));
+    }
+    s.units.forEach(u => {
+      const done = u.subs.filter(b => saved[k(s,u,b)]).length;
+      const unit = el('div', 'unit');
+      unit.appendChild(el('h3', '', '<span style="color:' + s.color + '">' + esc(u.title) + '</span><small>' + done + ' of ' + u.subs.length + '</small>'));
+      u.subs.forEach(b => {
+        const row = el('label', 'sub' + (saved[k(s,u,b)] ? ' done' : ''));
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = !!saved[k(s,u,b)];
+        cb.style.accentColor = s.color;
+        cb.addEventListener('change', () => {
+          setTicks([k(s,u,b)], cb.checked); render();
+        });
+        const a = el('a', '', '<span class="num" style="color:' + s.color + '">' + esc(b.num) + '</span>' + esc(b.title));
+        a.href = u.file + '#' + b.id;
+        a.addEventListener('click', e => e.stopPropagation());
+        row.appendChild(cb); row.appendChild(a);
+        unit.appendChild(row);
+      });
+      body.appendChild(unit);
+    });
+    if (t.done){
+      const tools = el('div', 'tools');
+      const btn = el('button', 'link', 'Clear ticks for this subject');
+      btn.addEventListener('click', () => {
+        const keys = [];
+        s.units.forEach(u => u.subs.forEach(b => keys.push(k(s,u,b))));
+        setTicks(keys, false); render();
+      });
+      tools.appendChild(btn); body.appendChild(tools);
+    }
+    d.appendChild(body);
+    host.appendChild(d);
+  });
+}
+init();
+</script>
+</body>
+</html>
