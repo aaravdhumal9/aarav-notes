@@ -1,0 +1,1958 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Management HL Unit 1 Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Subject colour: change this one value per subject (see references/subjects.md).
+     It is used ONLY for heading text, labels and numbers. Everything else is white. */
+  --accent:#1D4ED8;
+
+  --text:#1F2937;
+  --muted:#6B7280;
+  --bg:#FFFFFF;
+  --line:#E5E7EB;
+  /* label text colours for the boxes (text only, boxes stay white) */
+  --tip:#B45309;
+  --ex:#15803D;
+  --key:#6D28D9;
+  --syl:#DC2626;
+  --cmd:#475569;
+  --curve2:#F59E0B;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Lexend",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight:300;line-height:1.75;font-size:19px}
+b,strong,th,summary{font-weight:600}
+.layout{display:flex;max-width:1180px;margin:0 auto}
+/* Sidebar */
+nav.side{width:260px;flex:0 0 260px;position:sticky;top:0;align-self:flex-start;
+  height:100vh;overflow:auto;padding:28px 20px;border-right:1px solid var(--line);background:var(--bg)}
+nav.side .subject{font-weight:600;color:var(--accent);font-size:15.5px;letter-spacing:.04em;text-transform:uppercase}
+nav.side .unit{font-size:22px;font-weight:600;margin:4px 0 18px}
+nav.side a{display:block;padding:8px 10px;margin:2px 0;
+  color:var(--text);text-decoration:none;font-size:17px;line-height:1.4}
+nav.side a b{color:var(--accent);margin-right:6px}
+nav.side a:hover{text-decoration:underline}
+nav.side a.active{font-weight:600;color:var(--accent)}
+nav.side a.active b{text-decoration:underline}
+/* Main */
+main{flex:1;min-width:0;padding:28px 32px 80px;background:var(--bg)}
+.note-tag{display:inline-block;color:var(--muted);border:1px solid var(--line);
+  border-radius:6px;padding:4px 10px;font-size:14.5px;margin-bottom:18px}
+section.sub{margin-bottom:64px}
+.bar{color:var(--accent);font-size:31px;font-weight:600;margin:0 0 20px;
+  padding-bottom:10px;border-bottom:1px solid var(--line)}
+.bar span{margin-right:12px}
+h3{font-size:22px;font-weight:600;margin:28px 0 8px;color:var(--accent)}
+p{margin:8px 0}
+ul,ol{margin:8px 0 8px 22px;padding:0}
+li{margin:4px 0}
+/* Boxes: white, thin neutral border, only the label text is coloured */
+.box{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:18px 0}
+.box .label{display:block;font-size:14px;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;margin-bottom:4px}
+.def .label{color:var(--accent)}
+.tip .label{color:var(--tip)}
+.ex .label{color:var(--ex)}
+.key .label{color:var(--key)}
+.syl .label{color:var(--syl)}
+.cmd .label{color:var(--cmd)}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:17.5px}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;background:var(--bg)}
+th{color:var(--accent)}
+figure{margin:20px 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+figure svg{width:100%;height:auto;display:block;max-width:520px;margin:0 auto;font-family:inherit}
+figcaption{font-size:16px;color:var(--muted);margin-top:8px;text-align:center}
+details{border:1px solid var(--line);border-radius:8px;padding:8px 14px;margin:8px 0;background:var(--bg)}
+summary{cursor:pointer}
+code{border:1px solid var(--line);padding:1px 6px;border-radius:4px;font-size:.92em;font-family:inherit}
+/* Phones */
+@media (max-width: 820px){
+  .layout{display:block}
+  nav.side{position:sticky;top:0;z-index:5;width:100%;height:auto;max-height:none;
+    display:flex;gap:6px;overflow-x:auto;padding:10px 12px;
+    border-right:0;border-bottom:1px solid var(--line)}
+  nav.side .subject,nav.side .unit{display:none}
+  nav.side a{white-space:nowrap;margin:0}
+  main{padding:20px 16px 60px}
+  .bar{font-size:25px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media print{ nav.side{display:none} main{padding:0} .layout{display:block} }
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav class="side" aria-label="Sub units">
+  <a href="dashboard.html" class="home">← All subjects</a>
+  <div class="subject">Business Management HL</div>
+  <div class="unit">Unit 1 Introduction to Business Management</div>
+  <a href="#s1-1"><b>1.1</b>What is a business?</a>
+  <a href="#s1-2"><b>1.2</b>Types of business entities</a>
+  <a href="#s1-3"><b>1.3</b>Business objectives</a>
+  <a href="#s1-4"><b>1.4</b>Stakeholders</a>
+  <a href="#s1-5"><b>1.5</b>Growth and evolution</a>
+  <a href="#s1-6"><b>1.6</b>Multinational companies (MNCs)</a>
+</nav>
+
+<main>
+<!-- ============ SUB UNIT 1.1 ============ -->
+<section class="sub" id="s1-1">
+  <h2 class="bar"><span>1.1</span>What is a business?</h2>
+
+  <h3>The nature of business</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>business</b> is a <b>decision making organization</b> involved in the process of using <b>inputs</b> to produce <b>goods</b> and/or to provide <b>services</b>.</p>
+    <p><b>Businesses</b> are organizations involved in the <b>production of goods</b> and/or the <b>provision of services</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Inputs</b> are the <b>resources</b> that a business uses in the production process, such as <b>labour</b> and <b>raw materials</b>. The process generates <b>outputs</b> (also known as <b>products</b>).</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Production</b> is the process of creating <b>goods and/or services</b>, <b>adding value</b> in the process.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 520 150" role="img" aria-label="The production process: inputs go through a process and become outputs.">
+      <defs><marker id="a11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1F2937"/></marker></defs>
+      <g fill="none" stroke="#1D4ED8" stroke-width="1.6">
+        <rect x="8" y="30" width="140" height="70" rx="8"/><rect x="190" y="30" width="140" height="70" rx="8"/><rect x="372" y="30" width="140" height="70" rx="8"/>
+      </g>
+      <g stroke="#1F2937" stroke-width="1.6" marker-end="url(#a11)"><line x1="150" y1="65" x2="188" y2="65"/><line x1="332" y1="65" x2="370" y2="65"/></g>
+      <g font-size="15" text-anchor="middle" fill="#1D4ED8" font-weight="600"><text x="78" y="22">Inputs</text><text x="260" y="22">Process</text><text x="442" y="22">Outputs</text></g>
+      <g font-size="12.5" text-anchor="middle" fill="#1F2937">
+        <text x="78" y="58">Raw materials,</text><text x="78" y="75">components,</text><text x="78" y="92">machinery, labour</text>
+        <text x="260" y="58">Turning inputs into</text><text x="260" y="75">goods or into</text><text x="260" y="92">services</text>
+        <text x="442" y="58">Final goods</text><text x="442" y="75">and services</text>
+      </g>
+    </svg>
+    <figcaption>Figure 1.1. The production process. A business turns inputs into outputs.</figcaption>
+  </figure>
+
+  <p>Peter Drucker said that "there is only one valid definition of business purpose: to create a customer". A business does this by creating goods and services that meet the <b>needs and wants</b> of customers. The role of businesses is to combine <b>human, physical and financial resources</b> to create goods and services that satisfy the needs and wants of people, organizations and governments.</p>
+
+  <h3>Goods and services</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Goods</b> are <b>physical products</b> produced and sold to customers, such as laptops, books, contact lenses, perfumes and children's toys.</p>
+    <p><b>Services</b> are <b>intangible products</b> sold to customers, such as the services provided by airlines, restaurants, cinemas, banks, health and beauty spas, schools and hospitals.</p>
+  </div>
+  <ul>
+    <li>The word <b>product</b> can mean both goods and services.</li>
+    <li>Goods are physical (smartphones, clothes, books, food). Services are intangible (haircuts, public transport, education, healthcare).</li>
+    <li>With a service, the service itself cannot be touched, but the <b>results or experiences</b> are real. Examples are healthcare, transportation, dining, sports (recreation), legal advice, financial guidance and education.</li>
+    <li>Businesses can also sell goods and services to <b>other organizations</b>, for example freight transportation, distribution and insurance.</li>
+  </ul>
+
+  <h3>Types of products (Box 1.1)</h3>
+  <table>
+    <tr><th>Type</th><th>Meaning</th><th>Examples</th></tr>
+    <tr><td><b>Consumer goods</b></td><td>Products sold to the general public, rather than to other businesses.</td><td></td></tr>
+    <tr><td>Consumer <b>durables</b></td><td>Last a long time and can be used repeatedly.</td><td>Electronic devices, motor cars, jewellery, clothes, home furniture</td></tr>
+    <tr><td>Consumer <b>non durables</b></td><td>Need to be consumed shortly after purchase because they do not last or cannot be reused.</td><td>Fresh food, beverages, medicines, newspapers</td></tr>
+    <tr><td><b>Capital goods</b> (producer goods)</td><td>Physical products bought by businesses to produce other goods and/or services.</td><td>Buildings (premises), computers, machinery, tools, specialist equipment</td></tr>
+    <tr><td><b>Services</b></td><td>Intangible products provided by businesses.</td><td>Healthcare, transportation, dining, sports, legal advice, financial guidance, education</td></tr>
+  </table>
+
+  <h3>Needs and wants</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Needs</b> are the <b>basic necessities</b> that a person must have to <b>survive</b>, including food, water, warmth, shelter and clothing.</p>
+    <p><b>Wants</b> are people's <b>desires</b>, i.e. the things they would like to have, such as new clothes, smartphones, overseas holidays and jewellery.</p>
+  </div>
+  <p>Examples from the textbook: a larger home, a new smartphone, an overseas holiday or a birthday cake are wants, not needs.</p>
+
+  <h3>Customers and consumers</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Customers</b> are the people or organizations that <b>buy</b> the product.</p>
+    <p><b>Consumers</b> are the people or organizations that actually <b>use</b> a product.</p>
+  </div>
+  <p>They can be the same person (someone who buys and eats a meal). They can also be different: parents (customers) buy presents for their children (consumers).</p>
+  <div class="box tip">
+    <span class="label">Common mistake</span>
+    <p>Students often use "customer" and "consumer" as if they mean the same thing. Always ask: who pays, and who uses?</p>
+  </div>
+
+  <h3>Adding value</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Adding value</b> is the practice of producing a good or service that is <b>worth more than the cost of the resources</b> used in the production process.</p>
+  </div>
+  <ul>
+    <li>The purpose of business activity is to <b>generate added value</b>.</li>
+    <li>Added value exists when there is a <b>positive difference between the selling price</b> and the cost of producing the good or service.</li>
+    <li>It exists when products appeal to customers, so they are <b>willing to pay a higher price</b>.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Worked example (illustration)</span>
+    <p>A bakery uses ingredients and energy that cost $3 to make a birthday cake. It sells the cake for $12.</p>
+    <p>Added value = selling price − cost of production = $12 − $3 = <b>$9</b>.</p>
+  </div>
+
+  <h3>Entrepreneurs and entrepreneurship</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Entrepreneurs</b> are the people who <b>manage, organize and plan</b> the resources needed for business activity in pursuit of organizational objectives. They are <b>risk takers</b> who <b>exploit business opportunities</b> in return for profits.</p>
+    <p><b>Entrepreneurship</b> refers to the collective <b>knowledge, skills and experiences</b> of entrepreneurs.</p>
+  </div>
+  <ul>
+    <li>An entrepreneur plans, organizes and manages a business and its operations, <b>taking on financial risks</b>. The word was coined by Richard Cantillon (1680 to 1734), an Irish French economist.</li>
+    <li>Entrepreneurship also describes the trait of business leaders who are distinctive in temperament, attitude and outlook and who drive the business towards its goals.</li>
+    <li>Successful entrepreneurs tend to be <b>creative, innovative and highly passionate</b>. They search for and exploit opportunities by forecasting and/or responding to changes in the marketplace.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Case study: Steve Jobs</span>
+    <p>Steve Jobs (1955 to 2011) did not graduate from university because his adopted parents could not afford the fees. He took the risk of setting up Apple in 1976 with Steve Wozniak and Ronald Wayne. Wayne sold his share within weeks for just $2,300. Jobs went on to reinvent computing, music and mobile phones. Apple became the highest valued company in the world two months before he died, and Forbes estimated his wealth at over $8.3 billion.</p>
+    <p><b>Point it proves:</b> entrepreneurs take big financial risks, and the reward can be very large.</p>
+  </div>
+
+  <h3>The four functional areas</h3>
+  <p>A business needs tasks done by <b>functional areas</b> (departments). They are <b>interdependent</b> and must work together to achieve the organization's goals.</p>
+  <table>
+    <tr><th>Functional area</th><th>What it does</th><th>Textbook chapters</th></tr>
+    <tr><td><b>Human resource management</b></td><td>Manages the personnel (people) of the organization: human resource planning, organizational structures, management and leadership, motivation and demotivation, industrial/employee relations.</td><td>7 to 13</td></tr>
+    <tr><td><b>Finance and accounts</b></td><td>Manages the organization's money, makes sure it follows legal requirements (such as filing corporate taxes) and informs people interested in the financial position (such as shareholders and potential investors).</td><td>14 to 22</td></tr>
+    <tr><td><b>Marketing</b></td><td>Identifies and satisfies the needs and wants of customers. It is ultimately in charge of making sure the firm's products sell, through market research, promotion, pricing, branding and distribution.</td><td>23 to 34</td></tr>
+    <tr><td><b>Operations management</b></td><td>Converts raw materials and components into finished goods, ready for sale and delivery to customers. Examples: extracting crude oil, car manufacturing, providing travel and tourism services.</td><td>35 to 43</td></tr>
+  </table>
+  <ul>
+    <li>A <b>large</b> organization can give resources to each area, so each role is easy to see.</li>
+    <li>In a <b>small business owned by one person</b>, that one person carries out every function.</li>
+    <li>The areas depend on each other. Operations relies on marketers to promote and sell the products. Marketers need well made products to sell, and the finance to pay for marketing.</li>
+  </ul>
+
+  <h3>Primary, secondary, tertiary and quaternary sectors</h3>
+  <p>Businesses can be classified by the <b>stage of production</b> (the <b>chain of production</b>) they are engaged in.</p>
+
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Primary sector</b> refers to businesses involved in the <b>cultivation or extraction of natural resources</b>, such as farming, mining, quarrying, fishing, oil exploration and forestry.</p>
+    <p><b>Secondary sector</b> refers to businesses concerned with the <b>construction and manufacturing</b> of products.</p>
+    <p><b>Tertiary sector</b> refers to businesses involved with the <b>provision of services</b> to customers.</p>
+    <p><b>Quaternary sector</b> is a <b>sub category of the tertiary sector</b>, where businesses are involved in <b>intellectual and knowledge based activities</b> that generate and share information, such as research organizations.</p>
+  </div>
+
+  <table>
+    <tr><th>Sector</th><th>What businesses do</th><th>Examples</th><th>Notes from the textbook</th></tr>
+    <tr><td><b>Primary</b></td><td>Extraction, harvesting and conversion of natural resources</td><td>Agriculture, fishing, mining, forestry, oil extraction</td><td>Large share of output and employment in <b>low income</b> countries. In high income countries it uses mechanisation and automation (combine harvesters, tractors, automatic watering).</td></tr>
+    <tr><td><b>Secondary</b></td><td>Manufacturing or construction. Output is sold to other businesses, governments, foreign buyers or domestic customers.</td><td>Clothes makers, publishers, breweries and bottlers, construction firms, electronics makers, energy production companies</td><td>Dominant in <b>medium income</b> countries. Called the <b>wealth creating sector</b> because manufactured goods can be exported to earn income, and value is added to natural resources. Taiwan and South Korea prospered through mass production and export of vehicles and electronics. Automation has reduced employment in manufacturing.</td></tr>
+    <tr><td><b>Tertiary</b></td><td>Services to the general population and other organizations</td><td>Retailing, transport and distribution, banking, finance, insurance, healthcare, leisure and tourism, entertainment</td><td>Largest sector in <b>high income</b> countries (output as % of GDP and employment). In the USA and UK around 80% of the labour force works in it.</td></tr>
+    <tr><td><b>Quaternary</b></td><td>Intellectual and knowledge based activities that generate and share information</td><td>ICT, research and development (R&amp;D), consultancy, scientific research</td><td>Mainly in <b>high income</b> countries because it needs a highly educated workforce. High tech and e-commerce businesses invest here for growth. Pharmaceutical firms spend heavily on R&amp;D.</td></tr>
+  </table>
+
+  <h3>How the sector mix changes</h3>
+  <ul>
+    <li>As countries achieve sustained economic growth and development, they rely <b>less on the primary sector</b> for jobs and national output, partly because there is <b>little added value</b> in primary production. For example, low income countries can only sell tea leaves and coffee beans at low prices.</li>
+    <li>The primary sector is still important to every country. Less than 4% of France's national output comes from it, yet France benefits hugely from agricultural exports.</li>
+    <li>A restaurant is a service even though the chef changes physical ingredients. The focus is on the <b>people providing the service</b> (the chef and waiting staff), not on the tangible product.</li>
+    <li>Apple and Samsung see themselves as being in the services sector. They <b>outsource</b> production of smartphones and hardware to manufacturers such as Foxconn. There is more added value in the tertiary and quaternary sectors: instead of one off payments from selling equipment, Apple gets a <b>flow of revenue</b> from after sales services such as maintenance and support.</li>
+  </ul>
+
+  <h3>The chain of production</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>The <b>chain of production</b> tracks the stages of an item's production, from the <b>extraction of raw materials</b> all the way through to it being <b>delivered to the consumer</b>. It links the four sectors.</p>
+  </div>
+  <figure>
+    <svg viewBox="0 0 560 120" role="img" aria-label="The chain of production: primary production, then manufacturing, then services, then consumers.">
+      <defs><marker id="b11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1F2937"/></marker></defs>
+      <g fill="none" stroke="#1D4ED8" stroke-width="1.6"><rect x="6" y="30" width="118" height="62" rx="8"/><rect x="150" y="30" width="118" height="62" rx="8"/><rect x="294" y="30" width="118" height="62" rx="8"/><rect x="438" y="30" width="116" height="62" rx="8"/></g>
+      <g stroke="#1F2937" stroke-width="1.6" marker-end="url(#b11)"><line x1="125" y1="61" x2="148" y2="61"/><line x1="269" y1="61" x2="292" y2="61"/><line x1="413" y1="61" x2="436" y2="61"/></g>
+      <g font-size="13" text-anchor="middle" fill="#1F2937"><text x="65" y="57">Primary</text><text x="65" y="74">production</text><text x="209" y="57">Manufacturing</text><text x="209" y="74">(secondary)</text><text x="353" y="52">Services</text><text x="353" y="69">(tertiary and</text><text x="353" y="86">quaternary)</text><text x="496" y="66">Consumers</text></g>
+    </svg>
+    <figcaption>Figure 1.7. The chain of production. Each sector passes its output to the next.</figcaption>
+  </figure>
+  <p>The sectors are <b>interdependent</b>, because each relies on the others to exist.</p>
+  <ul>
+    <li>Crude oil would not be extracted if no one needed oil refining. Refiners would not exist without customers such as motorists and airlines (tertiary).</li>
+    <li>Secondary sector firms rely on suppliers for stocks so that they meet production targets.</li>
+    <li>All businesses need energy, ICT facilities, manufactured producer goods, financial services and management consultants.</li>
+  </ul>
+
+  <h3>Challenges for starting a business</h3>
+  <p>Around <b>20 to 25 per cent</b> of new businesses fail to survive their first year. A new business must deal with challenges at once, before they threaten its survival. The textbook lists these:</p>
+  <table>
+    <tr><th>Challenge</th><th>What the problem is</th></tr>
+    <tr><td><b>Lack of finance</b></td><td>Businesses need money to buy fixed assets (premises, buildings, machinery, equipment). Start ups often cannot get enough funding. Borrowing may be too little, or high interest charges hurt cash flow. New sole traders often <b>remortgage their homes</b>, giving the lender more <b>collateral</b> (financial security in case the loan is not repaid).</td></tr>
+    <tr><td><b>Unestablished customer base</b></td><td>Attracting customers and building a broad, loyal customer base is hard, especially when strong competitors already exist. Loyalty takes a long time and may need marketing know how and large amounts of money.</td></tr>
+    <tr><td><b>Cash flow problems</b></td><td>Financing <b>working capital</b> (money available for the daily running of the business) is hard. Stock (raw materials, semi finished or finished goods) cannot easily be turned into cash. Customers may demand a long <b>credit period</b> (usually 30 to 60 days), so cash arrives late, while wages, rent, utility bills, taxes and loan interest still have to be paid.</td></tr>
+    <tr><td><b>Marketing problems</b></td><td>Failing to meet customer needs leads to poor sales and low profit. New firms may lack the expertise to supply the right product to the right customers at the right price. A key to success is to find a <b>niche</b> (gap) in the market and fill it. Amazon saw the Internet as a way to distribute books and other products in the 1990s. easyJet and Ryanair spotted the niche for no frills (budget) air travel.</td></tr>
+    <tr><td><b>People management problems</b></td><td>Start ups may not know how to hire staff with the right skills. This causes poor labour productivity, retraining or rehiring, which is costly and slow. They may not know the best organizational structure or staff motivation methods.</td></tr>
+    <tr><td><b>Production problems</b></td><td>Hard to forecast demand. <b>Overproduction</b> causes stockpiling, wastage and higher costs. <b>Underproduction</b> causes unhappy customers and lost sales.</td></tr>
+    <tr><td><b>Legalities</b></td><td>Must follow all laws: business registration, insurance for staff and buildings, consumer protection laws, and intellectual property rules (copyrights, patents, trademarks). The paperwork is cumbersome, slow and expensive. Mistakes can mean compensation or financial penalties, which hurt weak cash flow.</td></tr>
+    <tr><td><b>High production costs</b></td><td>High set up costs (Box 1.2) and running costs: capital equipment, machinery, stock, rent, advertising, insurance. Small firms cannot enjoy <b>economies of scale</b>, so their average costs are higher. Large firms get supplier discounts for bulk buying and borrow at lower interest because of their size and collateral.</td></tr>
+    <tr><td><b>Poor location</b></td><td>A dilemma: busy areas offer the most customers but cost the most. Fixed costs (rent, mortgage) are a big share of total costs. Start ups want to reach <b>break even</b> fast by keeping fixed costs low, so many begin from home (which also has some tax advantages). Jeff Bezos started Amazon in his garage. This does not work where location is key to survival.</td></tr>
+    <tr><td><b>External influences</b></td><td>All businesses face <b>exogenous shocks</b>, such as a global financial crisis or a pandemic. Larger, established firms have more resources to cope, so new businesses are more vulnerable and more likely to fail.</td></tr>
+  </table>
+
+  <div class="box key">
+    <span class="label">Box 1.2: Examples of start up costs</span>
+    <ul>
+      <li><b>Buildings</b>: alterations, fixtures and fittings, insurance.</li>
+      <li><b>Capital equipment</b>: office furniture, telephones, computers, Wi-Fi, machinery, tools, motor vehicles.</li>
+      <li><b>Human resources</b>: recruitment, induction and training.</li>
+      <li><b>Legal and professional fees</b>: solicitors, licences, permits.</li>
+      <li><b>Marketing</b>: market research, advertising, promotional campaigns.</li>
+      <li><b>Premises</b>: purchase costs, mortgage deposit, rental deposit.</li>
+    </ul>
+  </div>
+
+  <p>In summary, the textbook gives <b>three inter related reasons</b> why many new businesses fail: <b>a lack of cash</b>, <b>poor cost control</b>, and <b>weak management and leadership</b>.</p>
+
+  <h3>Opportunities for starting a business: GET CASH</h3>
+  <p>The textbook gives the mnemonic <b>GET CASH</b> (it prints it as "GET CASHe").</p>
+  <table>
+    <tr><th>Letter</th><th>Opportunity</th><th>Explanation and example</th></tr>
+    <tr><td><b>G</b></td><td><b>Growth</b></td><td>Owners gain when the value of the business rises, especially as property and land tend to rise in value. This is <b>capital growth</b>, often worth more than the owners' salaries. Bill Gates (co founder of Microsoft, 1975) made his fortune mainly from Microsoft's capital growth.</td></tr>
+    <tr><td><b>E</b></td><td><b>Earnings</b></td><td>The returns from your own business can easily outweigh the costs, even though the risks are high. Entrepreneurs often earn far more than from other jobs. Apple's Tim Cook has a reported yearly pay package of about $265 million, and Tesla's Elon Musk about $595 million.</td></tr>
+    <tr><td><b>T</b></td><td><b>Transference and inheritance</b></td><td>In many societies assets, including businesses, are passed to the next generation. Owners can pass the business to their children (transference, inheritance), giving them financial security. The Walton family (estimated wealth over $215 billion) owns over 50% of Walmart. The Mars family (about $120 billion) owns Mars Inc., a privately held, multigenerational firm founded in 1911.</td></tr>
+    <tr><td><b>C</b></td><td><b>Challenge</b></td><td>Some people see running a business as a personal challenge that drives them and brings satisfaction. Success boosts self esteem. Warren Buffett, Carlos Slim and Li Ka shing kept working past the usual retirement age.</td></tr>
+    <tr><td><b>A</b></td><td><b>Autonomy</b></td><td>Employees follow rules set by their employer (conditions, hours, benefits, holidays). Self employed people have <b>independence, freedom of choice and flexibility</b>. This is the benefit of being your own boss.</td></tr>
+    <tr><td><b>S</b></td><td><b>Security</b></td><td>Greater <b>job security</b>: employees can be dismissed, made redundant or replaced by technology. Although risks are high, being self employed can make it easier to build personal wealth (financial security) for earlier retirement.</td></tr>
+    <tr><td><b>H</b></td><td><b>Hobbies</b></td><td>People can turn a passion or interest into a business. Examples: J.K. Rowling, chef Jamie Oliver (several restaurants), and Mark Zuckerberg, who became the world's youngest billionaire at 23 after co founding Facebook.</td></tr>
+  </table>
+  <p>People set up businesses to satisfy personal desires: to fulfil a personal vision, to achieve success, to be their own boss, or to live a more extravagant lifestyle.</p>
+
+  <h3>Culture and business, and the key concepts</h3>
+  <ul>
+    <li>Reasons for setting up a business vary by country and culture. Singapore, Hong Kong and New Zealand need only a few legal steps, which encourages an entrepreneurial culture where creative and innovative businesses thrive. In Chad, Libya and Myanmar a risk taking entrepreneurial culture is less obvious, so there is little change and <b>sustainability</b> is more of an issue.</li>
+    <li>The nature of business activity is to satisfy customers' needs and desires while meeting the organization's own objectives, such as profit, growth and corporate social responsibility.</li>
+    <li>In the long run all businesses must make a <b>profit or surplus</b> to survive. For profit and not for profit organizations go about this in similar and different ways (see 1.2).</li>
+    <li><b>Change, ethics and creativity</b> are central to the sustainability of businesses.</li>
+    <li><b>Business activity</b> is the process of turning inputs (<b>land, labour, capital and enterprise</b>) into outputs (finished goods and services) to meet the needs and wants of different customers. All businesses try to add value as part of a sustainable business strategy.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Case study: Paul Buchheit and Gmail</span>
+    <p>Paul Buchheit, a Google employee, is credited as creator of Gmail. In 2001 he programmed the first working version in one day and was lead developer. He left Google in 2006, worked at Facebook until 2010, and won The Economist Innovation Award in 2011 for computing and telecommunications.</p>
+    <p><b>Point it proves:</b> creativity and the ability to adapt to change are crucial to compete in business.</p>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <ul>
+      <li>Always <b>apply</b> your answer to the business in the case. Do not just list the challenges. Say which one hurts this business most and why.</li>
+      <li>When you give a challenge, add the <b>effect</b>. Example: cash flow problem, so the business cannot pay wages and rent while it waits for customers to pay.</li>
+      <li>Do not mix up customers (buy) and consumers (use), or needs (survival) and wants (desires).</li>
+      <li>Sectors: link each sector to a country's income level and give an example.</li>
+    </ul>
+  </div>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Adding value</b>: producing something worth more than the resources used.</li>
+      <li><b>Business</b>: decision making organization that uses inputs to make goods or services.</li>
+      <li><b>Capital goods</b>: physical products bought by businesses to make other goods or services.</li>
+      <li><b>Consumers</b>: use the product. <b>Customers</b>: buy the product.</li>
+      <li><b>Entrepreneur</b>: risk taker who plans, organizes and manages resources. <b>Entrepreneurship</b>: collective knowledge, skills and experience of entrepreneurs.</li>
+      <li><b>Goods</b>: physical products. <b>Services</b>: intangible products.</li>
+      <li><b>Needs</b>: necessities to survive. <b>Wants</b>: desires.</li>
+      <li><b>Production</b>: creating goods or services and adding value.</li>
+      <li><b>Primary</b>: cultivation or extraction. <b>Secondary</b>: manufacturing and construction. <b>Tertiary</b>: services. <b>Quaternary</b>: knowledge based activities.</li>
+      <li><b>Chain of production</b>: stages from raw material to consumer.</li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms</span>
+    <ul>
+      <li><b>Define</b>: give the precise meaning of a term (use the definitions above).</li>
+      <li><b>Distinguish</b>: make clear the differences between two or more items (customers and consumers, needs and wants).</li>
+      <li><b>Explain</b>: give a detailed account including reasons or causes (why a start up faces cash flow problems).</li>
+      <li><b>Examine</b>: consider an argument or concept so that the key elements are revealed (how business functions work together).</li>
+    </ul>
+  </div>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> Distinguish between a customer and a consumer.</p>
+    <p>Customers buy the product. Consumers use it. They can be the same person or different (parents buy, children use).</p>
+    <p><b>2.</b> Explain why the primary sector is smaller in high income countries.</p>
+    <p>There is little added value in primary production, and countries rely more on tertiary and quaternary sectors as they grow. Mechanisation also reduces the need for workers.</p>
+    <p><b>3.</b> State two challenges a new business faces and one reason for each.</p>
+    <p>Cash flow problems (customers pay late but bills must be paid now). Unestablished customer base (competitors already have loyal customers).</p>
+  </details>
+</section>
+<!-- ============ SUB UNIT 1.2 ============ -->
+<section class="sub" id="s1-2">
+  <h2 class="bar"><span>1.2</span>Types of business entities</h2>
+
+  <h3>The private sector and the public sector</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>The <b>private sector</b> is the part of the economy run by <b>private individuals and businesses</b>, rather than by the government, such as sole traders, partnerships, privately held companies and publicly held companies.</p>
+    <p>The <b>public sector</b> is the part of the economy <b>controlled by the government</b>. Examples include state healthcare and education services, the emergency services, social housing and national defence.</p>
+  </div>
+  <table>
+    <tr><th></th><th>Private sector</th><th>Public sector</th></tr>
+    <tr><td><b>Owned and controlled by</b></td><td>Private individuals and businesses</td><td>The government</td></tr>
+    <tr><td><b>Size</b></td><td>From one person businesses to large multinational companies</td><td>Often large national organizations</td></tr>
+    <tr><td><b>Main aim</b></td><td>Most (not all) aim to earn <b>profit</b> for owners. Profit is the positive difference between <b>sales revenue</b> (money earned from selling products) and <b>costs</b> (production spending such as wages and rent).</td><td>Typically provide <b>essential goods and services</b> that the private sector would underprovide or provide inefficiently: healthcare, education, social housing, emergency services.</td></tr>
+  </table>
+  <p>Organizations partly or wholly owned by the government are called <b>public sector companies</b> (or <b>state owned enterprises</b>). Examples: the UK's Transport for London, Singapore Airlines, Airports Authority of India, and Canada Post.</p>
+  <div class="box ex">
+    <span class="label">Case study: Australia Post</span>
+    <p>Established in 1809, it is a state owned enterprise providing postal services. It employs over 35,000 people across more than 4,330 retail outlets, with revenues above AUD 7.5bn (about USD 5.45bn).</p>
+  </div>
+  <h3>Reasons for public sector business activity</h3>
+  <ul>
+    <li>To make sure everyone can use <b>basic services</b>: education, health care, museums, public parks, public libraries.</li>
+    <li>To <b>avoid wasteful competition</b>. The government can reach huge <b>economies of scale</b> (cost savings from operating on a large scale) in services such as postal services and national defence.</li>
+    <li>To <b>create employment</b>. Governments are large employers of teachers, doctors and nurses.</li>
+    <li>To <b>stabilise the economy</b>. Many private banks were <b>nationalised</b> (bought by the government) in the 2008 global credit crisis to prevent more financial turmoil. Government action in the COVID-19 pandemic also helped stabilise economies.</li>
+    <li>To <b>protect citizens and businesses</b> through the police and courts, which run the law and order system.</li>
+  </ul>
+
+  <h3>Types of profit based organizations</h3>
+  <p>A business can only survive in the long term if it is profitable. Profit based entities differ in <b>ownership and control</b> (you do not have to run a business just because you own it), in <b>how they raise finance</b> and in <b>how profits are distributed</b>. The four main types are sole traders, partnerships, privately held companies and publicly held companies.</p>
+
+  <h3>(i) Sole traders</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>sole trader</b> is a <b>self-employed</b> person who runs the business <b>on his/her own</b>. This means s/he has <b>exclusive responsibility</b> for its success (profits) or failure (<b>unlimited liability</b>).</p>
+  </div>
+  <ul>
+    <li>Also called a <b>sole proprietor</b>. The owner runs and controls the business. It is the <b>most common</b> type of business ownership in the world.</li>
+    <li>The business is <b>unincorporated</b>: the owner and the business are the <b>same legal entity</b>. If the business collapses, the owner may lose personal possessions.</li>
+    <li>Sole traders may work alone or employ others. They are often small family run businesses, set up with a relatively small amount of capital, usually from <b>personal savings and borrowing</b>.</li>
+    <li>Examples: self employed decorators, plumbers, mechanics, restaurateurs, private tutors, freelance photographers.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Examples of businesses that began as sole traders</span>
+    <ul>
+      <li><b>Chanel</b>: started by Coco Chanel in 1910, now global.</li>
+      <li><b>Marks &amp; Spencer</b>: set up in 1904 by Michael Marks and Thomas Spencer, who first operated as sole traders.</li>
+      <li><b>Tesco</b>: started in 1919 as a sole proprietorship by Jack Cohen.</li>
+      <li><b>Walmart</b>: in 1945 Sam Walton started with personal savings of $5,000 and a $20,000 loan from his father in law. It became the world's largest retailer.</li>
+      <li><b>eBay</b>: created in 1995 by Pierre Omidyar as a sole proprietorship (prototype "Auction Web") after his fiancee had trouble selling collectibles such as PEZ candy dispensers. In 1998 eBay became a publicly held company, making him a billionaire at 31.</li>
+    </ul>
+  </div>
+  <table>
+    <tr><th>Advantages of sole proprietorships</th><th>Disadvantages of sole proprietorships</th></tr>
+    <tr><td><b>Few legal formalities</b>: easy to set up, start up costs usually much lower than other entities.</td><td><b>Unlimited liability</b>: no limit to the debts the owner is legally responsible for if the business fails.</td></tr>
+    <tr><td><b>Profit taking</b>: the only owner keeps all the profit, which is an incentive to work hard.</td><td><b>Limited sources of finance</b>: hard to get funds beyond personal savings. Growth is difficult.</td></tr>
+    <tr><td><b>Being your own boss</b>: no orders from anyone, flexible decisions (such as own working hours), self esteem from success.</td><td><b>High risks</b>: statistically the largest risk of failure. Larger, established firms threaten profits and survival.</td></tr>
+    <tr><td><b>Personalised service</b>: can know customers. Larger businesses often become generic and impersonal.</td><td><b>Workload and stress</b>: the owner often does accounts, marketing and HR, and is unlikely to be equally good at all of them.</td></tr>
+    <tr><td><b>Privacy</b>: no need to publish financial records (tax authorities can still check).</td><td><b>Limited economies of scale</b>: cannot enjoy large scale production benefits, so prices may be less competitive, reducing competitiveness and profit.</td></tr>
+    <tr><td><b>Quicker decision making</b>: no other owners to consult.</td><td><b>Lack of continuity</b>: if the owner is away, ill or on holiday, the business may struggle to continue.</td></tr>
+  </table>
+
+  <h3>(ii) Partnerships</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Partnerships</b> are a type of <b>private sector</b> business entity owned by <b>2 to 20 people</b> (known as <b>partners</b>). They share the responsibilities and burdens of running and owning the business.</p>
+    <p>A <b>deed of partnership</b> is the legal contract signed by the owners of a partnership. The formal deeds specify the name and responsibilities of each partner and their proportion of any profits or losses.</p>
+  </div>
+  <ul>
+    <li>A partnership is a for profit private sector business owned by two or more persons. For ordinary partnerships the maximum is <b>20 owners</b> (it varies by country). Exceptions include professions such as solicitors and accountants, where issuing shares is prohibited.</li>
+    <li>Like sole traders, partnerships are financed mainly from the owners' personal funds, but partners can <b>pool funds</b> to raise more.</li>
+    <li><b>Silent (sleeping) partners</b> invest money but do not take part in running the business. They are entitled to a share of the profits.</li>
+    <li>Partnerships are <b>unincorporated</b>. At least one owner must have <b>unlimited liability</b>, but typically all partners share it.</li>
+    <li>A legal agreement is <b>not required</b> but most partnerships make one. Without a contract, profits or losses are shared <b>equally</b> and partners have the same rights in running the business.</li>
+  </ul>
+  <div class="box key">
+    <span class="label">A deed of partnership is likely to include</span>
+    <ul>
+      <li>The amount of finance each partner contributes.</li>
+      <li>The roles, obligations and responsibilities of each partner.</li>
+      <li>How profits or losses are shared.</li>
+      <li>Conditions for introducing new partners.</li>
+      <li>Clauses for the withdrawal of a partner.</li>
+    </ul>
+  </div>
+  <table>
+    <tr><th>Advantages of partnerships</th><th>Disadvantages of partnerships</th></tr>
+    <tr><td><b>Financial strength</b>: more owners can invest, yet still fairly easy to set up. Easier to get outside finance because risk is lower.</td><td><b>Unlimited liability</b>: debts are the responsibility of the partners "wholly or severally", meaning repaid by one partner (wholly) or shared (severally). The rare exception is limited liability partners who elected to have limited liability.</td></tr>
+    <tr><td><b>Specialisation and division of labour</b>: shared expertise, workload and moral support. A law firm may have partners in corporate, divorce and criminal law, so it has a larger client base.</td><td><b>Lack of continuity</b>: if a partner leaves or dies the deed becomes invalid and must be set up again. Some changes can be handled, but solicitors cost time and money.</td></tr>
+    <tr><td><b>Financial privacy</b>: no need to publish financial records.</td><td><b>Prolonged decision making</b>: more owners means slower decisions, with disagreements and conflict.</td></tr>
+    <tr><td><b>Cost effectiveness</b>: each partner specialises, raising labour productivity and operational efficiency.</td><td><b>Lack of harmony</b>: conflict is common but mutual trust is needed. Each partner is legally and financially accountable to all others, so one person's mistake can reduce everyone's profit.</td></tr>
+  </table>
+  <div class="box tip">
+    <span class="label">Why unlimited liability exists</span>
+    <p>It stops sole traders and partners making careless or irresponsible decisions, because it makes private individuals accountable for their actions. The downside is that the risk of losing private property can stop them from taking risks, so they choose safe decisions instead.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Unlimited liability</b> is a feature of sole traders and ordinary partnerships who are <b>legally liable</b> for all monies owed to their creditors, even if this means they have to <b>sell their personal possessions</b> to pay their debts.</p>
+  </div>
+
+  <h3>(iii) Privately held companies</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>company</b> (or <b>corporation</b>) refers to a <b>limited liability</b> business that is <b>owned by shareholders</b>. A <b>certificate of incorporation</b> gives the company a <b>separate legal identity</b> from its owners.</p>
+    <p><b>Incorporation</b> means there is a <b>legal difference between the owners</b> of a company and the business itself. This ensures the owners are protected by limited liability.</p>
+    <p><b>Limited liability</b> is a <b>restriction on the amount of money</b> that owners of a company can lose if the business goes bankrupt, i.e. shareholders cannot lose more than the amount they invested in the company.</p>
+    <p>A <b>privately held company</b> is a business owned by shareholders with limited liability but whose shares <b>cannot be bought by or sold to the general public</b> on a Stock Exchange.</p>
+  </div>
+  <ul>
+    <li><b>Shareholders</b> are individuals or other businesses that have invested money to provide <b>share capital</b>. Companies are sometimes called <b>joint stock companies</b> because the shares ("stock") are jointly held by many owners.</li>
+    <li>Because a company is a <b>separate legal entity</b>, it has its own legal rights and duties. For example, the company, not the owners, takes people who break copyright and patent laws to court.</li>
+    <li>Shareholders' personal belongings are safe if the company goes bankrupt or into liquidation. The most they can lose is the value of their investment. This protects investors.</li>
+    <li>A <b>Board of Directors (BOD)</b> is elected by shareholders to run the company for them. Directors are chosen for skills and expertise. The BOD is <b>held responsible</b> for running the company but is <b>accountable to the shareholders</b>.</li>
+    <li>Usually <b>one share equals one vote</b>. In reality individual shareholders have little say because large institutional investors and directors hold most shares.</li>
+    <li>Shares are sold to family members and friends. They cannot be bought or sold without <b>prior agreement from the BOD</b>, so the directors keep control. Many are family businesses. The name often ends in "Limited" or "Ltd", though this varies by country.</li>
+    <li>Setting up a company can be complicated and costly, e.g. there are rules for shares to be sold on a stock exchange.</li>
+  </ul>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>stock exchange</b> is a <b>marketplace for trading stocks and shares</b> of publicly held companies (or public limited companies). Examples include the London Stock Exchange (LSE) and the New York Stock Exchange (NYSE).</p>
+  </div>
+  <div class="box tip">
+    <span class="label">Exam tip: business or company?</span>
+    <p>Do not use "business" and "company" as the same word. Companies are owned by shareholders, so there are only two types of company: <b>privately held</b> and <b>publicly held</b>. "Business" also includes sole traders and partnerships. <b>All companies are businesses but not all businesses are companies.</b></p>
+  </div>
+
+  <h3>Annual General Meeting (AGM)</h3>
+  <p>All companies must hold an AGM so owners can have a say (vote). The three main processes:</p>
+  <ul>
+    <li>Shareholders vote on <b>resolutions</b> (promises or declarations) and on the <b>re election</b> (sometimes election) of the Board of Directors.</li>
+    <li>Shareholders ask questions to the <b>CEO, directors and chairperson</b>.</li>
+    <li>Shareholders <b>approve the previous year's financial accounts</b> after directors present the annual report on financial performance.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Box 2.1: Ten examples of privately held companies</span>
+    <p>Aldi (discount supermarket, Germany); Chanel (fashion and cosmetics, France); Ernst &amp; Young (accounting, USA); Huawei (consumer electronics and technologies, China); IKEA (home furnishing, Sweden); LEGO (toys, Denmark); Mars Inc. (confectionery, USA); Rolex (wristwatches, Switzerland); PricewaterhouseCoopers (accounting, USA); Virgin Group (global conglomerate, UK).</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Case study: Mars Inc.</span>
+    <p>A global confectionery and food maker with sales over $37bn, entirely owned by the Mars family, with more than 130,000 employees. It began in 1911 when Franklin Clarence Mars and his wife Ethel made butter cream candies at home in Washington, USA. In 1920 Frank and his son Forrest produced the Milky Way bar (the "Mars bar" in Europe). Brands include Snickers, Wrigley, M&amp;M's, Twix, Pedigree, Whiskas, Cesar and Sheba.</p>
+    <p><b>Point it proves:</b> a private company can be huge and still stay family owned.</p>
+  </div>
+
+  <h3>(iv) Publicly held companies</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>publicly held company</b> is an <b>incorporated limited liability</b> business that allows shareholders to <b>buy and sell shares</b> in the company via a <b>public Stock Exchange</b>.</p>
+    <p>An <b>initial public offering (IPO)</b> occurs when a business sells all or part of its business to shareholders on a public stock exchange <b>for the first time</b>. This changes its legal status to a publicly held company.</p>
+  </div>
+  <ul>
+    <li>It is like a privately held company, but it can <b>advertise and sell shares to the general public</b>. It often has "PLC" after its name.</li>
+    <li><b>Flotation</b> is when a publicly held company first sells all or part of its business to outside investors. The IPO makes the company <b>listed (registered)</b> on a stock exchange. Flotation creates extra finance.</li>
+    <li>IPO examples: Agricultural Bank of China raised $22.1 billion in 2010; Alibaba raised $25 billion on the NYSE in 2014; Saudi Aramco raised $25.6 billion on the Tadawul Saudi Stock Exchange in 2019 (a record).</li>
+    <li>Largest shareholders are usually <b>institutional and commercial investors</b> (companies owning shares in other companies). Porsche is the majority shareholder of Volkswagen, which owns a majority of Audi, Bentley, Bugatti, Lamborghini, SEAT and Skoda.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Case study: Google</span>
+    <p>On 19 August 2004 Google Inc. floated on the NASDAQ, raising $2.7bn. Shares floated at $85 and reached over $600 by 2014 (up over 605% in ten years). In November 2021 the price peaked at $3,037, a rise of 3,473% since the IPO.</p>
+  </div>
+  <table>
+    <tr><th colspan="2">Box 2.2: Abbreviations for limited companies in different countries</th></tr>
+    <tr><td>Australia</td><td>Pty. Ltd. (proprietary limited company)</td></tr>
+    <tr><td>Germany</td><td>AG (AktienGesellschaft, "shareholder corporation")</td></tr>
+    <tr><td>Nigeria</td><td>Ltd. (private limited company)</td></tr>
+    <tr><td>Sweden</td><td>AB (Aktie Bolag, "limited liability company")</td></tr>
+    <tr><td>UK</td><td>PLC (public limited company)</td></tr>
+    <tr><td>USA</td><td>Inc. or Corp. (incorporated or corporation)</td></tr>
+  </table>
+  <div class="box tip">
+    <span class="label">Common mistakes</span>
+    <ul>
+      <li>It is wrong to say privately held companies are smaller than publicly held ones. IKEA, LEGO, Huawei, PricewaterhouseCoopers and Mars are market leaders.</li>
+      <li>Do not confuse a <b>publicly held company</b> with a <b>public corporation</b>. The first is a limited liability company in the <b>private sector</b> that offers shares to the public. The second is owned and run by the <b>government</b> for the public.</li>
+    </ul>
+  </div>
+  <p><b>Risks for shareholders</b> even with limited liability: an unprofitable company cannot pay dividends, and the share price is likely to fall (negative <b>capital growth</b>). Shareholders also trust the BOD and senior managers, but the interests of directors, managers and shareholders may conflict. For example, better pay and conditions for workers can reduce the funds available for dividends.</p>
+
+  <h3>Limited liability companies: advantages and disadvantages</h3>
+  <table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td><b>Raising finance</b>: large amounts from selling shares. No interest charges, and dividends are paid only if there is a profit.</td><td><b>Communication problems</b>: as a company grows, relationships with customers and employees become impersonal.</td></tr>
+    <tr><td><b>Limited liability</b>: lower risk makes it easier to attract investors.</td><td><b>Added complexities</b>: more costly and bureaucratic than a sole proprietorship or partnership.</td></tr>
+    <tr><td><b>Continuity</b>: a separate legal entity, so it continues even if owners change.</td><td><b>Compliance costs</b>: following rules adds to running costs, especially for publicly held companies (stock exchange rules).</td></tr>
+    <tr><td><b>Economies of scale</b>: larger size lowers unit costs. It is usually cheaper for a company to borrow than for sole traders or partnerships.</td><td><b>Disclosure of information</b>: financial data must be given to all shareholders. Auditors are hired and Annual Reports published. Privacy is lost.</td></tr>
+    <tr><td><b>Productivity</b>: can hire directors, specialist managers and specialist staff (marketers, lawyers, accountants), so output and productivity are generally higher.</td><td><b>Bureaucracy</b>: more paperwork. In the UK the Companies Act 2006 requires at least £50,000 ($70,000) share capital. Solicitors are needed. Promoting the IPO and hosting the AGM add costs.</td></tr>
+    <tr><td><b>Tax benefits</b>: sole traders and partnerships pay <b>income tax</b>, companies pay <b>corporation tax</b>. The top income tax rate tends to be higher than corporation tax. Companies also get more allowances and tax deductible costs.</td><td><b>Loss of control</b>: publicly held companies can face a <b>takeover</b> by a rival buying a majority stake, as shares are openly for sale.</td></tr>
+  </table>
+
+  <h3>Documents needed before trading</h3>
+  <ul>
+    <li><b>Articles of Association</b> (Articles of Incorporation): the longer document with internal rules and procedures, such as the rights, roles and powers of the BOD and shareholders, AGM procedures, how directors are appointed and how profits are distributed.</li>
+    <li><b>Memorandum of Association</b>: a short document with the basic details: trading name, main purpose, registered address and amount of share capital invested.</li>
+    <li>When the authorities are satisfied and a fee is paid, a <b>Certificate of Incorporation</b> is issued. This licence recognises the business as a separate legal entity from its shareholders and lets it trade as a limited liability company.</li>
+  </ul>
+
+  <h3>Social enterprises</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Social enterprises</b> are <b>revenue generating businesses</b> with <b>social objectives</b> at the core of their operations. They can be for profit or non profit business entities, but all profits or surpluses must be <b>reinvested for that social purpose</b> rather than distributed to shareholders and owners.</p>
+  </div>
+  <ul>
+    <li>Commercial for profit businesses return a profit to their owners. For profit social enterprises return a <b>surplus for social gain</b> instead of personal gain.</li>
+    <li>All social enterprises have <b>two main goals</b>: (1) to achieve social objectives and (2) to earn revenue in excess of costs. Social entrepreneurs cannot do good if the business is not financially healthy. Without a surplus or profit there is no business for the greater good.</li>
+    <li><b>Main benefits</b>: they use any financial surplus to benefit others in society; they create jobs and improve local communities; and they are run in a transparent way, giving tangible benefits and a "clean corporate conscience".</li>
+    <li><b>Social entrepreneurs</b> are those who use businesses to solve social issues.</li>
+    <li>There are three main types of for profit social enterprises: private sector companies, public sector companies and cooperatives.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Case study: Grameen Bank</span>
+    <p>In 1983 social entrepreneur Muhammad Yunus set up the Grameen Bank in Dhaka, Bangladesh, the "bank for the poor". It gives small loans (<b>microfinance</b>) to people in poverty so they can become financially self sufficient, and does <b>not require collateral</b>. Over 97% of borrowers are women. It has assets above $2.8bn and over 20,000 workers. Yunus won the Nobel Peace Prize in 2006 and the Presidential Medal of Freedom in 2009.</p>
+  </div>
+
+  <h3>(i) Private sector companies (for profit social enterprises)</h3>
+  <ul>
+    <li>They work like normal for profit businesses, but they <b>reinvest or donate the surplus</b> to create positive social change. They use <b>ethical business practices</b> and earn revenue in socially responsible ways.</li>
+    <li>Unlike charities that rely on donations, they must <b>earn a surplus</b> to survive. The surplus also lets them expand their activities and outreach.</li>
+    <li>They produce goods or services like commercial firms and <b>compete</b> with other businesses in the same market. They can be private or publicly held companies, or cooperatives.</li>
+  </ul>
+  <div class="box def">
+    <span class="label">Triple bottom line</span>
+    <p>Both private and public sector for profit social enterprises have three broad aims, the <b>triple bottom line</b>, an accounting framework coined by <b>John Elkington in 1994</b>:</p>
+    <ul>
+      <li><b>Economic aims</b>: earn a profit (surplus) and reinvest it back into the business for societal benefit.</li>
+      <li><b>Social aims</b>: benefit people in society, such as local jobs and support for less advantaged members of society.</li>
+      <li><b>Environmental aims</b>: protect the planet by operating in environmentally friendly and sustainable ways.</li>
+    </ul>
+  </div>
+
+  <h3>(ii) Public sector companies (for profit social enterprises)</h3>
+  <ul>
+    <li>State owned enterprises <b>run in a commercial way</b>. Formed by the government through legal means and regulated, as they do commercial business for financial gain.</li>
+    <li>Owned wholly or partly by the government. They help raise government revenue yet provide essential services that might be inefficient or undesirable if left only to the private sector.</li>
+    <li>Examples: some national airlines, airport authorities, transport operators, telecommunications companies and postal services.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Examples of public sector companies</span>
+    <ul>
+      <li><b>Australia Post</b>: over 4,330 outlets across Australia.</li>
+      <li><b>Egyptian National Railways</b>: Egypt's national railway, run by the state owned Egyptian Railway Authority.</li>
+      <li><b>Ontario Niagara Parks Commission</b>: manages the Canadian side of Niagara Falls, focusing on reformed land use and sustainable tourism.</li>
+      <li><b>Television Nacional de Chile (TVN)</b>: leading Chilean public service broadcaster, founded in 1969.</li>
+      <li><b>Temasek Holdings</b>: Singaporean state owned enterprise owning 56% of Singapore Airlines.</li>
+      <li><b>China Mobile</b>: the world's largest mobile phone operator (over 945.5 million subscribers), founded 1997. The Chinese government owns 74.25%. It is listed on the NYSE and the Hong Kong Stock Exchange.</li>
+      <li><b>Hong Kong Disneyland</b>: owned jointly by the Hong Kong government (majority shareholder) and Walt Disney Company. Opened 12 September 2005, created 36,000 jobs, and made no profit until 2012 (net profit HK$109m).</li>
+    </ul>
+  </div>
+
+  <h3>(iii) Cooperatives</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Cooperatives</b> are for profit social enterprises <b>set up, owned and run by their members</b>, who might be employees and/or customers.</p>
+  </div>
+  <ul>
+    <li>Common goal: create value for members by operating in a <b>socially responsible</b> way. Every employee member has a <b>vote</b>, and profits are <b>shared between members</b>.</li>
+    <li>Found in retailing, financial services, childcare, housing associations and agriculture. Canada has over 9,000 cooperatives with over 18 million members. The UK's Cooperative Group is the world's largest consumer owned business with over 4.5 million members.</li>
+    <li>They follow the guidelines and principles of the <b>International Cooperative Alliance (ICA)</b>, founded in 1895.</li>
+    <li>As cooperatives operate in the private sector, they are an example of private sector for profit social enterprises.</li>
+  </ul>
+  <table>
+    <tr><th>Type</th><th>Owned by</th><th>Features and examples</th></tr>
+    <tr><td><b>Consumer cooperatives</b></td><td>Customers who buy the goods or services for personal use</td><td>Food, credit unions, childcare, housing, healthcare. Members usually get lower prices than at traditional commercial businesses.</td></tr>
+    <tr><td><b>Worker cooperatives</b></td><td>Employee members who set up and organise it</td><td>Production and manufacturing, printers, cafes, tourism, communications. Members also get work opportunities.</td></tr>
+    <tr><td><b>Producer cooperatives</b></td><td>Cooperatives (producers) that join to support each other to process and/or market products</td><td>Farmer cooperatives are the most common. They pool funds to buy equipment, fertilizers and seeds, gaining bulk purchase discounts.</td></tr>
+  </table>
+  <table>
+    <tr><th>Advantages of cooperatives</th><th>Disadvantages of cooperatives</th></tr>
+    <tr><td><b>Incentives to work</b>: employees have a stake, so motivation and productivity can rise.</td><td><b>Disincentive effects</b>: there may be ineffective managers and employees because high salaries and bonuses are not paid.</td></tr>
+    <tr><td><b>Decision making power</b>: democratic, equal voting rights. This improves commitment and loyalty.</td><td><b>Limited sources of finance</b>: most cannot raise funds on a stock exchange, so finance is often limited to member contributions.</td></tr>
+    <tr><td><b>Social benefits</b>: run on socially responsible principles, so gains reach the wider community.</td><td><b>Slower decision making</b>: all members take part democratically.</td></tr>
+    <tr><td><b>Public support</b>: people want them to succeed because they believe in the cause.</td><td><b>Limited promotional opportunities</b>: flatter structures (see Chapter 8) give fewer chances to progress.</td></tr>
+  </table>
+
+  <h3>Non profit social enterprises</h3>
+  <ul>
+    <li>Run in a commercial like way, but profit is <b>not the main goal</b>. They use the <b>surplus to achieve social goals</b> instead of paying dividends to owners or shareholders.</li>
+    <li>Examples: public libraries, state schools, museums, government hospitals, social services. Well known ones: Habitat for Humanity, Oxfam, the Red Cross, the World Wide Fund for Nature.</li>
+    <li>The main type is the <b>non governmental organization (NGO)</b>, including international charities.</li>
+  </ul>
+  <div class="box tip">
+    <span class="label">Exam tip: "non profit"</span>
+    <p>"Non profit" does <b>not</b> mean the organization does not try to earn a profit or surplus. It means the money must be <b>retained in the organization</b> for its survival and growth. Profit is the reward given to owners or investors for risking their money. Non profit organizations (NPOs) keep the surplus. Many private fee paying schools are NPOs because surpluses are reinvested in facilities and teaching.</p>
+  </div>
+
+  <h3>Non governmental organizations (NGOs)</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Non governmental organizations (NGOs)</b> are <b>private sector not for profit social enterprises</b> that operate for the <b>benefit of others</b> rather than primarily aiming to earn a profit, such as Oxfam and Friends of the Earth.</p>
+    <p>The United Nations defines NGOs as "private organizations that pursue activities to relieve suffering, promote the interest of the poor, protect the environment, provide basic social services or undertake community development".</p>
+  </div>
+  <ul>
+    <li>The term was coined in Article 71 of the UN Charter (1945). An NGO (sometimes a <b>private voluntary organization, PVO</b>) can be any organization that (1) is <b>independent of the government</b> or direct public sector influence and (2) is <b>not for profit</b>.</li>
+    <li>Examples: Medecins Sans Frontieres (Doctors Without Borders), Friends of the Earth. Many are very large: Oxfam (poverty), Greenpeace (environment), Amnesty International (human rights), UNICEF (children's welfare).</li>
+    <li>They are run by senior managers and <b>trustees</b>, similar to a company's board of directors.</li>
+  </ul>
+  <table>
+    <tr><th>Type of NGO</th><th>What it does</th><th>Examples</th></tr>
+    <tr><td><b>Operational NGOs</b></td><td>Set up for a given objective or purpose. Involved in relief based and community projects.</td><td>Oxfam, UNICEF</td></tr>
+    <tr><td><b>Advocacy NGOs</b></td><td>Take a more aggressive approach to promote or defend a cause, raising awareness and support through direct action (lobbying, public relations, mass demonstrations).</td><td>Greenpeace, Amnesty International</td></tr>
+  </table>
+  <div class="box ex">
+    <span class="label">Case study: Bill &amp; Melinda Gates Foundation</span>
+    <p>Set up in 2000 to improve healthcare and reduce extreme poverty worldwide. The largest non profit private sector social enterprise in the world. Controlled by three trustees: Bill Gates, Melinda Gates and Warren Buffett. According to CNBC, Bill and Melinda Gates have donated over $50 billion to it.</p>
+  </div>
+
+  <h3>Choosing a business entity, and the key concepts</h3>
+  <p>Factors that affect the strategic choice of business entity:</p>
+  <ul>
+    <li><b>Amount of finance</b>: sole traders and partnerships need less start up capital than a publicly held company. A change in legal status usually needs more finance.</li>
+    <li><b>Size</b>: the larger and more complex the operations, the more likely a limited liability company. Sole traders find a large workforce or tall hierarchy unnecessary or unaffordable.</li>
+    <li><b>Limited liability</b>: owners who want to protect personal possessions may choose a company.</li>
+    <li><b>Degree of ownership and control</b>: owners who want to keep control may stay small as sole traders or privately held companies.</li>
+    <li><b>Nature of business activity</b>: type and scale matter. Mainstream aircraft and motor vehicle makers rely on outside finance, so are likely to be publicly held companies.</li>
+    <li><b>Change</b>: as a business grows and evolves (see 1.5) it may need more finance and people, so its legal status is likely to change.</li>
+  </ul>
+  <div class="box cmd">
+    <span class="label">Toolkit and concept links in the textbook</span>
+    <ul>
+      <li><b>HL toolkit</b>: discuss how <b>Porter's generic strategies</b> can support strategic decision making in private sector business organizations (the tool itself is taught later in the course, Chapter 53).</li>
+      <li><b>Toolkit</b>: examine the impact of changes in the external environment on NGOs (use <b>STEEPLE analysis</b>, Chapter 46).</li>
+      <li><b>Key concept (change)</b>: with an organization of your choice, examine how change has influenced its business strategy and choice of legal entity.</li>
+      <li><b>Key concept (creativity)</b>: discuss the role of creativity in creating sustainable competitive advantages.</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <ul>
+      <li>For "entity" questions, link the choice to the case: how much finance is needed, how much control the owner wants, and how risky the business is.</li>
+      <li>Limited liability protects <b>shareholders</b>. Unlimited liability affects <b>sole traders and ordinary partners</b>. Do not swap them.</li>
+      <li>For evaluation, compare entities and make a judgement about which suits this business, rather than listing advantages and disadvantages only.</li>
+    </ul>
+  </div>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Private sector</b>: run by private individuals and businesses. <b>Public sector</b>: controlled by the government.</li>
+      <li><b>Sole trader</b>: self employed, runs the business alone, unlimited liability.</li>
+      <li><b>Partnership</b>: owned by 2 to 20 partners. <b>Deed of partnership</b>: the legal contract between them.</li>
+      <li><b>Unlimited liability</b>: owners must pay all debts, even from personal possessions. <b>Limited liability</b>: shareholders cannot lose more than they invested.</li>
+      <li><b>Incorporation</b>: legal difference between owners and the business.</li>
+      <li><b>Company (corporation)</b>: limited liability business owned by shareholders.</li>
+      <li><b>Privately held company</b>: shares cannot be sold to the public on a stock exchange. <b>Publicly held company</b>: shares can be traded on a public stock exchange.</li>
+      <li><b>IPO</b>: first sale of shares on a public stock exchange. <b>Stock exchange</b>: marketplace for trading shares.</li>
+      <li><b>Social enterprises</b>: revenue generating businesses with social objectives; surpluses are reinvested for social purpose.</li>
+      <li><b>Cooperatives</b>: for profit social enterprises owned and run by members.</li>
+      <li><b>NGOs</b>: private sector not for profit social enterprises that benefit others.</li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms</span>
+    <ul>
+      <li><b>Distinguish</b>: make clear the differences (private and public sector).</li>
+      <li><b>Examine</b>: consider an argument so the key elements are revealed (costs and benefits of being a sole trader).</li>
+      <li><b>Explain</b>: give reasons (two advantages of a partnership).</li>
+      <li><b>Discuss</b>: give a balanced review of arguments, factors or hypotheses, with a conclusion (e.g. whether a family should keep a company private).</li>
+    </ul>
+  </div>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> Why do shareholders of a company have limited liability?</p>
+    <p>A company is a separate legal entity from its owners, so shareholders can only lose the amount they invested.</p>
+    <p><b>2.</b> Give two differences between privately held and publicly held companies.</p>
+    <p>Private shares cannot be sold to the public on a stock exchange and need BOD agreement. Public shares can be traded on a stock exchange and the company can advertise its shares.</p>
+    <p><b>3.</b> What are the three aims of the triple bottom line?</p>
+    <p>Economic, social and environmental aims.</p>
+  </details>
+</section>
+<!-- ============ SUB UNIT 1.3 ============ -->
+<section class="sub" id="s1-3">
+  <h2 class="bar"><span>1.3</span>Business objectives</h2>
+
+  <h3>Vision statements and mission statements</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>vision statement</b> is an organization's <b>long term aspirations</b>, i.e. <b>where the business ultimately wants to be</b>.</p>
+    <p>A <b>mission statement</b> refers to the <b>declaration of an organization's overall purpose</b>. It forms the <b>foundation for setting the objectives</b> of a business.</p>
+  </div>
+  <ul>
+    <li>Having a vision means having an image of an <b>ideal situation in the future</b>. A vision statement outlines aspirations (where the organization wants to be) in the distant future and relates to the attainment of success, i.e. what success would look like. Example: Adidas, "To be the leading sports brand in the world". Martin Luther King Jr's "I have a Dream" speech (28 August 1963) shows how a clear vision can bring inspirational change.</li>
+    <li>Having a mission means having a <b>clear purpose</b>. A mission statement is usually a simple declaration of the underlying purpose of an organization's existence and its <b>core values</b>. Example for a school: "the provision of wide opportunities and achievement for all".</li>
+    <li>Unlike business objectives, a mission statement has <b>no distinct time frame</b> and tends to be <b>qualitative rather than quantitative</b>.</li>
+    <li>A well produced mission statement is clearly defined and realistically achievable. It gives a sense of direction, guides decision making and unifies people and corporate cultures to achieve the vision.</li>
+  </ul>
+  <table>
+    <tr><th></th><th>Vision statement</th><th>Mission statement</th></tr>
+    <tr><td><b>Question answered</b></td><td>"What do we want to become?"</td><td>"What is our business?"</td></tr>
+    <tr><td><b>Time focus</b></td><td>The very long term ("some day")</td><td>Can focus on the immediate time period ("each and every day")</td></tr>
+    <tr><td><b>Updating</b></td><td>Updated less often</td><td>Updated more often</td></tr>
+    <tr><td><b>Targets</b></td><td>Does not have to be an actual target. It lets people see what could be.</td><td>Sets out what the business does and why. Outlines values: beliefs and guiding principles that set how managers and employees work day to day.</td></tr>
+  </table>
+  <div class="box key">
+    <span class="label">Box 3.1: Purpose and characteristics of mission statements</span>
+    <ol>
+      <li>Defines the organization, i.e. what it is.</li>
+      <li>Outlines what the organization aspires to be (in line with its vision statement).</li>
+      <li>Emphasises the organization's core values.</li>
+      <li>Broad enough to allow for growth and evolution in a creative and sustainable way.</li>
+      <li>Distinguishes the organization from others in the market.</li>
+      <li>Serves to evaluate current business activities.</li>
+      <li>Phrased clearly so that it is understood by all.</li>
+    </ol>
+  </div>
+  <p><b>Limitations</b> of vision and mission statements:</p>
+  <ul>
+    <li>Critics say they are just a <b>public relations stunt</b>, because the real purpose of most businesses is to maximize profits and protect shareholder value.</li>
+    <li>They are <b>time consuming</b> to write. It is hard to draft one that covers every part of the business and meets the needs of every stakeholder group.</li>
+    <li>Even good statements may not be supported by everyone (e.g. part time or temporary staff). Changing people's beliefs and behaviour can take a long time.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Examples of vision and mission statements (from the textbook)</span>
+    <ul>
+      <li>BMW: "To be the most successful premium manufacturer in the industry"</li>
+      <li>Coca-Cola: "The company exists to benefit and refresh everyone it touches"</li>
+      <li>Google: "To organise the world's information and make it universally accessible and useful"</li>
+      <li>Haagen-Dazs: "Creating the finest ice cream"</li>
+      <li>Lego: "Inspire and develop the builders of tomorrow"</li>
+      <li>Microsoft: "To help people and businesses throughout the world realise their full potential"</li>
+      <li>Oxfam: "A just world without poverty"</li>
+      <li>Walt Disney Company: "To make people happy"</li>
+    </ul>
+  </div>
+
+  <h3>Business objectives</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Objectives</b> specify <b>what an organization strives to achieve</b>. They are the <b>goals</b> of an organization, such as growth, profit, protecting shareholder value and ethical objectives.</p>
+  </div>
+  <p>Objectives are generally <b>specific and quantifiable (measurable)</b> and are set in line with the mission statement. Without clear objectives an organization has no sense of direction, like getting into a taxi without knowing where you want to go. Objectives matter for three reasons:</p>
+  <ul>
+    <li><b>To motivate</b>: they inspire managers and employees to reach a common goal, unifying and motivating the workforce. They also make managers think strategically (plan for long term success).</li>
+    <li><b>To direct</b>: they give an agreed, clear focus for all individuals and departments. They are the foundation for decisions and are used to devise business strategies.</li>
+    <li><b>To measure and control</b>: they set the parameters for business activity, so they are the basis for measuring and controlling performance of the whole business.</li>
+  </ul>
+  <p>The syllabus lists four common objectives: <b>(i) growth, (ii) profit, (iii) protecting shareholder value, (iv) ethical objectives</b>.</p>
+
+  <h3>(i) Growth</h3>
+  <ul>
+    <li>Growth is usually measured by an increase in <b>sales revenue</b> or in <b>market share</b>.</li>
+    <li><b>Market share</b> is the firm's sales revenue expressed as a percentage of the industry's total sales revenue.</li>
+    <li>Growth is essential for survival in an ever changing, competitive world, especially with the risk of <b>mergers and takeovers</b> (see 1.5). Failing to grow may reduce competitiveness and threaten sustainability.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Worked example: market share</span>
+    <p>A firm has sales revenue of $20m. The whole industry has sales of $200m.</p>
+    <p>Market share = (firm's sales revenue ÷ industry's total sales revenue) × 100 = ($20m ÷ $200m) × 100 = <b>10%</b>.</p>
+  </div>
+
+  <h3>(ii) Profit</h3>
+  <ul>
+    <li>Traditionally the main objective of most private sector organizations is to <b>maximize profits</b>.</li>
+    <li>Profit gives an <b>incentive for entrepreneurs to take risks</b> in setting up and running a business.</li>
+    <li>For incorporated businesses, part of the profits (called <b>dividends</b>) is distributed to shareholders.</li>
+    <li>Without a profit motive, owners and investors find it hard to justify the business existing.</li>
+    <li>Milton Friedman (1912 to 2006, Nobel Prize in Economics 1976): "there is one and only one social responsibility of business: to use its resources and engage in activities designed to increase its profits."</li>
+  </ul>
+  <div class="box key">
+    <span class="label">Key concept links</span>
+    <p>Is it only ever possible for businesses to be profitable if they are creative and ethical?</p>
+  </div>
+
+  <h3>(iii) Protecting shareholder value</h3>
+  <ul>
+    <li>This objective is about generating <b>long term value for shareholders</b> (owners). It means earning a profitable return for shareholders in a <b>sustainable</b> way.</li>
+    <li>Most shareholders do not run the company day to day, so they rely on directors, managers and employees to protect their interests.</li>
+    <li>The <b>board of directors</b> is ultimately and directly responsible for protecting and managing shareholders' interests. Shareholder value is the result of the business strategy the board follows.</li>
+    <li>The challenge for directors is to <b>balance short term profits</b> (dividends) with <b>investing in the long term value</b> of the company.</li>
+    <li>Key concept link: change may be essential for businesses to protect shareholder value.</li>
+  </ul>
+
+  <h3>(iv) Ethical objectives</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Ethics</b> are the <b>moral principles</b> that guide decision making and business strategy. Morals are concerned with what is considered to be <b>right or wrong</b>, from society's point of view.</p>
+    <p><b>Ethical objectives</b> are organizational goals based on <b>moral guidelines</b>, determined by the business and/or society, which direct and determine decision making.</p>
+    <p>An <b>ethical code of practice</b> is the documented <b>beliefs and philosophies</b> of an organization, so that people know what is considered acceptable or not acceptable within the organization.</p>
+  </div>
+  <ul>
+    <li>Examples: direct marketing aimed at children is banned in many countries as unethical. Health and safety laws help stop the exploitation of employees.</li>
+    <li><b>Business ethics</b> are the actions an organization takes that are considered morally correct. An ethical business acts morally towards its <b>workers, customers, shareholders and the natural environment</b>. For example, an ethical employer gives enough rest breaks.</li>
+    <li>Ethical objectives in line with <b>circular business models</b> (Chapter 51) include: disposing of waste in an environmentally safe way; fairer conditions of trade with low income countries; more recycling; reducing pollution with more environmentally friendly technologies and production processes.</li>
+    <li>An increasing number of businesses adopt an <b>ethical code of practice</b> (code of conduct) and publish it in annual reports. It gives guidelines on expected behaviour. Values differ between people and businesses, so a code of ethics (such as personal integrity and consideration for others) gives consistency in the workplace.</li>
+  </ul>
+  <div class="box key">
+    <span class="label">Box 3.2: Examples of unethical business behaviour</span>
+    <ul>
+      <li><b>Financial dishonesty</b>: mismanaging finances, e.g. deliberately misrepresenting the accounts (also illegal). Moral issues also arise with extravagant business expenses by directors (unethical but not illegal).</li>
+      <li><b>Environmental neglect and damage</b>: business activity harming the natural environment, e.g. pollution and depletion of non renewable resources.</li>
+      <li><b>Exploitation of workers</b>: deliberately neglecting employee welfare. Many multinationals are criticised for poor pay and conditions in low income countries.</li>
+      <li><b>Exploitation of suppliers</b>: large businesses forcing suppliers to cut prices. Controversial especially in low income countries, or when savings are not passed to consumers as lower prices.</li>
+      <li><b>Exploitation of consumers</b>: knowingly selling products with harmful side effects (tobacco, alcohol, gambling services), or firms with few competitors abusing market power by charging excessively high prices.</li>
+    </ul>
+  </div>
+  <div class="box ex">
+    <span class="label">Case studies: ethics</span>
+    <ul>
+      <li><b>Unethical discrimination</b>: in 2006 Indian Airlines (now merged with Air India) was criticised for grounding female flight attendants judged too overweight and telling them to lose weight or lose their jobs. In 2010 female Hooters workers filed lawsuits over weight discrimination. In 2021 the Norwegian women's beach handball team was fined for refusing to play in bikini bottoms.</li>
+      <li><b>The ethics of fast food</b>: after negative exposure from the book Fast Food Nation and the film Super-size Me, McDonald's changed its product portfolio to include fresh salads and healthier choices.</li>
+    </ul>
+  </div>
+  <table>
+    <tr><th>Advantages of ethical objectives and practices</th><th>Limitations</th></tr>
+    <tr><td><b>Improved corporate image</b>: acting ethically enhances reputation. Media reports of unethical behaviour can seriously damage image.</td><td><b>Compliance costs</b>: being socially responsible can be very costly, e.g. organic farming costs far more than growing genetically modified crops.</td></tr>
+    <tr><td><b>Increased customer loyalty</b>: customers favour ethical firms. The Body Shop built a large worldwide customer base on not testing products on animals.</td><td><b>Lower profits</b>: if costs cannot be passed on as higher prices, profit falls. An <b>ethical dilemma</b> exists when the ethical choice is the less profitable one.</td></tr>
+    <tr><td><b>Cost cutting</b>: e.g. less excess packaging; avoids <b>litigation costs</b> (costs of legal action against the business).</td><td><b>Stakeholder conflict</b>: not all stakeholders want ethical objectives, especially if they clash with profit maximization. Speculative shareholders may prefer short term profit.</td></tr>
+    <tr><td><b>Improved staff morale and motivation</b>: attracts and keeps motivated staff, who are proud of the firm. Raises productivity and loyalty.</td><td><b>The subjective nature of business ethics</b>: what is right or wrong depends on the beliefs of individuals and societies. Even laws are somewhat subjective.</td></tr>
+  </table>
+  <p>Key concept links: discuss the value of ethical business objectives; is it practical to protect shareholder value and achieve ethical objectives at the same time?</p>
+
+  <h3>Strategic and tactical objectives</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Strategic objectives</b> are the <b>longer term goals</b> of a business, such as profit maximization, growth, market standing and increased market share.</p>
+    <p><b>Strategies</b> are the various <b>plans of action</b> that businesses use to achieve their targets. They are the <b>long term plans</b> of the organization as a whole.</p>
+    <p><b>Tactical objectives</b> are <b>short term goals</b> that affect a unit of the organization. They are specific goals that guide the daily functioning of certain departments or operations.</p>
+    <p><b>Tactics</b> are the <b>short term plans of action</b> that businesses use to achieve their objectives.</p>
+  </div>
+  <p>Strategy and tactics have matching purposes: how a business intends to get to where it wants to be. Once short and long term goals are set, the business chooses the best methods to reach them.</p>
+  <table>
+    <tr><th></th><th>Strategic</th><th>Tactical</th></tr>
+    <tr><td><b>Time</b></td><td>Medium to long term</td><td>Next 12 months or sooner</td></tr>
+    <tr><td><b>Scope</b></td><td>Whole organization</td><td>A section, department or operation</td></tr>
+    <tr><td><b>Examples</b></td><td>Profit maximization, growth, market standing, image and reputation, market share</td><td>Survival, sales revenue maximization. Others: raise sales revenue of one product line by $10m within a year; keep staff turnover below 10%.</td></tr>
+  </table>
+
+  <h3>Tactical objectives</h3>
+  <ul>
+    <li><b>Survival</b>: new businesses face problems such as little brand recognition, a small customer base and intense rivalry. Established firms also need to survive in a <b>recession</b> (2008 financial crisis, COVID-19). A takeover target may also make its own survival a key objective.</li>
+    <li><b>Sales revenue maximization</b>: new firms try to maximize sales revenue to establish themselves. Sales staff and agents (insurance, real estate) like it because their earnings depend on sales value. But <b>sales revenue is not profit</b> (the surplus left after all costs). A firm with high sales but low or no profit will struggle in the long run.</li>
+  </ul>
+
+  <h3>Strategic objectives (examples)</h3>
+  <ul>
+    <li><b>Market standing</b>: how much presence a business has in its industry. Microsoft (market leader in software), Walmart (world's largest retailer), Toyota (world's largest car producer), Apple (innovative products and designs), The Body Shop (socially responsible). Good standing brings competitive advantages.</li>
+    <li><b>Image and reputation</b>: a bad image, perhaps from the media, can turn customers away. Businesses improve customer service, facilities and after sales care. A positive image motivates employees, helps attract and keep high calibre staff, and suppliers prefer reputable firms.</li>
+    <li><b>Market share</b>: sales revenue as a percentage of industry sales. The higher it is, the greater the market dominance and ability to compete.</li>
+  </ul>
+  <ul>
+    <li>In practice a business has a <b>combination</b> of strategic objectives, which change over time. For example, survival can be a key strategic objective when a firm faces a hostile takeover.</li>
+    <li>Organizational culture (Chapter 11) and whether the business is in the private or public sector also affect its objectives.</li>
+    <li>Objectives can <b>conflict</b>. For example, employees want better pay and conditions, which may cut profits in the short term. Managers must still base strategy on achieving the objectives.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Case study: Lenovo</span>
+    <p>Lenovo bought IBM's personal computer division in 2005 to establish itself outside Asia by owning globally recognised brands such as ThinkPad. Its four values: customer service; trust and integrity; teamwork across cultures; innovation and entrepreneurial spirit. It raised market presence by sponsoring McLaren, Williams, the NBA, the 2008 Beijing Olympics and, in 2012, the NFL. It has gained market share around the world. Lenovo also gives 1% of pre tax income to good causes.</p>
+  </div>
+  <div class="box cmd">
+    <span class="label">HL toolkit link</span>
+    <p>Discuss how <b>force field analysis</b> (Chapter 55) can help managers and decision makers decide their priorities and business objectives. (Taught later in the course.)</p>
+  </div>
+
+  <h3>Corporate social responsibility (CSR)</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Corporate social responsibility (CSR)</b> is the <b>conscientious consideration of ethical and environmental practice</b> related to business activity. A business that adopts CSR <b>acts morally towards all of its various stakeholder groups</b> and the well being of society as a whole.</p>
+  </div>
+  <ul>
+    <li>Examples: McDonald's employees go on litter patrol near restaurants and join local fundraising such as charity runs. Lenovo commits 1% of pre tax income to good causes. During COVID-19, Zoom's CEO Eric Yuan gave schools the premium version of the software free.</li>
+    <li>Media exposure means large multinationals are expected to give some profits to charity. Customers are careful about buying from socially irresponsible firms. Investors avoid unethical firms (e.g. those using child labour). Pressure groups and awareness make climate change and environmental damage big concerns, so businesses change objectives to reflect their role in protecting the planet. Polluting firms risk a poor corporate image with serious consequences.</li>
+    <li>A good <b>reputation</b> (how others view the organization) can give an important competitive advantage. According to Fortune, the top 500 US firms donate over 2% of post tax profits to charity. This could be a real wish to act responsibly or fear of bad publicity. Compliance costs add to expenses. For employees and investors to support CSR, they must believe it is in their interest too.</li>
+  </ul>
+  <h3>CSR is subjective</h3>
+  <ul>
+    <li>What is "right" or "wrong" depends largely on public opinion, so attitudes change over time. Advertising aimed at young children was once acceptable but may not be now. Environmental protection was not a major issue before the 1980s.</li>
+    <li>It differs by country: some do not see a minimum wage as needed, others use it to stop unethically low pay. Advertising tobacco is banned in many countries but not all. Serbia, Bangladesh and Russia are huge tobacco consumers, so cigarette advertising is less strict than in the UK and Singapore. Australia and Canada treat environmental concern as a key CSR indicator, while India and China place less emphasis on it.</li>
+    <li>This makes CSR harder for businesses that operate in several countries.</li>
+  </ul>
+  <p>Whether a business acts in a socially responsible way depends on these interrelated factors:</p>
+  <ul>
+    <li>Societal expectations (public awareness and concern about CSR).</li>
+    <li>Exposure and pressure from the mass media.</li>
+    <li>Experience: it often takes a <b>crisis</b> (Chapter 41) or bad experience to make firms pay attention to CSR.</li>
+    <li>The involvement, influence and power of stakeholder groups, such as pressure groups and the government.</li>
+    <li>Corporate culture and the firm's attitude to CSR and ethics.</li>
+    <li>Compliance costs: human and financial resources needed to carry out CSR policies.</li>
+    <li>Laws and regulations.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Case studies: CSR</span>
+    <ul>
+      <li><b>McDonald's and Burger King</b>: McDonald's created Ronald McDonald House Charities (non profit, in 64 countries and regions) to "directly improve the health and well being of children". Burger King has used humanely sourced meats and eggs since 2007, giving priority and better deals to suppliers of cage free chickens and free range pigs. It runs the Have It Your Way Foundation (hunger, disease prevention, community education) and the McLamore Foundation (scholarships since 2000).</li>
+      <li><b>Walmart</b>: fined millions of dollars for breaking air and water pollution laws. The media alleged 8% of customers stopped shopping there. Unions criticised practices that led to labour turnover of about 70% in some stores. It was taken to court over unpaid overtime, no proper rest breaks and discrimination against women in pay and promotion.</li>
+      <li><b>BP Deepwater Horizon</b>: BP's cutting back on safety checks led to the world's largest accidental marine oil spill, costing billions in lost revenue and fines.</li>
+    </ul>
+  </div>
+
+  <h3>Why objectives change, and the key concepts</h3>
+  <p>Objectives change because of internal and external factors, and businesses need creative responses.</p>
+  <table>
+    <tr><th>Internal factors (within the organization's control)</th><th>Explanation</th></tr>
+    <tr><td><b>Corporate culture</b></td><td>The accepted norms and customs of an organization. Flexible, adaptable cultures are more likely to have creative objectives that change over time.</td></tr>
+    <tr><td><b>Type and size of organization</b></td><td>A change in legal status is likely to change objectives. With a separation of ownership and control (publicly held companies), objectives of several stakeholders matter: managers (higher bonuses) and shareholders (higher dividends).</td></tr>
+    <tr><td><b>Private versus public sector</b></td><td>Most public sector organizations do not aim for profit maximization but to provide a service to the public.</td></tr>
+    <tr><td><b>Age of the business</b></td><td>New firms focus on survival. Established firms may aim for growth and higher market share.</td></tr>
+    <tr><td><b>Finance</b></td><td>Available money sets the scope of objectives, e.g. expanding overseas needs a huge sum.</td></tr>
+    <tr><td><b>Risk profile</b></td><td>If managers and entrepreneurs are willing and able to take risks, objectives are more ambitious, e.g. diversification into new markets with new products (Chapter 45).</td></tr>
+    <tr><td><b>Crisis management</b></td><td>Internal crises such as high absenteeism and labour turnover, falling productivity and motivation, liquidity problems (Chapter 19) or quality issues (Chapter 37).</td></tr>
+  </table>
+  <table>
+    <tr><th>External factors (beyond the organization's control)</th><th>Explanation</th></tr>
+    <tr><td><b>State of the economy</b></td><td>A <b>boom</b> (high national income and employment) gives many opportunities. A <b>recession</b> (high unemployment, low consumption) can threaten survival.</td></tr>
+    <tr><td><b>Government constraints</b></td><td>Rules can limit what a business can do, e.g. environmental laws limit profit maximization because compliance costs more.</td></tr>
+    <tr><td><b>Pressure groups</b></td><td>E.g. environmental groups can force a firm to review its ethics by lobbying, and can harm its image if it is not responsible.</td></tr>
+    <tr><td><b>New technologies</b></td><td>Create new opportunities and so change objectives. Samsung used digital technologies to dominate smartphones and smart TVs. E-commerce has changed how most businesses operate.</td></tr>
+    <tr><td><b>Societal expectations</b></td><td>Changing expectations of ethical practice directly change objectives and strategy.</td></tr>
+  </table>
+  <ul>
+    <li>If a public sector organization is <b>privatized</b> (sold to the private sector), its strategic objective may change from providing an affordable service to profit maximization. Strategy (the tools used to achieve objectives) then changes too.</li>
+    <li>A change in strategic direction automatically needs a change in business strategy.</li>
+    <li>Organizations also change objectives because the <b>original goals have been achieved</b>, so new ones are needed for a sustainable future.</li>
+  </ul>
+  <div class="box key">
+    <span class="label">Unit concept: objectives and the key concepts</span>
+    <ul>
+      <li><b>Change</b>: objectives must change to protect shareholder value and adapt to internal and external factors.</li>
+      <li><b>Creativity</b>: creative objectives help a business respond to change and stay sustainable.</li>
+      <li><b>Ethics</b>: ethical objectives and CSR affect image, loyalty and long term success.</li>
+      <li><b>Sustainability</b>: how important are CSR and ethical objectives for sustainability and success?</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <ul>
+      <li>Whilst a business can do little about changes in the external environment, successful businesses change their tactics and strategies to adapt. Positive changes can also create opportunities.</li>
+      <li>Do not mix up <b>vision</b> (future, "what do we want to become?") and <b>mission</b> (present purpose, "what is our business?").</li>
+      <li>Do not mix up <b>sales revenue</b> and <b>profit</b>.</li>
+      <li>For CSR and ethics questions, give both sides: costs and lower profits versus image, loyalty and motivation. Then judge using the case.</li>
+    </ul>
+  </div>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Vision statement</b>: long term aspirations. <b>Mission statement</b>: overall purpose and foundation for objectives.</li>
+      <li><b>Objectives</b>: goals an organization strives to achieve (growth, profit, shareholder value, ethics).</li>
+      <li><b>Strategic objectives</b>: longer term goals. <b>Tactical objectives</b>: short term goals for a unit. <b>Strategies</b>: long term plans. <b>Tactics</b>: short term plans.</li>
+      <li><b>Ethics</b>: moral principles guiding decisions. <b>Ethical objectives</b>: goals based on moral guidelines. <b>Ethical code of practice</b>: documented beliefs and philosophies.</li>
+      <li><b>CSR</b>: considering ethical and environmental practice and acting morally towards stakeholders.</li>
+      <li><b>Market share</b>: firm's sales revenue as a percentage of industry sales.</li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms</span>
+    <ul>
+      <li><b>Define / State</b>: give the meaning, or a brief answer without explanation.</li>
+      <li><b>Distinguish</b>: make differences clear (vision and mission).</li>
+      <li><b>Explain</b>: give reasons (why objectives are important).</li>
+      <li><b>Examine</b>: consider the key elements (barriers to meeting objectives).</li>
+      <li><b>Discuss</b>: balanced review of arguments with a conclusion (whether acting ethically provides competitive advantage).</li>
+      <li><b>Justify</b>: give valid reasons for an answer (shareholder value or CSR as more sustainable).</li>
+    </ul>
+  </div>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> Give two differences between a vision statement and a mission statement.</p>
+    <p>Vision is long term and about what the business wants to become. Mission is about what the business does now and why, and is updated more often.</p>
+    <p><b>2.</b> Explain one reason why objectives are important.</p>
+    <p>They give direction: an agreed focus for all departments, and the basis for decisions and strategies.</p>
+    <p><b>3.</b> State one advantage and one limitation of ethical objectives.</p>
+    <p>Advantage: better corporate image and customer loyalty. Limitation: compliance costs can lower profits.</p>
+  </details>
+</section>
+<!-- ============ SUB UNIT 1.4 ============ -->
+<section class="sub" id="s1-4">
+  <h2 class="bar"><span>1.4</span>Stakeholders</h2>
+
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Stakeholders</b> are <b>individuals or organizations</b> with a <b>direct interest</b> (known as a <b>stake</b>) in the activities and performance of a business, such as shareholders, employees, customers and suppliers.</p>
+  </div>
+  <ul>
+    <li>"Stake" means to have an interest or be involved in something. Stakeholders are <b>impacted by the activities</b> of the organization.</li>
+    <li>They are split into <b>internal</b> and <b>external</b> stakeholders.</li>
+  </ul>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Internal stakeholders</b> of a business are <b>members of the organization</b>, namely the employees, managers, directors and shareholders (owners) of the business.</p>
+    <p><b>External stakeholders</b> are individuals and organizations <b>not part of the business</b> but with a <b>direct interest</b> in its activities and performance. Examples include customers, suppliers and the government.</p>
+  </div>
+  <div class="box tip">
+    <span class="label">Common mistake: stakeholders and shareholders</span>
+    <p>Many students treat <b>stakeholders</b> and <b>shareholders</b> as the same thing. <b>Shareholders</b> are the owners of a limited liability company. They are only <b>one</b> stakeholder group, although an important one.</p>
+    <p>Some shareholders are <b>internal</b> stakeholders (directors or employees who hold shares). Others are <b>external</b> (they own shares but are not involved in daily operations).</p>
+  </div>
+
+  <h3>Internal stakeholders</h3>
+
+  <h3>(i) Employees</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Employees</b> are the <b>staff</b> of an organization. They have a <b>stake</b> (an interest and involvement) in the organization they work for.</p>
+  </div>
+  <ul>
+    <li><b>Interests</b>: better <b>pay</b> (and other financial benefits), <b>working conditions</b> (hours, physical environment), <b>job security</b> and <b>career progression</b>.</li>
+    <li>Charles Handy argues employees are an organization's <b>most valuable asset</b>: they make the goods and services and talk directly to customers. So more employers involve workers in decision making. A motivated workforce is more dynamic and loyal. Fred Allen: "Treat employees like partners and they act as partners."</li>
+    <li>Richard Branson puts <b>employees first, customers second, shareholders third</b>. He says that way customers and shareholders both benefit. Demotivated workers give poor quality and poor service, and unhappy staff may take <b>industrial action</b>.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Examples of industrial action</span>
+    <ul>
+      <li>About 40,000 BMW workers went on a long strike at its South Africa plant in late 2013. Export sales fell by 75%.</li>
+      <li>A 2019 pilots strike at British Airways cost €215 million ($245m) in lost earnings.</li>
+    </ul>
+  </div>
+
+  <h3>(ii) Managers and directors</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Managers</b> are an internal group of stakeholders responsible for <b>overseeing the daily operations</b> of the business.</p>
+    <p><b>Directors</b> are <b>senior executives</b> who have been <b>elected by the company's shareholders</b> to address business activities on behalf of their owners.</p>
+  </div>
+  <ul>
+    <li>Senior managers and directors may aim to maximise their own benefits, such as <b>annual bonuses</b> and other financial rewards. So they are likely to aim for <b>profit maximization</b>, which also pleases shareholders and helps safeguard the jobs of top executives.</li>
+    <li>They also look at the <b>long term financial health</b> of the organization, e.g. retaining profits for further investment.</li>
+  </ul>
+
+  <h3>(iii) Shareholders</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Shareholders</b> (or <b>stockholders</b>) are the <b>owners of a limited liability company</b>. Shares in a company can be held by individuals and other organizations.</p>
+  </div>
+  <ul>
+    <li>They invest money by buying shares. They are a <b>powerful</b> group because they have <b>voting rights</b> and a say in how the company is run, and are entitled to a share of annual profits.</li>
+    <li>Two main interests: (1) to <b>maximise dividends</b> (the part of profits paid to shareholders) and (2) to achieve <b>capital gain</b> (a rise in the value of their shares).</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Case study: Nokia and Microsoft</span>
+    <p>Nokia led the mobile phone market from 1998 to 2008 with up to 49.4% market share and sold its one billionth phone in 2005. By 2007 its market value was $150 billion (5th most valuable brand). Apple and Samsung smartphones forced it to sell to Microsoft for €5.4bn ($7.3bn) in November 2013. 99.5% of its 3,900 shareholders voted for the deal after the share price fell 93% and market share fell to 3%. Its 32,000 mobile division employees moved to Microsoft Mobile in 2014.</p>
+    <p><b>Point it proves:</b> a takeover affects each stakeholder group differently (shareholders, employees, customers).</p>
+  </div>
+
+  <h3>External stakeholders</h3>
+  <p>The six groups are <b>customers, suppliers, financiers, pressure groups, competitors and the government</b>.</p>
+
+  <h3>(i) Customers</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Customers</b> are the clients of a business. As a key external stakeholder group, customers seek <b>value for money</b>, such as competitive prices and good quality products.</p>
+  </div>
+  <ul>
+    <li>Marshall Field: "Right or wrong, the customer is always right." Sam Walton also believed customers can simply spend their money elsewhere, which threatens survival.</li>
+    <li>Interests: <b>greater choice, better quality products, more competitive prices</b>. Bill Gates said dissatisfied customers are the best source of learning for a business.</li>
+    <li>Businesses use <b>market research</b> (Chapter 26), <b>suggestion schemes</b> and <b>satisfaction surveys</b> (fast food restaurants and hotels) to get feedback. Complaints and suggestions go to the management team. This shows a wish to keep customers happy and loyal.</li>
+  </ul>
+
+  <h3>(ii) Suppliers</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Suppliers</b> are an external stakeholder group that provide a business with <b>stocks of raw materials, component parts and finished goods</b> needed for production. They can also provide commercial services, such as maintenance and technical support.</p>
+  </div>
+  <ul>
+    <li>Interests: <b>regular contracts</b> at competitive prices, and customers who <b>pay bills on time</b>.</li>
+    <li>Businesses want a good relationship to get quality stock on time at a fair price. Example: long haul airlines rely on caterers. A dispute could cancel flights.</li>
+    <li>A good relationship can win <b>preferential credit terms</b> (buy now, pay later), which improves <b>cash flow</b>.</li>
+  </ul>
+
+  <h3>(iii) Financiers</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Financiers</b> are the <b>financial institutions and individual investors</b> who provide sources of finance for an organization. They are interested in the organization's ability to <b>generate profits and to repay debts</b>.</p>
+  </div>
+  <ul>
+    <li>Examples: commercial banks, microfinance providers, individual investors such as <b>business angels</b>.</li>
+    <li>They want the borrower to make enough profit to repay the debt and pay <b>regular interest</b>. They earn money by charging interest.</li>
+    <li>They want a <b>long term relationship</b> so they can lend again if the business needs more loans to expand or run daily operations.</li>
+  </ul>
+
+  <h3>(iv) Pressure groups</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Pressure groups</b> consist of individuals with a <b>common concern</b> (such as environmental protection) who seek to <b>place demands on organizations</b> to act in a particular way or to influence a change in their behaviour.</p>
+  </div>
+  <ul>
+    <li>Examples: groups campaigning against smoking, deforestation, harmful treatment of animals, or for protecting the natural environment.</li>
+    <li>They increasingly influence business decisions, often by <b>influencing government policy</b> (lobbying for a change in law). Friends of the Earth and Greenpeace operate internationally and win public support because the public is more aware of environmental damage.</li>
+    <li>The <b>local community</b> is also a source of pressure. Its interests: jobs, extra income and spending in the area, accountability for environmental impact (e.g. tourist litter, traffic congestion, damage to beaches and rural areas), and sponsorship of local fundraising. Local acceptance is paramount to a business being able to operate in the area.</li>
+  </ul>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>The <b>local community</b> refers to the <b>general public and local businesses</b> that have a direct interest in the activities of an organization, namely to create jobs and to conduct business activities in a socially responsible way.</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Case study: pressure groups in practice</span>
+    <p>Anti smoking and anti littering campaigns have won support from the public, media and governments. Cigarette advertising is banned in Australia. Littering carries a heavy fine and imprisonment penalty in Singapore. Animal protection groups such as the World Wildlife Fund use ethical marketing to get positive press coverage. Environmental groups often help with beach clean ups.</p>
+  </div>
+
+  <h3>(v) Competitors</h3>
+  <ul>
+    <li>Competitors are the <b>rival businesses</b> of an organization. Example: the rivals of Japan Airlines include Singapore Airlines, Qantas, Cathay Pacific and Air China.</li>
+    <li>Competitors may also <b>hold shares</b> in the business. Examples: Cathay Pacific is partly owned by Air China (28.2%) and Qatar Airways (9.4%). The textbook also says Porsche owns more than 31% of Audi (part of the Volkswagen Group).</li>
+    <li>Their objectives: <b>to remain competitive</b> (respond to rivals' activities), <b>to benchmark performance</b> (compare key performance indicators such as sales turnover, profit and market share), and <b>to be creative and innovative</b> (rivalry gives an incentive to keep up with changes such as new production processes or product launches).</li>
+  </ul>
+
+  <h3>(vi) Government</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Government</b> refers to the <b>ruling authority</b> within a state or country. As an external stakeholder group, the government is interested in businesses <b>complying with the law</b> in the conduct of business activities.</p>
+  </div>
+  <p>The government has a significant influence on business. Its interests include making sure that:</p>
+  <ul>
+    <li>Unfair business practices are avoided.</li>
+    <li>The correct amount of <b>corporate tax</b> is paid from net profits.</li>
+    <li>Health and safety standards are met.</li>
+    <li>Employment legislation is followed.</li>
+    <li>Consumer protection laws are upheld.</li>
+  </ul>
+  <ul>
+    <li>Governments may have a <b>financial stake</b>. Examples: Air Albania is 51% owned by the Albanian government and 49% by Turkish Airlines. The Japanese government owns 53.42% of Tokyo Metro Company.</li>
+    <li>The government can <b>support</b> businesses with lower interest rates and/or taxes to create jobs and investment, incentives to multinationals to locate in the country (subsidised rent, tax concessions), and more investment in roads and communications.</li>
+    <li>It can also <b>constrain</b> business. The textbook says Microsoft was broken up into two smaller companies after lawsuits for malpractice and unfair competition.</li>
+  </ul>
+
+  <table>
+    <tr><th>Stakeholder</th><th>Type</th><th>Main interests</th></tr>
+    <tr><td>Employees</td><td>Internal</td><td>Pay, working conditions, job security, career progression</td></tr>
+    <tr><td>Managers and directors</td><td>Internal</td><td>Bonuses, profit maximization, long term financial health</td></tr>
+    <tr><td>Shareholders</td><td>Internal (or external)</td><td>Dividends, capital gain</td></tr>
+    <tr><td>Customers</td><td>External</td><td>Value for money, choice, quality, competitive prices</td></tr>
+    <tr><td>Suppliers</td><td>External</td><td>Regular contracts, competitive prices, prompt payment</td></tr>
+    <tr><td>Financiers</td><td>External</td><td>Profit to repay debts and interest, long term relationship</td></tr>
+    <tr><td>Pressure groups and local community</td><td>External</td><td>Ethical and environmental behaviour, jobs, local benefits</td></tr>
+    <tr><td>Competitors</td><td>External</td><td>Staying competitive, benchmarking, innovation</td></tr>
+    <tr><td>Government</td><td>External</td><td>Legal compliance, tax, safety, jobs, consumer protection</td></tr>
+  </table>
+  <div class="box key">
+    <span class="label">Key concept link</span>
+    <p>Is it unethical for a business to give one group of stakeholders priority over the interests of other groups?</p>
+  </div>
+
+  <h3>Conflict between stakeholders</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Stakeholder conflict</b> refers to <b>differences in the varying needs and priorities</b> of the various stakeholder groups of a business.</p>
+    <p><b>Conflict</b> refers to situations where stakeholders have disputes or differences regarding certain issues. This can lead to arguments and tension between the stakeholder groups.</p>
+  </div>
+  <ul>
+    <li>A business <b>cannot meet all stakeholder objectives at the same time</b>. Conflict comes from disagreements in opinions or values. Margaret Thatcher's point: standing in the middle of a road gets you hit by traffic from both sides, so you cannot please everyone all the time.</li>
+  </ul>
+  <h3>Causes of conflict, with examples</h3>
+  <ul>
+    <li><b>Director remuneration</b> (pay and benefits). Shareholders and employees may say top managers are "overpaid" and that profits should be shared more fairly (dividends, better pay for staff). Senior executives say their pay must reflect the higher risks of decision making, and this raises profits and so dividends and wages later. In 2021 the Economic Policy Institute found CEOs of the top 350 US companies were paid 351 times more than a typical worker.</li>
+    <li><b>Shareholders versus employees</b>: if shareholders want a bigger share of profit, staff benefits such as profit related or performance related pay may be cut, which upsets employees.</li>
+    <li><b>Suppliers versus the business</b>: suppliers want customers to pay full price in one go to help their cash flow. Businesses expect discounts for regular and bulk purchases.</li>
+    <li><b>Stakeholders with more than one role</b>: managers are employees too. Some employees are also shareholders. A customer may also be in the local community. So their interests can conflict.</li>
+  </ul>
+  <h3>How managers decide who to prioritise</h3>
+  <ul>
+    <li><b>The type of business entity</b>: a partnership may aim for profit maximization and see customers as key. A charity may see the local community as most important. A limited liability company is accountable to its shareholders, so they come first.</li>
+    <li><b>The goals and objectives of the business</b>: if the aim is growth and expansion, the share of profits to owners matters less in the short term, and managers and directors may be given higher priority to help the change process.</li>
+    <li><b>The source and degree of power (influence)</b> of each group: customers have more power in a mass market with many substitutes. Access to the media gives pressure groups more power. A united workforce through a <b>trade union</b> (Chapter 13) strengthens employees.</li>
+  </ul>
+  <p>Modern management thinking says there are <b>mutual benefits</b> in meeting the competing needs of stakeholders at the same time. For example, meeting the needs of employees and managers builds a cohesive, motivated, loyal workforce with low absenteeism and labour turnover. This leads to better customer relations, better image, higher market share and higher long term profit, which pleases shareholders. More output may also create jobs in the local community. So meeting all needs is possible, but maybe only in the <b>medium to long term</b>.</p>
+  <div class="box ex">
+    <span class="label">Case studies: stakeholder conflict</span>
+    <ul>
+      <li><b>Skoda Auto</b> (founded 1895, part of Volkswagen Group since 2000): entered China in 2007 for growth, but its European workforce struck over pay. The strike cost 60 million crowns ($2.9m) a day in lost output. China later became its main market (one in four Skoda cars sold there).</li>
+      <li><b>Royal Bank of Scotland Group</b>: before the 2008 crisis it was one of the world's largest banks. It could not cope with the turmoil, so the UK government bought over 80% of its shares. The share price fell from £3.54 ($4.95) to £0.11 ($0.16). It sold its 4.26% stake in Bank of China without profit and made the largest loss in British corporate history, £24.1bn ($33.8bn) in 2008.</li>
+      <li><b>Royal Dutch Shell</b>: formed in 1907 by the merger of Royal Dutch (Netherlands) and Shell (UK). In 2020 net income was $21.5 billion (about $2.45m per hour) and sales revenue above $180.5 billion. Internal stakeholders watch profit closely, while pressure groups such as Greenpeace scrutinise its activities.</li>
+    </ul>
+  </div>
+  <div class="box ex">
+    <span class="label">Worked example: percentage change in RBS share price</span>
+    <p>Percentage change = (new value − old value) ÷ old value × 100</p>
+    <p>= (£0.11 − £3.54) ÷ £3.54 × 100 = −£3.43 ÷ £3.54 × 100 = <b>−96.9%</b> (a fall of about 97%).</p>
+  </div>
+
+  <h3>Stakeholders and the key concepts: managing conflict</h3>
+  <ul>
+    <li>Conflict exists in every organization and needs careful management. Employees disagree with change, customers are unhappy if the business acts unethically, suppliers fail to deliver on time, shareholders dislike poor performance. So <b>conflict resolution</b> is an important part of a sustainable business strategy.</li>
+    <li>It is unlikely a business can meet every stakeholder's goals all the time, but it is <b>unrealistic or undesirable to maximise the needs of just one group</b>. A group that is ignored may cause interruptions and problems. Most strategies aim for a <b>"best fit" compromise</b>.</li>
+    <li>The outcome of negotiation depends on <b>organizational culture</b> (Chapter 11) and the <b>relative bargaining power</b> of each stakeholder. A large multinational like Honda or Ford has more bargaining power with suppliers than a sole trader mechanic buying parts.</li>
+    <li>Pressure groups are more effective because of <b>social media</b>. Public awareness of globalisation's harms (child labour, global warming, sustainability) makes it harder to ignore ethics.</li>
+    <li>How managers deal with conflict depends on their <b>leadership style</b> (Chapter 9) and <b>organizational culture</b>. <b>Paternalistic</b> leaders would say employees' needs come first: hire the right people, train them, and they will give customers first rate service.</li>
+    <li>Jack Ma (Alibaba, before its $25 billion IPO) wrote "Customers first, employees second and shareholders third", because "If the customer is happy, the business is happy and the shareholders are happy."</li>
+  </ul>
+
+  <h3>Stakeholder mapping</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Stakeholder mapping</b> is a model that assesses the <b>relative interest</b> of stakeholders and their <b>relative influence (or power)</b> on an organization.</p>
+  </div>
+  <figure>
+    <svg viewBox="0 0 520 300" role="img" aria-label="Stakeholder mapping grid. Level of interest runs left to right from low to high. Level of power runs top to bottom from low to high. A is minimum effort, B keep informed, C keep satisfied, D maximum effort.">
+      <g font-size="14" fill="#1F2937" text-anchor="middle">
+        <text x="300" y="22" font-weight="600" fill="#1D4ED8">Level of interest</text>
+        <text x="220" y="48">Low</text><text x="400" y="48">High</text>
+        <text transform="translate(28,155) rotate(-90)" font-weight="600" fill="#1D4ED8">Level of power</text>
+        <text transform="translate(76,110) rotate(-90)">Low</text><text transform="translate(76,230) rotate(-90)">High</text>
+      </g>
+      <g fill="none" stroke="#1D4ED8" stroke-width="1.6">
+        <rect x="100" y="58" width="360" height="200"/><line x1="280" y1="58" x2="280" y2="258"/><line x1="100" y1="158" x2="460" y2="158"/>
+      </g>
+      <g font-size="14" fill="#1F2937" text-anchor="middle">
+        <text x="190" y="104" font-weight="600">A</text><text x="190" y="124">Minimum effort</text>
+        <text x="370" y="104" font-weight="600">B</text><text x="370" y="124">Keep informed</text>
+        <text x="190" y="204" font-weight="600">C</text><text x="190" y="224">Keep satisfied</text>
+        <text x="370" y="204" font-weight="600">D</text><text x="370" y="224">Maximum effort</text>
+      </g>
+    </svg>
+    <figcaption>Figure 4.3. Stakeholder mapping. Interest runs left to right, power runs top to bottom (low at the top, as in the textbook).</figcaption>
+  </figure>
+  <table>
+    <tr><th>Quadrant</th><th>Interest</th><th>Power</th><th>What managers do</th></tr>
+    <tr><td><b>A</b></td><td>Low</td><td>Low</td><td>Minimum effort. Little attention from decision makers.</td></tr>
+    <tr><td><b>B</b></td><td>High</td><td>Low</td><td>Keep informed.</td></tr>
+    <tr><td><b>C</b></td><td>Low</td><td>High</td><td>Keep satisfied, e.g. consult them on strategic decisions.</td></tr>
+    <tr><td><b>D</b></td><td>High</td><td>High</td><td>Maximum effort. These are the key stakeholders and get the most attention.</td></tr>
+  </table>
+  <p>Stakeholder mapping helps managers prioritise their actions when stakeholder objectives change or conflict. It is hard to please everyone at once.</p>
+
+  <div class="box cmd">
+    <span class="label">Toolkit and key concept links</span>
+    <ul>
+      <li><b>Toolkit</b>: consider the stakeholder groups of an organization and why they might be interested in its <b>business plan</b> (Chapter 48).</li>
+      <li><b>Toolkit</b>: to what extent might <b>force field analysis</b> (Chapter 55) help resolve stakeholder conflict? (taught later)</li>
+      <li><b>Key concept (change)</b>: does organizational change always lead to conflicting stakeholder objectives?</li>
+      <li><b>Key concept (ethics)</b>: examine how business ethics impact both internal and external stakeholders.</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <ul>
+      <li>Be ready to answer on: (1) the difference between <b>internal and external</b> stakeholders, (2) the difference between <b>stakeholders and shareholders</b>, and (3) the <b>different objectives</b> of stakeholder groups and how they <b>conflict</b>.</li>
+      <li>Always name the stakeholder group and what it wants, then say how the business decision helps or harms it.</li>
+      <li>In evaluation, say which group has most power in this case and whether the conflict can be solved in the long term.</li>
+    </ul>
+  </div>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Stakeholders</b>: individuals or organizations with a direct interest (stake) in a business.</li>
+      <li><b>Internal stakeholders</b>: employees, managers, directors, shareholders. <b>External stakeholders</b>: customers, suppliers, financiers, pressure groups, competitors, government.</li>
+      <li><b>Shareholders</b>: owners of a limited liability company.</li>
+      <li><b>Directors</b>: senior executives elected by shareholders. <b>Managers</b>: oversee daily operations.</li>
+      <li><b>Financiers</b>: providers of finance who want debts repaid.</li>
+      <li><b>Pressure groups</b>: people with a common concern who demand change in business behaviour.</li>
+      <li><b>Local community</b>: the general public and local businesses with a direct interest.</li>
+      <li><b>Stakeholder conflict</b>: differences in the needs and priorities of stakeholder groups.</li>
+      <li><b>Stakeholder mapping</b>: model of stakeholder interest and power.</li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms</span>
+    <ul>
+      <li><b>Distinguish</b>: make clear the differences (internal and external stakeholders).</li>
+      <li><b>Outline</b>: give a brief account (one source of stakeholder conflict).</li>
+      <li><b>Examine</b>: consider the key elements (how stakeholders are affected by a takeover).</li>
+      <li><b>To what extent / Discuss</b>: weigh arguments for and against and reach a conclusion (how far a company should listen to pressure groups).</li>
+    </ul>
+  </div>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> Distinguish between a stakeholder and a shareholder.</p>
+    <p>A stakeholder is any person or group with an interest in the business. A shareholder is an owner of a company. Shareholders are only one type of stakeholder.</p>
+    <p><b>2.</b> State two interests of shareholders.</p>
+    <p>Maximising dividends and capital gain on their shares.</p>
+    <p><b>3.</b> Which stakeholders should get "maximum effort" on a stakeholder map?</p>
+    <p>Those with high interest and high power (quadrant D).</p>
+  </details>
+</section>
+<!-- ============ SUB UNIT 1.5 ============ -->
+<section class="sub" id="s1-5">
+  <h2 class="bar"><span>1.5</span>Growth and evolution</h2>
+
+  <h3>Economies and diseconomies of scale</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Economies of scale</b> refer to <b>lower average costs of production</b> as a firm operates on a <b>larger scale</b> due to gains in <b>productive efficiency</b>, such as easier and cheaper access to sources of finance.</p>
+    <p><b>Average cost</b> refers to the <b>cost per unit of output</b>.</p>
+  </div>
+  <p>A major reason businesses grow is to gain economies of scale. Lower average costs can give a <b>competitive cost advantage</b>: lower prices for customers, a higher profit margin on each item, or both.</p>
+  <div class="box ex">
+    <span class="label">Worked example: average cost</span>
+    <p>Average cost (AC) = total costs (TC) ÷ quantity of output (Q)</p>
+    <p>If total costs of making 10,000 shirts are $78,000, then AC = $78,000 ÷ 10,000 = <b>$7.80 per shirt</b>.</p>
+    <p>AC has two parts: <b>average fixed cost</b> AFC = total fixed cost (TFC) ÷ Q, and <b>average variable cost</b> AVC = total variable cost (TVC) ÷ Q. So AC = AFC + AVC.</p>
+  </div>
+  <p><b>Why AFC falls:</b> total fixed cost stays the same but is spread over more and more output, so AFC falls all the time as output rises.</p>
+
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>The <b>optimal level of output</b> is the most efficient scale of operation for a business. This occurs at the level of output where the <b>average cost of production is minimized</b>.</p>
+    <p><b>Diseconomies of scale</b> are the cost disadvantages of growth. Average costs are likely to eventually rise as a firm grows due to a <b>lack of control, coordination and communication</b>.</p>
+  </div>
+  <figure>
+    <svg viewBox="0 0 520 300" role="img" aria-label="Average cost curve. Costs fall as output rises, reach a minimum at the optimal level of output, then rise again. The falling part shows economies of scale and the rising part shows diseconomies of scale.">
+      <defs><marker id="a15" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1F2937"/></marker></defs>
+      <g stroke="#1F2937" stroke-width="1.6" fill="none" marker-end="url(#a15)"><line x1="70" y1="250" x2="70" y2="24"/><line x1="70" y1="250" x2="490" y2="250"/></g>
+      <path d="M 90 50 C 130 170, 190 205, 260 205 C 340 205, 390 170, 440 90" fill="none" stroke="#1D4ED8" stroke-width="2.4"/>
+      <line x1="260" y1="205" x2="260" y2="250" stroke="#1F2937" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <line x1="70" y1="205" x2="260" y2="205" stroke="#1F2937" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <g font-size="14" fill="#1F2937">
+        <text x="40" y="150" transform="rotate(-90 40 150)" text-anchor="middle">Costs ($)</text>
+        <text x="490" y="272" text-anchor="end">Output</text>
+        <text x="260" y="272" text-anchor="middle" font-size="13">Optimal level of output</text>
+        <text x="78" y="198" text-anchor="start" font-size="13">Min AC</text>
+        <text x="440" y="78" text-anchor="middle" fill="#1D4ED8" font-weight="600">Average costs</text>
+        <text x="185" y="120" text-anchor="middle" font-size="13">Economies</text><text x="185" y="136" text-anchor="middle" font-size="13">of scale</text>
+        <text x="345" y="125" text-anchor="middle" font-size="13">Diseconomies</text><text x="345" y="141" text-anchor="middle" font-size="13">of scale</text>
+      </g>
+    </svg>
+    <figcaption>Figure 5.1. Average costs fall (economies of scale) until the optimal level of output, then rise (diseconomies of scale).</figcaption>
+  </figure>
+  <p>Firms minimize costs by operating at the optimal level of output. Economies inside the firm and within its control are <b>internal</b>. Those within the industry and generally beyond one firm's control are <b>external</b>.</p>
+
+  <h3>Internal economies of scale</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Internal economies of scale</b> occur <b>within a particular organization</b> (rather than the industry as a whole) as it grows in size.</p>
+  </div>
+  <p>A business can reduce average cost through any mix of these types. Which matters most depends on the business.</p>
+  <table>
+    <tr><th>Type</th><th>Meaning</th><th>Example or reason</th></tr>
+    <tr><td><b>Technical economies</b></td><td>Cost savings by greater use of <b>large scale mechanical processes and specialist machinery</b>, such as mass production, which cut average cost.</td><td>Philips' factory in Shenzhen makes complete audio systems within seconds. High fixed costs of machinery are spread over huge output. Small firms cannot afford such technology.</td></tr>
+    <tr><td><b>Financial economies</b></td><td>Cost savings made by large firms as banks and other lenders charge <b>lower interest</b> (overdrafts, loans, mortgages) because large businesses are <b>lower risk</b>.</td><td>Financiers compete to lend to large, reputable firms. Small firms struggle to raise finance and pay higher interest because of higher risk.</td></tr>
+    <tr><td><b>Managerial economies</b></td><td>Large firms can afford <b>specialist managers</b>, which improves efficiency and productivity.</td><td>A sole trader must be marketer, accountant and production manager, and nobody is equally good at everything. A large firm avoids duplicated effort in planning, communication, marketing, distribution and production, so productivity rises and average cost falls.</td></tr>
+    <tr><td><b>Specialization economies</b></td><td>Large firms can hire and train <b>specialist workers</b> (division of labour of the workforce), boosting output, productivity and efficiency.</td><td>Car makers using mass production have specialist designers, production staff, engineers and marketers, each responsible for one part of the process.</td></tr>
+    <tr><td><b>Marketing economies</b></td><td>Large firms get a lower average cost by <b>selling in bulk</b> (saving time and transaction costs) and by <b>spreading marketing costs</b> over a large output.</td><td>A small shop selling 1,000 cans of Coca-Cola to hundreds of customers spends more than Coca-Cola selling 1,000 cans in one deal to a supermarket. McDonald's and Nike spread advertising costs by using the same campaign worldwide (translation is a small cost).</td></tr>
+    <tr><td><b>Purchasing economies</b></td><td>Large organizations gain huge cost savings per unit by <b>buying vast quantities of stock</b> (raw materials, components, semi finished or finished goods).</td><td>Even small firms get bulk discounts, but the larger the order the bigger the discount, so being big still helps.</td></tr>
+    <tr><td><b>Risk bearing economies</b></td><td>Large firms can <b>bear greater risks</b> because they have a greater product portfolio. Seen in <b>conglomerates</b>.</td><td>Conglomerates spread fixed costs (advertising, R&amp;D) across many operations. Bad conditions in one area are offset by better conditions in others, so a loss in one area does not threaten the whole business.</td></tr>
+  </table>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Conglomerates</b> are businesses that provide a <b>diversified range of products</b> and operate in a range of different industries.</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Case studies</span>
+    <ul>
+      <li><b>Airbus A380</b>: the world's largest passenger plane has 49% more seating than the Boeing 787 Dreamliner but burns 17% less fuel per seat, so fuel cost per seat is lower. Fuel is a big cost for airlines. The 787 costs over $257m and the A380 costs $418m per plane. Low demand (especially after COVID-19) meant Airbus stopped making the A380 at the end of 2021.</li>
+      <li><b>Reliance Industries</b>: Indian multinational conglomerate based in Mumbai, one of the world's largest conglomerates and India's largest publicly held company, with units in energy, financial services, logistics, mass media, natural gas, petrochemicals, retail, telecommunications and textiles.</li>
+    </ul>
+  </div>
+  <div class="box tip">
+    <span class="label">Common mistake</span>
+    <p>Many students define economies of scale as "the benefits of bulk buying". Even small businesses can buy in bulk. The term means the <b>cost saving benefits of large scale operations</b>. Financial, technical and managerial economies are probably far more important than bulk buying in cutting average costs for most businesses.</p>
+  </div>
+
+  <h3>External economies of scale</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>External economies of scale</b> occur when an organization's <b>average cost falls as the industry grows</b>. Hence <b>all firms in the industry benefit</b>. They are cost saving benefits that arise from outside the business, due to its favourable location or the general growth of the industry.</p>
+  </div>
+  <table>
+    <tr><th>Example</th><th>Explanation</th></tr>
+    <tr><td><b>Technological progress</b></td><td>Raises productivity across the industry. The Internet saves e-commerce businesses huge costs: online retailers need not be in expensive city centres.</td></tr>
+    <tr><td><b>Improved transportation networks</b></td><td>Prompt deliveries. Late staff, congestion and inefficiencies raise costs and cut profits. Customers and suppliers also want easy access.</td></tr>
+    <tr><td><b>Abundance of skilled labour</b></td><td>Government training programmes or reputable education and training facilities give local firms a pool of trained workers, cutting recruitment and training costs without lowering productivity.</td></tr>
+    <tr><td><b>Regional specialisation</b></td><td>A location or country with a trusted reputation for a good or service. Murano in Venice is famous for glass (vases, jewellery, chandeliers). The industry gets access to specialist labour, sub contractors and suppliers, lowering average cost, and firms can charge premium prices.</td></tr>
+  </table>
+
+  <h3>Internal diseconomies of scale</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Internal diseconomies of scale</b> occur due to <b>internal problems of mismanagement</b>, causing average costs of production to increase as a firm grows.</p>
+  </div>
+  <p>Businesses can become too large. There is a "tipping point" when economies of scale stop. The business becomes outsized and inefficient and average cost begins to rise (see Figure 5.1).</p>
+  <ul>
+    <li><b>Lack of control and coordination</b>: the span of control (Chapter 8) increases, which causes communication problems and slows decisions. Coordination is harder with operations in different countries. Workers in large organizations may feel alienated, harming morale (Chapter 10). Costs rise with no extra productivity.</li>
+    <li><b>Poorer working relationships</b>: senior managers become detached from lower levels and feel out of touch. This damages communication and motivation, lowers productivity and raises average costs.</li>
+    <li><b>Disadvantages of specialization and division of labour</b>: workers get bored with repetitive tasks. With a bigger workforce there may be <b>slack</b> (inefficiency and procrastination). Productive efficiency falls and average costs rise.</li>
+    <li><b>Bureaucracy</b> (excessive administration, paperwork and company policies): decisions take longer, costs rise without a proportional rise in output, and communication gets worse.</li>
+    <li><b>Complacency</b> (lack of awareness of genuine risks or deficiencies) in a large, dominant firm or market leader reduces productivity and raises unit costs.</li>
+  </ul>
+  <p>Because large firms may suffer diseconomies, some businesses grow by <b>franchising</b> instead. McDonald's and 7-Eleven expanded and raised brand awareness without the higher average costs of being large.</p>
+
+  <h3>External diseconomies of scale</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>External diseconomies of scale</b> occur due to factors <b>beyond the firm's control</b> which cause average costs of production to <b>increase as an industry grows</b>. They affect the whole industry, often because too many firms compete in the market.</p>
+  </div>
+  <ul>
+    <li><b>Higher rents</b>: too many businesses in one area make land scarcer, so rents rise. Fixed costs rise for all firms with no extra output. Examples: Manhattan (New York), Shinjuku (Tokyo), The City (London), Silicon Valley.</li>
+    <li><b>Higher wages</b>: workers have more choice of employers, so firms must pay more to keep or attract staff, raising average costs without raising output.</li>
+    <li><b>Traffic congestion</b>: too many businesses in one area delay deliveries and raise transport costs and unit costs.</li>
+  </ul>
+
+  <h3>Internal and external growth</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Internal growth</b> (also known as <b>organic growth</b>) occurs when a business grows using its <b>own capabilities and resources</b> to increase the scale of its operations and sales revenue.</p>
+    <p><b>External growth</b> (or <b>inorganic growth</b>) occurs when a business grows and evolves by <b>collaborating with, buying up or merging with other organizations</b>.</p>
+  </div>
+  <p>Internal growth is usually financed through <b>retained profits, borrowing and issuing new shares</b>.</p>
+  <h3>Methods of internal growth</h3>
+  <ul>
+    <li><b>Changing price</b>: more customers buy at lower prices. If there are few substitutes, demand is <b>price inelastic</b> (Chapter 28), so raising price earns more revenue. In highly competitive markets demand is <b>price elastic</b>, so a price cut gives proportionately more sales revenue.</li>
+    <li><b>Improved promotion</b>: people buy if they are informed, reminded or persuaded. Coca-Cola spends about $3bn a year on promotion and is the world's most recognised brand, with sales of 1.9 billion servings a day.</li>
+    <li><b>Producing improved or better products</b>: market research, innovation and new product development. Most new products fail, so firms often improve an existing product. Apple grows by launching new products (iPod, iPad, iPhone, iMac Pro, MacBook Air and Pro, Apple TV, Apple Watch, HomePod, AirPod, iTunes, App Store).</li>
+    <li><b>Selling through a greater distribution network (placement)</b>: wide availability helps sales. The Lamborghini Veneno ($4.5m, very limited supply) has few potential customers. Coca-Cola is sold in supermarkets, wholesalers, restaurants, cinemas, aeroplanes and vending machines. More outlets cost more but help growth.</li>
+    <li><b>Increased capital expenditure</b> (investment spending): new locations, new production processes and technologies to raise productivity. Risks may not pay off, so careful planning and <b>investment appraisal</b> (Chapter 21) may be needed.</li>
+    <li><b>Improved training and development</b>: employees are a firm's most important asset. Customers will not buy from salespeople who lack product knowledge. Training builds confidence, motivation, better customer service, loyalty and sales.</li>
+    <li><b>Offer preferential credit</b>: "buy now, pay later" or instalments over 12 or 24 months for cars, furniture, large TVs. Too much credit harms <b>cash flow</b> (Chapter 20).</li>
+    <li><b>Providing overall value for money</b>: customers look beyond price to quality, after sales care, brand image, maintenance costs and environmental considerations.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Case study: Poundland (internal growth)</span>
+    <p>Founded 1990. Its 500th store opened in 2014 and it had over 800 stores at the start of 2022. It sells most products for £1 ($1.40) or less, serves 7 million customers a week, and has reported profit rises of up to 29%. Its growth strategy is expansion in Ireland, the Netherlands and the UK to gain market share.</p>
+  </div>
+  <table>
+    <tr><th>Advantages of internal growth</th><th>Disadvantages of internal growth</th></tr>
+    <tr><td><b>Better control and coordination</b>: easier than relying on external sources, and the organization keeps control and ownership.</td><td><b>Diseconomies of scale</b>: hierarchical structures (Chapter 8) bring communication problems and slower decisions as the firm grows.</td></tr>
+    <tr><td><b>Relatively inexpensive</b>: the main source is retained profit. Some interest bearing loans may be needed but the amount is lower, so there is less risk. For many firms it is the only affordable option.</td><td><b>A need to restructure</b>: if a sole trader grows into a multinational, the structure must change. Restructuring takes time, effort and money (training). Specialist managers must be hired.</td></tr>
+    <tr><td><b>Maintains the corporate culture</b>: no culture clashes or conflicting management styles, which are a big problem in M&amp;As.</td><td><b>Dilution of control and ownership</b>: if the firm changes legal status (e.g. partnership to publicly held company), owners share decision making power with new shareholders. Decisions take longer and stakeholder conflict is likelier.</td></tr>
+    <tr><td><b>Less risky</b>: the easiest and least risky growth method for most firms. It builds on strengths such as brand value and customer loyalty.</td><td><b>Slower growth</b>: slower than external growth. Shareholders may prefer faster methods to raise return on investment.</td></tr>
+  </table>
+
+  <h3>External growth: advantages and disadvantages</h3>
+  <p>External growth usually takes the form of <b>mergers and acquisitions (M&amp;As), takeovers, joint ventures, strategic alliances or franchising</b>. These are together called the <b>amalgamation or integration</b> of firms.</p>
+  <table>
+    <tr><th>Advantages of external growth</th><th>Disadvantages of external growth</th></tr>
+    <tr><td><b>Quicker than organic growth</b>: uses external resources and finance.</td><td><b>More expensive</b> than internal growth.</td></tr>
+    <tr><td><b>Synergies</b>: a greater pool of skills, knowledge and expertise from external parties.</td><td><b>Greater risks</b>: not knowing new markets well, and more uncertainty.</td></tr>
+    <tr><td><b>Reduced competition</b>: a quick, though expensive, way to reduce competition and raise market share.</td><td><b>Regulatory barriers</b>: governments can block acquisitions and takeovers seen as anti competitive.</td></tr>
+    <tr><td><b>Economies of scale</b>: access to larger markets and lower unit costs.</td><td><b>Potential diseconomies of scale</b>: more complexity can cause inefficiency and higher average costs.</td></tr>
+    <tr><td><b>Spreading of risks</b>: diversification means fewer risks from failure in one area.</td><td><b>Organizational culture clash</b>: hard to combine cultures and management styles, especially if the nature and culture of the business change.</td></tr>
+  </table>
+  <div class="box cmd">
+    <span class="label">HL toolkit link</span>
+    <p>Discuss how <b>descriptive statistics</b> (Chapter 50) can help decision makers choose between internal and external growth strategies.</p>
+  </div>
+
+  <h3>Reasons for businesses to grow</h3>
+  <p>All businesses have an appropriate scale of operation. The market for smartphones is huge, but the market for IB textbooks is smaller. Size is measured in relative terms by comparing with competitors. <b>Ways to measure size:</b></p>
+  <ul>
+    <li><b>Size of workforce</b>: total number of employees per time period.</li>
+    <li><b>Total sales revenue</b>: value of annual sales, usually per year. It shows the size of the customer base.</li>
+    <li><b>Profit</b>: value of profits per time period.</li>
+    <li><b>Capital employed</b>: value of capital investment as recorded on the balance sheet (Chapter 17).</li>
+    <li><b>Market share</b>: sales revenue as a percentage of the industry's total sales revenue.</li>
+  </ul>
+  <p>A rise in any of these suggests the firm is growing.</p>
+  <table>
+    <tr><th>Generic benefit of being large</th><th>Explanation</th></tr>
+    <tr><td><b>Economies of scale</b></td><td>Cost saving benefits that reduce average cost.</td></tr>
+    <tr><td><b>Lower prices</b></td><td>Larger firms can give bigger price discounts because of economies of scale.</td></tr>
+    <tr><td><b>Brand recognition</b></td><td>Familiar brands sell to a wider market. Many large firms have global brand recognition.</td></tr>
+    <tr><td><b>Brand reputation</b></td><td>Larger firms tend to be trusted more because of brand image and reputation.</td></tr>
+    <tr><td><b>Value added services</b></td><td>More resources to give extra services such as longer opening hours and interest free credit instalments.</td></tr>
+    <tr><td><b>Greater choice</b></td><td>Wider range. Amazon offers more books, toys and music than a small local shop.</td></tr>
+    <tr><td><b>Customer loyalty</b></td><td>The benefits above encourage loyalty, through trust and value for money.</td></tr>
+  </table>
+  <ul>
+    <li>Apple, BMW, Coca-Cola and IKEA design and market products to a global audience, so consumers recognise and trust their brands. McDonald's cooks burgers and fries the same way worldwide. These firms exploit <b>global marketing and production economies of scale</b>.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Case studies: growth</span>
+    <ul>
+      <li><b>IKEA</b>: founded 1943, world's largest home furniture, kitchen appliance and accessory retailer. First overseas stores in Norway (1963) and Denmark (1969). Now over 445 stores in 50 countries and over 225,000 employees.</li>
+      <li><b>Amazon</b>: founded 1994 by Jeff Bezos in his garage in Washington, USA. Started as an online bookstore earning $20,000 sales a week in its first two months. First profit in 2001. Now e-commerce, cloud computing, digital streaming and AI, over 810,000 workers in the USA and over $386bn annual sales revenue.</li>
+      <li><b>A.S. Watson Group</b>: history from 1828, world's largest international health, beauty and lifestyle retailer, with over 16,000 stores in 27 markets, over 5.3 billion customers a year and over 140,000 staff. Brands include Watsons, PARKnSHOP, Fortress, Superdrug, Rossmann, Marionnaud and The Perfume Shop. Growth remains a long term goal.</li>
+    </ul>
+  </div>
+  <div class="box cmd">
+    <span class="label">HL toolkit link</span>
+    <p>Discuss the role of <b>Ansoff's matrix</b> (Chapter 45) in decisions about organizational growth strategies.</p>
+  </div>
+
+  <h3>Reasons for businesses to stay small</h3>
+  <table>
+    <tr><th>Reason</th><th>Explanation</th></tr>
+    <tr><td><b>Cost control</b></td><td>Large scale operations can mean diseconomies of scale from problems of control, coordination and communication. Owners may not want to expand and face higher unit costs. Growth can need extra borrowing costs.</td></tr>
+    <tr><td><b>Loss of control</b></td><td>External growth (M&amp;As, takeovers) may dilute ownership and control for the original owners.</td></tr>
+    <tr><td><b>Financial risks</b></td><td>Running a large global business costs a lot (R&amp;D, marketing, recruitment, training), so financial risks are high. Owners of small firms manage and control finances better.</td></tr>
+    <tr><td><b>Government aid</b></td><td>Grants and subsidies for small firms to start up and develop. Training funds may be available for small firms that create local jobs.</td></tr>
+    <tr><td><b>Local monopoly power</b></td><td>A small firm may be the only one in a location (local restaurant, franchised petrol station, convenience store in a remote town). Large firms may not want to locate in remote areas.</td></tr>
+    <tr><td><b>Personalised services</b></td><td>Small firms can give time to individual customers, with less pressure from high sales targets. Large supermarkets rely on many customers, many using self checkout.</td></tr>
+    <tr><td><b>Flexibility</b></td><td>Small firms adapt to change easily. A sole trader whose beauty salon fails can turn it into a toy shop. Large firms have big financial commitments and conflicting stakeholder objectives.</td></tr>
+    <tr><td><b>Small market size</b></td><td>Local hair salons or private tuition firms are too small to interest large firms, so they can thrive.</td></tr>
+  </table>
+  <ul>
+    <li>The <b>optimal size</b> of a business depends on its internal structure, finances, aims and objectives. Mars and IKEA are privately held companies because the owners want to keep the businesses under founding family control. Above optimal size, diseconomies of scale push up unit costs and lower profit.</li>
+    <li>In practice a firm may not operate at its optimal level because of: lack of resources and finance, lack of <b>productive capacity</b> (Chapter 40), or <b>insufficient demand</b> (it will not produce more even if average cost would fall).</li>
+    <li>Some firms choose to stay small. Rolex and Ferrari deliberately limit growth. McDonald's and Toyota keep expanding.</li>
+  </ul>
+  <p>Key concept link: in a world of uncertainty and change, is it possible to achieve both growth and profit in a sustainable way?</p>
+
+  <h3>External growth methods</h3>
+
+  <h3>(i) Mergers and acquisitions (M&amp;As)</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>merger</b> is a form of external growth whereby two (or more) firms <b>agree to form a new organization</b>, thereby <b>losing their original identities</b>.</p>
+    <p>An <b>acquisition</b> is a method of external growth that involves one company <b>buying a controlling interest (majority stake)</b> in another company, <b>with the agreement and approval of the target company's Board of Directors</b>.</p>
+    <p><b>Synergy</b> is a benefit of growth, which occurs when the <b>whole is greater than the sum of the individual parts</b> when two or more business operations are combined. Synergy creates greater output and improved efficiency.</p>
+    <p>The <b>target company</b> is the organization that is purchased by another in an acquisition or takeover. The <b>purchaser</b> is the acquiring company in an acquisition or the buyer of another company in a takeover.</p>
+  </div>
+  <ul>
+    <li>"M&amp;As" means the consolidation or integration of two or more businesses into a single company. The new, larger entity usually benefits from synergies such as economies of scale and has a larger market share. M&amp;As also need <b>restructuring</b> of the organizational structure (Chapter 8).</li>
+    <li><b>Merger</b>: two or more firms agree to create a <b>new company with its own legal identity</b>. It usually needs a new name and a Board of Directors made up of executives from the firms involved. Examples: BP and Amoco (1998, now just "BP"), Daimler Benz and Chrysler (1998), Glaxo Wellcome and SmithKline Beecham (2000), Hewlett-Packard and Compaq (2001), American Airlines and US Airways (2013), Just Eat and Takeaway.com (2020).</li>
+    <li><b>Acquisition</b>: the acquiring company buys enough shares to hold a <b>majority stake</b>. Usually the larger, financially stronger company buys the smaller one, so the two are not of equal stature (a merger usually joins firms of similar size). Examples: Google bought YouTube for $1.65bn in 2006. Amazon bought Whole Foods for $13.7bn in 2017. Whole Foods keeps its name but Amazon, the parent company, controls its operations.</li>
+  </ul>
+  <div class="box tip">
+    <span class="label">Common mistake</span>
+    <p>Students often say a business must buy at least 51% of shares to acquire a company. The textbook says buying 50% plus 1 share guarantees control, but this may be too expensive and is <b>not a necessary condition</b>. Buying a <b>majority stake</b> (which can be less than 50%) can still give control. (Note: earlier the textbook says the purchaser "must buy more than 50%" for absolute control.)</p>
+  </div>
+  <h3>Four types of integration</h3>
+  <table>
+    <tr><th>Type</th><th>Meaning</th><th>Examples</th></tr>
+    <tr><td><b>Horizontal integration</b></td><td>Amalgamation with a firm operating in the <b>same stage of production</b>, in the same industry. The <b>most common</b> M&amp;A. It does not grow the industry but gives a larger market share and market power.</td><td>Nike bought Umbro (2007, $580m). Carlsberg bought Chongqing Brewery (2013).</td></tr>
+    <tr><td><b>Vertical integration</b></td><td>Between businesses at <b>different stages of production</b>.</td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Forward vertical</td><td>Amalgamation with a firm at a <b>later stage</b> (towards the consumer).</td><td>A book publisher buying book retailers; a coffee manufacturer buying a chain of coffee shops.</td></tr>
+    <tr><td>&nbsp;&nbsp;Backward vertical</td><td>Amalgamation with a firm at an <b>earlier stage</b> of production. Helps secure lower raw material costs.</td><td>A car maker taking over a tyre or component supplier; a coffee manufacturer joining its coffee bean supplier.</td></tr>
+    <tr><td><b>Lateral integration</b></td><td>M&amp;As between firms with <b>similar operations that do not directly compete</b>.</td><td>Tata Motors (mass market) bought Jaguar and Land Rover (luxury) in 2008. PepsiCo bought Quaker Oats (2001). Microsoft bought LinkedIn (2016). Meta bought Instagram ($1bn, 2012) and WhatsApp ($19bn, 2014).</td></tr>
+    <tr><td><b>Conglomerate</b></td><td>Amalgamation of businesses in <b>completely distinct or diversified markets</b>.</td><td>Berkshire Hathaway owns firms in insurance, property, clothing, meat products, flight services, home furnishing, news media, confectionery, beverages and carpets.</td></tr>
+  </table>
+  <p>In the key terms the textbook also says:</p>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Horizontal integration</b> is an external growth strategy that occurs when a business amalgamates with a firm operating in the <b>same stage of production</b>.</p>
+    <p><b>Vertical integration</b> takes place between businesses that are at <b>different stages of production</b>.</p>
+    <p><b>Forward vertical integration</b> is a growth strategy that occurs with the amalgamation of a firm operating at a <b>later stage</b> in the production process, such as a book publisher acquiring book retailers.</p>
+    <p><b>Backward vertical integration</b> occurs when a business amalgamates with a firm operating in an <b>earlier stage</b> of production, such as a car manufacturer taking over a supplier of tyres or other components.</p>
+    <p><b>Lateral integration</b> refers to external growth of firms that have <b>similar operations but do not directly compete</b> with each other, such as PepsiCo acquiring Quaker Oats Company.</p>
+  </div>
+  <p><b>Factors in the success of M&amp;As</b>:</p>
+  <ul>
+    <li><b>Planning</b>: a clear rationale for the benefits must be explained to key stakeholders to win support.</li>
+    <li><b>Aptitudes of senior directors</b>: negotiation skills and ability to handle extra pressure.</li>
+    <li><b>Conflict</b> can easily end an M&amp;A.</li>
+    <li><b>Regulatory problems</b>: governments can stop M&amp;As that give too much market power, if against the public interest.</li>
+  </ul>
+  <table>
+    <tr><th>Benefits of M&amp;As</th><th>Drawbacks of M&amp;As</th></tr>
+    <tr><td><b>Greater market share</b>: more market power, sales revenue and customers.</td><td><b>Redundancies</b>: job losses from cost savings. The new company does not need two finance or marketing directors.</td></tr>
+    <tr><td><b>Economies of scale</b>: lower unit costs, better competitiveness and/or profit margins.</td><td><b>Conflict</b>: disputes between the firms are inevitable even if they agree in the end.</td></tr>
+    <tr><td><b>Synergy</b>: access to each other's distribution channels, technologies, HR and management expertise, raising productivity, sales and profit.</td><td><b>Culture clash</b>: people must adapt to the new corporate culture. Core values and mission statement may change. Staff need time to adapt.</td></tr>
+    <tr><td><b>Survival</b>: a quick growth method that protects survival, as a defensive strategy against rivals.</td><td><b>Loss of control</b>: the original owners or Board lose some control as a new Board and management team are formed.</td></tr>
+    <tr><td><b>Diversification</b>: spreads and reduces risk, and gives a larger customer base.</td><td><b>Diseconomies of scale</b>: more bureaucracy and longer communication chains make decisions less effective.</td></tr>
+    <tr><td><b>Gain entry into new markets</b>: if the firms operate in different markets.</td><td><b>Regulatory problems</b>: governments may prevent M&amp;As that create a monopoly with too much market power.</td></tr>
+  </table>
+  <div class="box ex">
+    <span class="label">Case studies: M&amp;As</span>
+    <ul>
+      <li><b>American Airlines and US Airways</b>: agreed on Valentine's Day 2013, a deal worth $11 billion to create the world's largest airline (6,700 daily flights, revenues over $42 billion). The airlines said it offered more travel options but probably at higher prices. Regulators first blocked it as not in the public interest, but it completed in December 2013 as American Airlines Group Inc.</li>
+      <li><b>AT&amp;T and WarnerMedia</b>: in 2018 AT&amp;T (world's largest telecoms company) agreed to buy WarnerMedia for $43 billion, giving access to HBO, Cinemax, CNN and Warner Bros.</li>
+      <li><b>Geely and London Taxi International</b>: in 2013 LTI (black taxi maker) was sold to Geely for £11.4m ($16m) after five years without profit and going into administration in October 2012. The deal protected UK production. Geely rehired workers made redundant. LTI was rebranded the London Electric Vehicle Company in 2017.</li>
+    </ul>
+  </div>
+  <div class="box cmd">
+    <span class="label">HL toolkit link</span>
+    <p>What is the significance of understanding <b>Hofstede's cultural dimensions</b> (Chapter 54) for the success of international mergers and acquisitions? (Taught later; it also applies to takeovers, joint ventures and strategic alliances.)</p>
+  </div>
+
+  <h3>(ii) Takeovers</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>takeover</b> (also called a <b>hostile takeover</b>) occurs when a company buys a controlling interest in another firm <b>without the prior agreement or approval</b> of the target company's Board of Directors.</p>
+  </div>
+  <ul>
+    <li>To persuade the target's shareholders to sell, the <b>offer price</b> is likely to be well above the stock market value of the shares.</li>
+    <li>Examples: Heineken took over many Dutch competitors to dominate Dutch brewing. Kraft Foods took over Cadbury in 2010 for $18 billion. Walt Disney bought 21st Century Fox in 2017 for $52.4 billion. Disney bought Pixar for $7.4 billion in 2006 (high demand for merchandise earned Disney over $3.2 billion; Toy Story 3 in 2010 earned over $1bn at the box office) and Lucasfilm in 2012 (Star Wars third trilogy).</li>
+  </ul>
+  <div class="box key">
+    <span class="label">Box 5.1: Reasons why businesses become takeover targets</span>
+    <ul>
+      <li>They have growth potential but lack enough funds for internal growth.</li>
+      <li>They are seen as a small rival with growth potential.</li>
+      <li>They have a widely recognised corporate name or brand but face a liquidity or financial crisis.</li>
+      <li>They are vulnerable (an easy target) because of a drop in profits and a fall in their share price.</li>
+    </ul>
+  </div>
+  <p>Key concept link: can hostile takeovers ever be judged as ethical business behaviour?</p>
+
+  <h3>(iii) Joint ventures</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>joint venture (JV)</b> is a growth strategy that combines the contributions and responsibilities of two or more different organizations in a <b>shared project</b> by <b>creating a separate legal enterprise</b>.</p>
+  </div>
+  <ul>
+    <li>Two or more businesses split the <b>costs, risks, control and rewards</b> of a project. Typically a 50:50 split of costs, responsibilities and profits (or losses).</li>
+    <li>Examples: Coca-Cola and San Miguel share a bottling plant in the Philippines. BMW and Brilliance Auto have had a JV since 2003 to produce, distribute and sell BMW cars in China.</li>
+    <li>JVs give benefits similar to M&amp;As <b>without losing individual corporate identities</b>.</li>
+  </ul>
+  <table>
+    <tr><th>Advantages of joint ventures</th><th>Drawbacks</th></tr>
+    <tr><td><b>Synergy</b>: pooled skills, experience and resources. Bank of Scotland and Sainsbury's (50:50, 1997 to 2014) each specialised in what they did best while gaining new technology and customers.</td><td>Partners rely heavily on each other's <b>resources and goodwill</b>.</td></tr>
+    <tr><td><b>Exploitation of local knowledge</b>: use partners' local knowledge and reputation, avoiding overseas problems (etiquette, cultural values, languages, traditions) of M&amp;As.</td><td>There may be <b>dilution of brands</b>, though firms spend huge sums building their own brands (Chapter 27).</td></tr>
+    <tr><td><b>Spreading of costs and risks</b>: costs, risks and losses shared. Products can be diversified.</td><td><b>Organizational culture clashes</b> can cause operational problems and conflict.</td></tr>
+    <tr><td><b>Entry to foreign markets</b>: agreements with local firms. Sometimes national law makes JVs the only way in. Many foreign firms entered China and India through JVs.</td><td></td></tr>
+    <tr><td><b>Relatively cheap</b>: M&amp;As have lengthy legal and admin costs, and the cost of a hostile takeover is often unknown. JVs are cheaper to set up and easier to leave.</td><td></td></tr>
+    <tr><td><b>Competitive advantages</b>: less competition between the partners, and a stronger force against rivals. Larger combined size may bring more economies of scale.</td><td></td></tr>
+    <tr><td><b>High success rate</b>: JVs tend to be friendly and well received by stakeholders. Takeovers often fail because they are hostile.</td><td></td></tr>
+  </table>
+  <div class="box ex">
+    <span class="label">Case study: Tiffany &amp; Co. and Swatch Group</span>
+    <p>In 2007 Swatch and Tiffany formed a JV to make watches under the brand Tiffany Watch Co, for 20 years. Disputes began in 2011 and Swatch cancelled it, accusing Tiffany of blocking development. In 2014 Tiffany was ordered to pay Swatch almost $450m plus $9m in legal fees.</p>
+    <p><b>Point it proves:</b> JVs can fail through conflict and culture clashes.</p>
+  </div>
+
+  <h3>(iv) Strategic alliances</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Strategic alliances</b> are formed when two or more organizations join together to benefit from external growth, <b>without having to set up a new separate legal entity</b>.</p>
+  </div>
+  <ul>
+    <li>Like a JV: two or more businesses cooperate for mutual benefit and share the costs of product development, operations and marketing. Unlike a JV: the firms <b>stay independent</b> and do not form a new legal entity.</li>
+    <li>Main purpose: <b>synergies</b> from each member's strengths by pooling resources (expertise and finance). Members also get economies of scale. Customers may get value added services such as wider access to distribution (Chapter 30).</li>
+    <li>Airline example: two airlines with half empty planes could compete, or cooperate by using one full plane to cut crew and fuel costs and split the profit.</li>
+  </ul>
+  <table>
+    <tr><th>Stage</th><th>What happens</th></tr>
+    <tr><td><b>1. Feasibility study</b></td><td>Investigate and establish the rationale, objectives and feasibility of the alliance.</td></tr>
+    <tr><td><b>2. Partnership assessment</b></td><td>Analyse potential partners: human and financial resources, skills, experience, expertise.</td></tr>
+    <tr><td><b>3. Contract negotiations</b></td><td>Decide each member's contributions and rewards and agree a contract.</td></tr>
+    <tr><td><b>4. Implementation</b></td><td>Operations start with commitment to the contract from all parties.</td></tr>
+  </table>
+  <p>Joint ventures and strategic alliances have similar drawbacks (reliance on partners, brand dilution, culture clashes).</p>
+  <div class="box ex">
+    <span class="label">Case study: Star Alliance</span>
+    <p>Set up in 1997 by Lufthansa, Scandinavian Airlines, Thai Airways International, United Airlines and Air Canada (headquarters in Frankfurt). The first strategic airline alliance, now with 26 members and a pre pandemic passenger count of 762.27 million. It also has 40 non voting affiliated carriers, so it serves almost every country.</p>
+  </div>
+
+  <h3>(v) Franchising</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Franchising</b> refers to an agreement between a <b>franchisor</b> selling its rights to other businesses (<b>franchisees</b>) to allow them to sell products under its corporate name in return for a <b>fee and regular royalty payments</b>.</p>
+  </div>
+  <ul>
+    <li>A franchise is a form of business ownership where a person or business buys a <b>licence</b> to trade using another company's products, name, logos, brands and trademarks.</li>
+    <li>The buyer (<b>franchisee</b>) pays a <b>licence fee</b> to the parent company (<b>franchisor</b>) and also pays a <b>royalty</b> (like commission) based on sales revenue.</li>
+    <li>Franchisors include McDonald's, Subway, The Body Shop, 7-Eleven, Baskin-Robbins, Burger King, Hertz, Intercontinental Hotels, KFC, Marriott, Pizza Hut.</li>
+  </ul>
+  <table>
+    <tr><th>Benefits for the franchisor</th><th>Benefits for the franchisee</th></tr>
+    <tr><td><b>Rapid growth</b> without risking large sums, because the franchisee pays for the rights. Cheaper and faster than internal growth.</td><td><b>Lower start up costs</b> because the idea is already developed (market research, brand development, product development).</td></tr>
+    <tr><td>A <b>national or international presence</b> without the higher costs of internal growth or M&amp;As, as the franchisee helps finance expansion.</td><td><b>Relatively low risk</b>: a tried and tested formula, so success chances are statistically high.</td></tr>
+    <tr><td>No worries about <b>running costs</b>: recruitment, training, salaries and stock.</td><td>The franchisor <b>supports</b> the franchisee with value added services, e.g. training and financial management advice.</td></tr>
+    <tr><td><b>Royalty payments</b> (a percentage of sales revenue) plus a membership (registration or joining) fee.</td><td><b>'Free' advertising</b> and promotion from the franchisor's large scale advertising, reducing costs.</td></tr>
+    <tr><td>Franchisees have <b>more incentive</b> than salaried managers, which raises success chances.</td><td>Franchisees are still technically their <b>own boss</b>, with a large degree of autonomy within the agreement.</td></tr>
+  </table>
+  <table>
+    <tr><th>Drawbacks for the franchisor</th><th>Drawbacks for the franchisee</th></tr>
+    <tr><td><b>Risk to reputation</b>: unsuccessful franchisees can damage the whole franchise's reputation.</td><td><b>Limited initiative</b>: cannot freely try new ideas because the franchisor oversees them and there is a formal agreement.</td></tr>
+    <tr><td><b>Hard to control</b> daily operations of all franchisees and make them meet quality standards.</td><td><b>Expensive</b> to buy a franchise, with no guarantee the investment is ever recouped.</td></tr>
+    <tr><td>Faster than internal growth but <b>not as quick</b> as M&amp;As.</td><td>Must pay a <b>significant percentage of sales revenue</b> to the franchisor.</td></tr>
+  </table>
+  <div class="box ex">
+    <span class="label">Case studies: franchising</span>
+    <ul>
+      <li><b>Burger King</b>: uses franchising as its key strategy. The world's second largest fast food chain has over 18,000 outlets, about 90% franchised. It relies on the parent's know how, brand recognition and trust, plus franchisees' incentives. Parent company: Restaurant Brands International (also owns Tim Hortons and Popeyes).</li>
+      <li><b>Pizza Hut</b>: founded 1958, the world's largest pizza chain. First franchise within a year. Over 18,700 restaurants in over 95 countries.</li>
+    </ul>
+  </div>
+
+  <h3>Growth, evolution and the key concepts</h3>
+  <ul>
+    <li>Growth is a strategic objective for many businesses. The driving force is not only profit but <b>sustainable competitiveness</b>. Chinese proverb: "Be not afraid of going slowly; be afraid only of standing still."</li>
+    <li>M&amp;As are common in today's fast paced, competitive and changing environment. Organizations have to "run faster to stay still": change and be creative to grow and evolve sustainably, to keep market share and competitiveness.</li>
+    <li>A strategy suitable for one organization may not suit another, so put answers in the context of the business and consider <b>short and long term factors</b>.</li>
+    <li>Growth does not always work. Businesses may choose to <b>shrink</b>: break away from a strategic alliance, end a joint venture, or <b>demerge</b>.</li>
+  </ul>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>demerger</b> occurs when a company <b>sells off a part of its business</b>, thereby separating into two or more businesses. It usually happens due to conflicts, inefficiencies and incompatibilities after an earlier merger of two or more companies.</p>
+  </div>
+  <p>Reasons for shrinking:</p>
+  <ul>
+    <li>Offloading unprofitable sections of the business.</li>
+    <li>Avoiding rising average costs and inefficiencies from being too large (internal and external diseconomies of scale).</li>
+    <li>Raising cash to keep other, more profitable parts running.</li>
+    <li>A clearer corporate focus on a smaller range of products or operations.</li>
+  </ul>
+  <p>Growth and downsizing can happen in cycles. Downsizing creates problems: <b>redundancies</b> must be planned and managed sensitively and ethically. For large firms the cost of redundancies can be high and cause short term <b>liquidity problems</b> (Chapter 20).</p>
+  <div class="box key">
+    <span class="label">Key concept links</span>
+    <ul>
+      <li><b>Creativity</b>: how creativity has influenced a firm's growth strategy and its ability to change and evolve.</li>
+      <li><b>Change</b>: how change has influenced a firm's evolution.</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <ul>
+      <li>Be able to <b>evaluate</b> the different external growth methods. Put your answer in the context of the business and consider short and long term factors.</li>
+      <li>Reference to <b>Hofstede's cultural dimensions</b> (Chapter 54) can be relevant when evaluating methods that involve overseas partners.</li>
+      <li>To understand overseas growth better, link this unit with 1.6 (multinational companies) and with <b>STEEPLE</b> analysis (Chapter 46): how the political, legal and social environments affect growth strategies.</li>
+      <li>On diagrams: label both axes (Costs and Output), the curve (average costs) and the optimal level of output.</li>
+    </ul>
+  </div>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Average cost</b>: cost per unit of output (TC ÷ Q).</li>
+      <li><b>Economies of scale</b>: lower average costs as a firm grows. <b>Diseconomies of scale</b>: higher average costs as a firm grows too large.</li>
+      <li><b>Internal economies</b>: technical, financial, managerial, specialization, marketing, purchasing, risk bearing. <b>External economies</b>: come from industry growth.</li>
+      <li><b>Optimal level of output</b>: output where average cost is lowest.</li>
+      <li><b>Internal (organic) growth</b>: using own resources. <b>External (inorganic) growth</b>: working with or buying other firms.</li>
+      <li><b>Merger</b>: firms form a new organization. <b>Acquisition</b>: agreed purchase of a majority stake. <b>Takeover</b>: purchase of a controlling interest without Board approval.</li>
+      <li><b>Horizontal, vertical (forward and backward), lateral integration</b>, and <b>conglomerate</b> M&amp;As.</li>
+      <li><b>Synergy</b>: the whole is greater than the sum of its parts.</li>
+      <li><b>Joint venture</b>: shared project through a new legal entity. <b>Strategic alliance</b>: cooperation without a new legal entity.</li>
+      <li><b>Franchising</b>: a franchisor sells rights to franchisees for a fee and royalties.</li>
+      <li><b>Demerger</b>: a company sells off part of itself.</li>
+      <li><b>Conglomerate</b>: diversified business across industries.</li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms</span>
+    <ul>
+      <li><b>Define / Outline</b>: give the meaning, or a brief account.</li>
+      <li><b>Describe</b>: give a detailed account (two methods of internal growth).</li>
+      <li><b>Explain</b>: give reasons (why economies of scale lower average cost).</li>
+      <li><b>Examine</b>: consider the key elements (problems of growth in new markets).</li>
+      <li><b>Discuss</b>: balanced review with a conclusion (whether internal growth is desirable).</li>
+      <li><b>Evaluate</b>: weigh strengths and limitations and make a judgement (choice of growth method).</li>
+    </ul>
+  </div>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> A firm's total cost for 5,000 units is $40,000. What is the average cost?</p>
+    <p>$40,000 ÷ 5,000 = $8 per unit.</p>
+    <p><b>2.</b> Give one difference between a joint venture and a strategic alliance.</p>
+    <p>A joint venture creates a new separate legal entity. In a strategic alliance the firms stay independent with no new entity.</p>
+    <p><b>3.</b> What is the difference between a merger and a takeover?</p>
+    <p>A merger is agreed and creates a new organization. A takeover is hostile: it buys a controlling interest without the target Board's approval.</p>
+  </details>
+</section>
+<!-- ============ SUB UNIT 1.6 ============ -->
+<section class="sub" id="s1-6">
+  <h2 class="bar"><span>1.6</span>Multinational companies (MNCs)</h2>
+
+  <h3>What is a multinational company?</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>multinational company (MNC)</b> is an organization that <b>operates in two or more countries</b>, with its <b>head office</b> usually based in the <b>home country</b>.</p>
+    <p>A <b>host country</b> is any nation that <b>allows a multinational company to set up</b> in its country.</p>
+  </div>
+  <ul>
+    <li>The terms MNC and <b>transnational corporation</b> are often used for the same thing. Some commentators say an MNC has its head office in the home country, whereas a transnational corporation has <b>regional head offices</b> rather than a single international base.</li>
+    <li>Examples of large MNCs: Apple, Coca-Cola, Louis Vuitton, Nike, Samsung, Toyota. They stand out in their industries for sales revenue, profits, capital assets and market value.</li>
+    <li>The rise of MNCs and the growing importance of international trade have <b>intensified globalization</b>.</li>
+  </ul>
+
+  <h3>Why businesses become MNCs</h3>
+  <table>
+    <tr><th>Reason</th><th>Explanation</th></tr>
+    <tr><td><b>Cheaper production costs</b></td><td>Especially <b>inexpensive labour</b>. Labour is costly in Germany, partly due to minimum wage laws, so Adidas, BMW and Volkswagen have production facilities overseas where labour is more affordable.</td></tr>
+    <tr><td><b>Economies of scale</b></td><td>As production rises, MNCs gain economies of scale (see 1.5).</td></tr>
+    <tr><td><b>Host country benefits</b></td><td>Good <b>infrastructure</b> (roads, telecommunications, ports). Better quantity, quality or cost of <b>land</b>. <b>Financial incentives</b> from the host government that cut average production cost and help the MNC enter new markets.</td></tr>
+    <tr><td><b>Increased customer base</b></td><td>A larger customer base means higher sales revenue. KFC, Starbucks, Lamborghini and Walmart expanded into China for its huge customer base.</td></tr>
+    <tr><td><b>Brand development and brand value</b></td><td>Operating internationally can raise brand value. Global marketing strategies can raise brand recognition and brand loyalty (Chapter 27).</td></tr>
+    <tr><td><b>Avoiding protectionist policies</b></td><td>By producing inside a country, MNCs usually avoid the trade barriers it imposes. This is why Toyota, Honda and Nissan built factories in the European Union and North America.</td></tr>
+    <tr><td><b>Spreading risks</b></td><td>Bad conditions in one country or region may not damage the whole business. Natural disasters (tsunamis), terrorism (9-11 attacks) and disease (swine flu, mad cow disease) have hit different parts of the world. Over specialization in one region could have cut profit seriously.</td></tr>
+  </table>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Protectionist policies</b> are measures imposed by a country to <b>reduce the competitiveness of imports</b>, such as <b>tariffs</b> (import taxes), <b>quotas</b> and restrictive trade practices.</p>
+  </div>
+
+  <h3>The impact of MNCs on host countries</h3>
+  <p>MNCs affect host countries in ways that can be good or bad.</p>
+  <table>
+    <tr><th>Positive impacts</th><th>Negative impacts</th></tr>
+    <tr><td><b>Job creation</b>: MNCs create jobs. Volkswagen's plant in Kaluga, Russia created over 3,500 jobs with an initial investment of $400 million. Although some MNCs are criticised for "low" pay in poorer countries, they typically pay <b>more than local firms</b>.</td><td><b>Job losses</b>: MNCs can threaten domestic businesses. Competition can push local firms to improve, but it can also leave local firms unable to compete, so they make people redundant or close down.</td></tr>
+    <tr><td><b>Higher national income</b>: MNCs raise the host country's <b>GDP</b> by creating consumption spending (more workers in paid jobs) and boosting <b>export earnings</b>, which raises average living standards. Audi (German) is one of Hungary's largest exporters, producing the Audi TT in western Hungary.</td><td><b>Repatriation of profits</b>: profits are sent back to the home country. This hurts the host country's tax revenues and the size and frequency of <b>foreign direct investment (FDI)</b>, as profits do not stay in the host country.</td></tr>
+    <tr><td><b>Knowledge and technology transfer</b>: new skills and technologies in production. Japanese firms brought lean production and quality management models such as <b>kaizen, just in time, quality circles and total quality management</b> (Chapter 37). Production efficiency and international competitiveness of host country firms rise.</td><td><b>Vulnerability</b>: MNCs are increasingly <b>footloose</b> (Chapter 38), not bound to a location, so they can move at short notice for cost advantages. In 2012 Carrefour left Turkey, Poland, Romania, Malaysia, Indonesia and Singapore.</td></tr>
+    <tr><td><b>Increased competition</b>: more competition should bring efficiency gains for domestic customers. Without the threat of MNCs, domestic firms may lack the incentive to be creative and innovative.</td><td><b>Social responsibilities</b>: anti globalization groups worry about MNCs exploiting scarce resources. Host nations often cannot control large MNCs because of their market power. Walmart's sales revenue is bigger than the GDP of Nigeria and Pakistan. This power can be challenged, especially if the MNC does little to support local communities.</td></tr>
+    <tr><td></td><td><b>Competitive pressures</b>: domestic firms may be forced to cut prices. They may lack the finance and resources to compete, so they become prone to <b>takeover bids</b> or collapse. Technology transfer may also threaten them.</td></tr>
+  </table>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Gross domestic product (GDP)</b> is the <b>value of a country's annual output</b> or national income.</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Case study: Hollywood</span>
+    <p>Hollywood is a threat to many movie industries around the world, so governments often step in to protect their domestic industries and jobs. China and India limit how many Hollywood movies are released each month. China has an official annual quota of 34 foreign movies, while India is the largest producer of movies in the world.</p>
+    <p><b>Point it proves:</b> host governments may use protectionist policies against MNC competition.</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Other examples from the textbook</span>
+    <ul>
+      <li><b>Coca-Cola</b>: founded 1886, the largest beverages company in the world, with 86,200 employees and sales revenue over $37.3bn a year. Sold in over 200 economies. More than 10,000 drinks are consumed every second (over 1.9 billion a day). It protects brand awareness and loyalty through sponsorship of the Olympics, NASCAR, PGA Tour, English Premier League, UEFA European Championships and FIFA World Cup, and exclusive rights in theme parks such as Walt Disney Parks.</li>
+      <li><b>UAE</b>: attracts MNCs (Microsoft, Marriott, DHL, Ericsson) with low taxes, political stability and high GDP per capita. There is no federal income tax and a 0% corporate tax rate. Dubai has over 3.46 million people.</li>
+      <li><b>Bollywood</b>: the Hindi language film industry, the largest in India. Indian cinema is the world's largest film industry by ticket sales and production. India has 16 official languages. The example shows why knowledge of local cultures matters to firms operating globally.</li>
+    </ul>
+  </div>
+  <div class="box cmd">
+    <span class="label">Toolkit link</span>
+    <p>Discuss the <b>opportunities and threats</b> (Chapter 44) that an MNC of your choice presents to a host country of your choice.</p>
+  </div>
+  <p>Key concept link: to what extent does the threat or presence of MNCs encourage creativity in the host country?</p>
+
+  <h3>Multinational companies and the key concepts</h3>
+  <ul>
+    <li><b>Change, ethics, creativity and sustainability</b> are central to any strategy that involves growth in overseas markets.</li>
+    <li>International trade causes problems such as adjusting to foreign customs and cultures. So a business may need to <b>change its practices</b> in a creative and ethical way to suit local laws and regulations. Understanding <b>cultural dimensions</b> (Hofstede, Chapter 54) helps firms operating overseas.</li>
+    <li>Change is not always sustainable. International M&amp;As or strategic alliances do not always work, because of <b>resistance to change and cultural clashes</b>. Then a <b>demerger</b> may happen (sale of part of a business, separating into two or more entities, see 1.5). Examples: Cadbury Schweppes (merged 1969) split in 2008. DaimlerChrysler (merged 1998) demerged in 2007.</li>
+    <li><b>Brand acquisition</b>: an alternative to a full merger or takeover is to buy one of the target company's brands. BMW bought the Rolls Royce brand in 2003 to improve and sustain its broad product portfolio (Chapters 27 and 47). It is relatively low risk but can be expensive. In 2013 Berkshire Hathaway bought the Heinz brand for $28 billion. A firm may also sell off a brand to deal with a <b>liquidity problem</b> (Chapter 20) rather than be bought by another firm, which would cause more disruptive change.</li>
+  </ul>
+  <div class="box key">
+    <span class="label">Key concept links</span>
+    <ul>
+      <li>To what extent should large, profitable MNCs have an <b>ethical obligation</b> to support low income members of society?</li>
+      <li>How might MNC activities cause <b>positive and negative change</b> to host countries?</li>
+      <li><b>Toolkit</b>: why might knowledge of <b>Hofstede's cultural dimensions</b> matter for MNCs working in overseas markets?</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <ul>
+      <li>To understand the difficulties MNCs face overseas, link this unit with <b>STEEPLE analysis</b> (Chapter 46): how the political, legal and social environments affect an MNC's growth strategy.</li>
+      <li>For "impact on host country" questions, give <b>both</b> positive and negative impacts, name who is affected (workers, local firms, government, consumers) and make a judgement.</li>
+      <li>Use real examples with numbers or names (Volkswagen in Russia, Carrefour leaving countries, Hollywood quotas) to show application.</li>
+    </ul>
+  </div>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Multinational company (MNC)</b>: operates in two or more countries, with its head office usually in the home country.</li>
+      <li><b>Host country</b>: nation that lets an MNC set up there.</li>
+      <li><b>Gross domestic product (GDP)</b>: value of a country's annual output or national income.</li>
+      <li><b>Protectionist policies</b>: measures such as tariffs and quotas that reduce the competitiveness of imports.</li>
+      <li><b>Repatriation of profits</b>: sending profits back to the home country.</li>
+      <li><b>Footloose</b>: not tied to a location, free to move at short notice.</li>
+      <li><b>Brand acquisition</b>: buying one brand of a target company instead of the whole firm.</li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms</span>
+    <ul>
+      <li><b>Define / Outline</b>: give the meaning or a brief account (evidence that a firm is an MNC).</li>
+      <li><b>Distinguish</b>: show differences (brand awareness and brand loyalty).</li>
+      <li><b>Explain</b>: give reasons (how change might affect MNC location).</li>
+      <li><b>Examine</b>: consider key elements (benefits to MNCs of operating abroad).</li>
+      <li><b>Discuss</b>: balanced review with a conclusion (opportunities and threats of operating overseas).</li>
+    </ul>
+  </div>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> Define a multinational company.</p>
+    <p>An organization that operates in two or more countries, with its head office usually in the home country.</p>
+    <p><b>2.</b> State two positive and two negative impacts of MNCs on a host country.</p>
+    <p>Positive: job creation, knowledge and technology transfer. Negative: repatriation of profits, job losses in local firms.</p>
+    <p><b>3.</b> Why would a car maker build a factory inside another country instead of exporting?</p>
+    <p>To avoid protectionist policies such as tariffs and quotas, and to use cheaper labour and local incentives.</p>
+  </details>
+</section>
+</main>
+</div>
+<script>
+/* Highlight the sub unit in the sidebar while scrolling */
+(function(){
+  var links = document.querySelectorAll('nav.side a');
+  var secs = document.querySelectorAll('section.sub');
+  function onScroll(){
+    var pos = window.scrollY + 120, cur = secs[0] && secs[0].id;
+    secs.forEach(function(s){ if (s.offsetTop <= pos) cur = s.id; });
+    links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>

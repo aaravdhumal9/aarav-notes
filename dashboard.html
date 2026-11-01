@@ -97,7 +97,16 @@ button.link{background:none;border:0;font:inherit;font-size:15px;color:var(--mut
      for example sub unit 1.2 uses section id "s1-2".
    ===================================================================== */
 const SUBJECTS = [
-  { id:'bm',  name:'Business Management HL', color:'#1D4ED8', status:'ready', units:[] },
+  { id:'bm',  name:'Business Management HL', color:'#1D4ED8', status:'ready', units:[
+    { title:'Unit 1 Introduction to Business Management', file:'bm-hl-unit-1.html', subs:[
+      { id:'s1-1', num:'1.1', title:'What is a business?' },
+      { id:'s1-2', num:'1.2', title:'Types of business entities' },
+      { id:'s1-3', num:'1.3', title:'Business objectives' },
+      { id:'s1-4', num:'1.4', title:'Stakeholders' },
+      { id:'s1-5', num:'1.5', title:'Growth and evolution' },
+      { id:'s1-6', num:'1.6', title:'Multinational companies (MNCs)' }
+    ] }
+  ] },
   { id:'eco', name:'Economics HL', color:'#0F766E', status:'ready', units:[] },
   { id:'ess', name:'ESS SL', color:'#4D7C0F', status:'ready', units:[] },
   { id:'maths', name:'Maths AI HL', color:'#6D28D9', status:'soon', units:[] },
