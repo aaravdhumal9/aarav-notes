@@ -62,7 +62,14 @@ button.go:disabled{opacity:.5;cursor:default}
 
 <script>
 const cfg = window.IBDP_CONFIG || {};
-const sb = (cfg.url && cfg.anonKey && window.supabase) ? window.supabase.createClient(cfg.url, cfg.anonKey) : null;
+let sb = null, setupProblem = '';
+try {
+  if (!cfg.url || !cfg.anonKey) setupProblem = 'Supabase is not connected yet. Add your URL and anon key in config.js.';
+  else if (!window.supabase) setupProblem = 'Could not load the Supabase library. Check your internet connection.';
+  else sb = window.supabase.createClient(String(cfg.url).trim(), String(cfg.anonKey).trim());
+} catch (e) {
+  setupProblem = 'Your Supabase URL or key in config.js is not valid: ' + e.message;
+}
 const DASH = 'dashboard.html';
 
 const $ = id => document.getElementById(id);
@@ -83,7 +90,7 @@ $('tabIn').addEventListener('click', () => setMode('in'));
 $('tabUp').addEventListener('click', () => setMode('up'));
 
 if (!sb){
-  msg('Supabase is not connected yet. Add your keys in config.js.', 'err');
+  msg(setupProblem, 'err');
 } else {
   /* Already signed in? Go straight to the notes. */
   sb.auth.getSession().then(({ data }) => { if (data.session) location.href = DASH; });
@@ -91,7 +98,7 @@ if (!sb){
 
 $('form').addEventListener('submit', async e => {
   e.preventDefault();
-  if (!sb){ msg('Supabase is not connected yet. Add your keys in config.js.', 'err'); return; }
+  if (!sb){ msg(setupProblem, 'err'); return; }
   const email = $('email').value.trim(), pw = $('pw').value;
   if (!email || !pw){ msg('Enter your email and password.', 'err'); return; }
   if (mode === 'up' && pw.length < 6){ msg('Password needs at least 6 characters.', 'err'); return; }
@@ -114,7 +121,7 @@ $('form').addEventListener('submit', async e => {
 });
 
 $('forgot').addEventListener('click', async () => {
-  if (!sb){ msg('Supabase is not connected yet.', 'err'); return; }
+  if (!sb){ msg(setupProblem, 'err'); return; }
   const email = $('email').value.trim();
   if (!email){ msg('Type your email above first.', 'err'); return; }
   const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.href });
