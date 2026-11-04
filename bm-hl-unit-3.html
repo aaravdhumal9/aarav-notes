@@ -1,0 +1,1586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Management HL Unit 3 Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Subject colour: change this one value per subject (see references/subjects.md).
+     It is used ONLY for heading text, labels and numbers. Everything else is white. */
+  --accent:#1D4ED8;
+
+  --text:#1F2937;
+  --muted:#6B7280;
+  --bg:#FFFFFF;
+  --line:#E5E7EB;
+  /* label text colours for the boxes (text only, boxes stay white) */
+  --tip:#B45309;
+  --ex:#15803D;
+  --key:#6D28D9;
+  --syl:#DC2626;
+  --cmd:#475569;
+  --curve2:#F59E0B;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Lexend",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight:300;line-height:1.75;font-size:19px}
+b,strong,th,summary{font-weight:600}
+.layout{display:flex;max-width:1180px;margin:0 auto}
+/* Sidebar */
+nav.side{width:260px;flex:0 0 260px;position:sticky;top:0;align-self:flex-start;
+  height:100vh;overflow:auto;padding:28px 20px;border-right:1px solid var(--line);background:var(--bg)}
+nav.side .subject{font-weight:600;color:var(--accent);font-size:15.5px;letter-spacing:.04em;text-transform:uppercase}
+nav.side .unit{font-size:22px;font-weight:600;margin:4px 0 18px}
+nav.side a{display:block;padding:8px 10px;margin:2px 0;
+  color:var(--text);text-decoration:none;font-size:17px;line-height:1.4}
+nav.side a b{color:var(--accent);margin-right:6px}
+nav.side a:hover{text-decoration:underline}
+nav.side a.active{font-weight:600;color:var(--accent)}
+nav.side a.active b{text-decoration:underline}
+/* Main */
+main{flex:1;min-width:0;padding:28px 32px 80px;background:var(--bg)}
+.note-tag{display:inline-block;color:var(--muted);border:1px solid var(--line);
+  border-radius:6px;padding:4px 10px;font-size:14.5px;margin-bottom:18px}
+section.sub{margin-bottom:64px}
+.bar{color:var(--accent);font-size:31px;font-weight:600;margin:0 0 20px;
+  padding-bottom:10px;border-bottom:1px solid var(--line)}
+.bar span{margin-right:12px}
+h3{font-size:22px;font-weight:600;margin:28px 0 8px;color:var(--accent)}
+p{margin:8px 0}
+ul,ol{margin:8px 0 8px 22px;padding:0}
+li{margin:4px 0}
+/* Boxes: white, thin neutral border, only the label text is coloured */
+.box{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:18px 0}
+.box .label{display:block;font-size:14px;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;margin-bottom:4px}
+.def .label{color:var(--accent)}
+.tip .label{color:var(--tip)}
+.ex .label{color:var(--ex)}
+.key .label{color:var(--key)}
+.syl .label{color:var(--syl)}
+.cmd .label{color:var(--cmd)}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:17.5px}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;background:var(--bg)}
+th{color:var(--accent)}
+figure{margin:20px 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+figure svg{width:100%;height:auto;display:block;max-width:520px;margin:0 auto;font-family:inherit}
+figcaption{font-size:16px;color:var(--muted);margin-top:8px;text-align:center}
+details{border:1px solid var(--line);border-radius:8px;padding:8px 14px;margin:8px 0;background:var(--bg)}
+summary{cursor:pointer}
+code{border:1px solid var(--line);padding:1px 6px;border-radius:4px;font-size:.92em;font-family:inherit}
+/* Phones */
+@media (max-width: 820px){
+  .layout{display:block}
+  nav.side{position:sticky;top:0;z-index:5;width:100%;height:auto;max-height:none;
+    display:flex;gap:6px;overflow-x:auto;padding:10px 12px;
+    border-right:0;border-bottom:1px solid var(--line)}
+  nav.side .subject,nav.side .unit{display:none}
+  nav.side a{white-space:nowrap;margin:0}
+  main{padding:20px 16px 60px}
+  .bar{font-size:25px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media print{ nav.side{display:none} main{padding:0} .layout{display:block} }
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav class="side" aria-label="Sub units">
+  <a href="dashboard.html" class="home">← All subjects</a>
+  <div class="subject">Business Management HL</div>
+  <div class="unit">Unit 3 Finance and accounts</div>
+  <a href="#s3-1"><b>3.1</b>Introduction to finance</a>
+  <a href="#s3-2"><b>3.2</b>Sources of finance</a>
+  <a href="#s3-3"><b>3.3</b>Costs and revenues</a>
+  <a href="#s3-4"><b>3.4</b>Final accounts</a>
+</nav>
+
+<main>
+<!-- ============ SUB UNIT 3.1 ============ -->
+<section class="sub" id="s3-1">
+  <h2 class="bar"><span>3.1</span>Introduction to finance</h2>
+  <p><i>Syllabus: the role of finance for businesses, capital expenditure and revenue expenditure (AO2).</i></p>
+
+  <h3>Why businesses need finance</h3>
+  <p>The role or purpose of finance for a business can be split into two groups: <b>capital expenditure</b> and <b>revenue expenditure</b>. Every spending decision a business makes falls into one of these two groups.</p>
+
+  <h3>Capital expenditure</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Capital expenditure</b> refers to <b>investment spending</b> on <b>fixed assets</b>, such as the purchase of <b>machinery</b>, <b>equipment</b>, <b>land</b> and <b>buildings</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Fixed assets</b> (or <b>noncurrent assets</b>) are items of <b>monetary value</b> that have a <b>long term function</b> for businesses, so can be <b>used repeatedly</b> for the purpose of <b>production</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Collateral</b> refers to the <b>financial guarantee</b> for securing <b>external loan capital</b> to finance <b>investment expenditure</b> for business growth.</p>
+  </div>
+
+  <ul>
+    <li>Fixed assets are <b>not intended to be sold</b> in the short term. They are <b>used</b> to produce goods and services.</li>
+    <li>Examples: land, buildings, equipment, machinery and commercial vehicles.</li>
+    <li>Fixed assets give <b>long term benefits</b> to the business. They also decide the <b>scale</b> (size) of the business's operations.</li>
+    <li>The money for capital expenditure usually comes from <b>long term sources of finance</b> (see 3.2), because fixed assets cost a lot.</li>
+    <li>Fixed assets can act as <b>collateral</b>. This helps the business to get extra loans to pay for growth.</li>
+  </ul>
+
+  <h3>Reasons for capital expenditure</h3>
+  <ul>
+    <li>To add <b>extra production capacity</b> as the business grows.</li>
+    <li>To improve <b>efficiency</b> by using the latest technology, including IT systems and production technology.</li>
+    <li>To <b>replace</b> worn out, damaged or <b>obsolete</b> (outdated) capital equipment and machinery.</li>
+    <li>To <b>comply</b> with changing laws and regulations, for example green technologies.</li>
+  </ul>
+
+  <h3>Challenges of capital expenditure</h3>
+  <ul>
+    <li>The <b>high cost</b> of fixed assets.</li>
+    <li>The <b>limited sources of finance</b> available for such investments. Because of this, some investments are simply <b>not feasible</b>.</li>
+    <li>Managers often have to look at the <b>expected return on investment</b> using <b>investment appraisal</b> methods (covered in a later chapter of the textbook) before they decide.</li>
+  </ul>
+
+  <h3>Revenue expenditure</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Revenue expenditure</b> refers to <b>spending</b> on the <b>day to day running</b> of a business, such as payment of <b>rent</b>, <b>wages</b>, <b>salaries</b> and <b>utility bills</b>.</p>
+  </div>
+  <ul>
+    <li>Other examples: <b>raw materials</b>. It also includes <b>indirect costs</b> such as <b>insurance</b> and <b>advertising</b>.</li>
+    <li>Revenue expenditure creates value for the business <b>today</b>, not in the future.</li>
+    <li>Expenses come from producing goods and services. This production <b>generates revenue</b>.</li>
+    <li>Costs must be <b>controlled</b> so that sales revenue is enough to <b>cover production costs</b>. Only then can the business <b>earn a profit</b>.</li>
+  </ul>
+
+  <h3>Examples of capital and revenue expenditure</h3>
+  <table>
+    <tr><th>Capital expenditure</th><th>Revenue expenditure</th></tr>
+    <tr><td>Capital equipment</td><td>Advertising and promotion</td></tr>
+    <tr><td>Furniture, fixtures and fittings</td><td>Energy costs</td></tr>
+    <tr><td>Computer and IT systems</td><td>Freight and delivery</td></tr>
+    <tr><td>Intellectual property</td><td>Insurance</td></tr>
+    <tr><td>Machinery</td><td>Office supplies and administration</td></tr>
+    <tr><td>Mergers and acquisitions</td><td>Raw materials and components</td></tr>
+    <tr><td>Property and premises</td><td>Rent</td></tr>
+    <tr><td>Vehicles</td><td>Wages and salaries</td></tr>
+  </table>
+
+  <h3>Capital expenditure compared with revenue expenditure</h3>
+  <table>
+    <tr><th></th><th>Capital expenditure</th><th>Revenue expenditure</th></tr>
+    <tr><td><b>Spent on</b></td><td>Fixed (noncurrent) assets</td><td>Day to day running of the business</td></tr>
+    <tr><td><b>Benefit lasts</b></td><td>Long term. The asset is used again and again.</td><td>Now. Value is gained today.</td></tr>
+    <tr><td><b>Usual source of finance</b></td><td>Long term sources (see 3.2)</td><td>Short term sources and the money coming in from sales</td></tr>
+    <tr><td><b>Main challenge</b></td><td>High cost and limited finance</td><td>Controlling costs so revenue covers them</td></tr>
+  </table>
+
+  <h3>Who uses which sources of finance</h3>
+  <p>Different businesses can reach different sources of finance. The main source for <b>sole traders</b> is their <b>personal savings</b>. Larger and more established businesses can use other sources for capital expenditure, such as <b>selling shares on a stock exchange</b>. All of these sources are covered in 3.2.</p>
+
+  <h3>Finance and the key concepts</h3>
+  <ul>
+    <li><b>Change</b>: capital expenditure helps a business to change. More people working from home meant businesses had to buy laptops, smartphones and other hardware, and pay for cloud based software subscriptions.</li>
+    <li><b>Staying competitive</b>: businesses must invest in their future. Some businesses collapse because they do not spend enough on capital expenditure to adapt to changes in the external environment, such as changing consumer trends or competitors moving in a new strategic direction.</li>
+    <li><b>Revenue expenditure matters too</b>: attractive and competitive pay packages motivate the workforce. This improves productivity and employee loyalty.</li>
+    <li><b>Sustainability</b>: both types of expenditure are vital for the long term survival of a business.</li>
+  </ul>
+
+  <div class="box ex">
+    <span class="label">Real world example</span>
+    <p><b>The London Olympic Games.</b> London was the first city to host the modern Olympics three times (1908, 1948 and 2012). Around half a million new jobs were added in the UK construction industry to prepare for the 2012 Games. Transport for London paid for many improvements, including bigger railway networks and Britain's first high speed ("bullet") trains. <b>Point it shows:</b> large capital expenditure on infrastructure with long lasting benefits, and benefits for many stakeholders such as construction workers and travellers.</p>
+  </div>
+
+  <div class="box ex">
+    <span class="label">Worked example</span>
+    <p>A cafe pays $4,000 for a new coffee machine, $900 for this month's rent and $350 for coffee beans. Classify each payment.</p>
+    <p>Step 1: ask "will the item be used repeatedly over a long time?"<br>
+       Coffee machine: yes. It is a fixed asset, so it is <b>capital expenditure</b> ($4,000).<br>
+       Step 2: ask "is it a day to day running cost?"<br>
+       Rent: yes, <b>revenue expenditure</b> ($900). Coffee beans: yes, raw materials, <b>revenue expenditure</b> ($350).<br>
+       Total revenue expenditure this month is $900 + $350 = $1,250.</p>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <p>Explain the difference using <b>time</b> and <b>purpose</b>: capital expenditure buys assets that last and are used again and again, revenue expenditure pays for the daily running of the business. Always add an <b>example from the case</b>. Remember that the textbook puts <b>mergers and acquisitions</b> and <b>intellectual property</b> under capital expenditure, and <b>advertising</b> and <b>insurance</b> under revenue expenditure.</p>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Textbook check</span>
+    <p>The textbook mentions "Box 14.1" (a business that collapsed from too little capital expenditure) but that box is not in the pages you sent. If it is in your textbook, add its example to these notes.</p>
+  </div>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Capital expenditure</b>: investment spending on fixed assets such as machinery, equipment, land and buildings.</li>
+      <li><b>Revenue expenditure</b>: spending on the day to day running of a business.</li>
+      <li><b>Fixed assets (noncurrent assets)</b>: items of value used again and again for production over a long time.</li>
+      <li><b>Collateral</b>: a financial guarantee used to get an external loan.</li>
+      <li><b>Obsolete</b>: outdated.</li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms to expect</span>
+    <ul>
+      <li><b>Define</b> / <b>Outline</b>: give the meaning of capital or revenue expenditure in a few words, with one example.</li>
+      <li><b>Distinguish</b>: show the differences between the two, side by side.</li>
+      <li><b>Explain</b>: give reasons, for example why a business spends on capital equipment.</li>
+      <li><b>Examine</b>: look at the benefits and limits, for example the benefits of a big project for different stakeholders.</li>
+    </ul>
+  </div>
+
+  <h3>Ideas to think about (from the textbook)</h3>
+  <ul>
+    <li>How might knowledge of the <b>external environment</b> help managers make better decisions about revenue and capital expenditure?</li>
+    <li>TOK: how can managers <b>know</b> what to invest in?</li>
+    <li>Does capital expenditure <b>enhance or limit creativity</b> in a business?</li>
+  </ul>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> Define capital expenditure and give two examples.</p>
+    <p>Investment spending on fixed assets that are used repeatedly for production. Examples: machinery and vehicles.</p>
+    <p><b>2.</b> Is paying wages capital or revenue expenditure? Why?</p>
+    <p>Revenue expenditure. Wages are a day to day running cost and the benefit is gained now.</p>
+    <p><b>3.</b> State two reasons why a business might spend on capital equipment.</p>
+    <p>Any two of: more production capacity, better efficiency with new technology, replacing worn out or obsolete equipment, following new laws and regulations.</p>
+  </details>
+</section>
+
+<!-- ============ SUB UNIT 3.2 ============ -->
+<section class="sub" id="s3-2">
+  <h2 class="bar"><span>3.2</span>Sources of finance</h2>
+  <p><i>Syllabus: internal sources (personal funds for sole traders, retained profit, sale of assets) and external sources (share capital, loan capital, overdrafts, trade credit, crowdfunding, leasing, microfinance providers, business angels), both AO2. Appropriateness of short or long term sources of finance for a given situation (AO3).</i></p>
+
+  <h3>What are sources of finance?</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Sources of finance</b> is the general term used to refer to <b>where or how</b> businesses <b>obtain their funds</b>, such as from personal funds, retained profits, loan capital and share capital.</p>
+  </div>
+  <p>All businesses need money for the <b>set up</b> of the business, for <b>day to day running</b> (revenue expenditure) and for <b>expansion</b> (capital expenditure). Sources of finance are split into <b>internal</b> and <b>external</b>.</p>
+
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Internal sources of finance</b> are <b>funds generated from within</b> the organization, namely through <b>personal funds</b>, <b>retained profits</b> and the <b>sale of assets</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>External sources of finance</b> are the <b>funds from outside</b> of the organization, such as through <b>debt</b> (overdrafts and loan capital), <b>share capital</b> and <b>business angels</b>.</p>
+  </div>
+
+  <h3>Internal sources of finance</h3>
+
+  <h3>(i) Personal funds</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Personal funds</b> are a source of <b>internal finance</b>, referring to the use of an <b>entrepreneur's own savings</b>. Personal funds are usually used to finance <b>business start ups</b> for <b>sole traders</b>.</p>
+  </div>
+  <ul>
+    <li>Also called <b>owner's capital</b>. It is the main source of finance for sole traders.</li>
+    <li>For most sole traders it is <b>not enough</b>, so they need other sources too.</li>
+    <li><b>Example:</b> chef Jamie Oliver used £500,000 ($720,000) of his own money to fund his restaurant "Fifteen", which hired fifteen unknown recruits.</li>
+  </ul>
+
+  <h3>(ii) Retained profit</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Retained profit</b> is the value of the <b>surplus</b> that a business <b>keeps</b> to use within the business <b>after paying corporate taxes</b> on its profits to the government and <b>dividend payments</b> to its shareholders.</p>
+  </div>
+  <ul>
+    <li>Often used for <b>capital expenditure</b>: buying or upgrading fixed assets.</li>
+    <li>Some may be kept in a <b>contingency fund</b> for emergencies, crises and unforeseen spending.</li>
+    <li><b>Benefit:</b> no <b>interest charges</b>.</li>
+  </ul>
+
+  <h3>(iii) Sale of assets</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Sale of assets</b> means <b>selling existing items of value</b> that the business owns, such as <b>dormant assets</b> (unused assets) and <b>obsolete assets</b> (outdated assets).</p>
+  </div>
+  <ul>
+    <li>Examples: selling obsolete machinery and old computers that have just been replaced.</li>
+    <li>If a business <b>relocates</b>, it may sell land and buildings.</li>
+    <li>In extreme cases, a business can sell <b>subsidiaries</b> to deal with a major <b>liquidity threat</b> to its survival.</li>
+  </ul>
+
+  <h3>External sources of finance</h3>
+
+  <h3>(i) Share capital</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Share capital</b> is the money raised from <b>selling shares</b> in a <b>limited liability company</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>An <b>initial public offering (IPO)</b> refers to a business converting its legal status to a <b>publicly traded company</b> by <b>floating</b> (or selling) its shares on a <b>stock exchange</b> for the <b>first time</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>share issue</b> (or <b>share placement</b>) means an existing <b>publicly held company</b> raises <b>further finance</b> by selling <b>more of its shares</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>stock exchange</b> is a <b>highly regulated marketplace</b> where individuals and businesses can <b>buy and/or sell shares</b> in <b>publicly traded companies</b>.</p>
+  </div>
+  <ul>
+    <li>Share capital is the <b>main source</b> of finance for most limited liability companies. It is recorded on the company's <b>balance sheet</b>.</li>
+    <li><b>Key advantage:</b> it can provide a <b>huge amount</b> of finance. Petrobras (Brazil) raised a world record $70 billion from a public share issue in September 2010.</li>
+    <li><b>Privately held</b> companies cannot sell shares to the general public. <b>Publicly held</b> companies can sell shares on a stock exchange.</li>
+    <li>A stock exchange lets companies <b>raise capital</b> and provides a market for <b>second hand shares</b> and government stocks. Large ones include the London, Tokyo and New York Stock Exchanges.</li>
+    <li>Many businesses "go public" by floating shares for the first time (an IPO). Popular IPOs are heavily <b>oversubscribed</b>, which pushes up the share price.</li>
+    <li><b>Disadvantages:</b> ownership and control become <b>diluted</b>. The process also involves many <b>legal and administrative procedures</b> with costs.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Real world example</span>
+    <p><b>Agricultural Bank of China (ABC).</b> In August 2010 ABC completed its IPO in Shanghai and Hong Kong and raised $22.1 billion. This was the largest flotation in the world at the time, beating the $21.9 billion raised by the IPO of ICBC (Industrial and Commercial Bank of China) in October 2006. Investors still put in money despite weak sentiment in Asian stock markets and fears that shares were overvalued. Today ABC has over 320 million customers in 24,000 branches. <b>Point it shows:</b> an IPO can raise a very large sum, and large well known firms attract investors.</p>
+  </div>
+  <div class="box tip">
+    <span class="label">Textbook check</span>
+    <p>The textbook refers to "Box 15.1" (on oversubscribed IPOs and the ICBC share issue) but that box is not in the pages you sent. If it is in your textbook, add its example here.</p>
+  </div>
+  <div class="box tip">
+    <span class="label">Common mistake</span>
+    <p>Students often write that a fall in a company's share price reduces its profits. It is more likely the other way round. Poor performance lowers the value of the company, and then the share price falls.</p>
+  </div>
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <p>When shareholders <b>sell</b> their shares, the company <b>does not receive</b> that money. These shares are traded on the <b>secondary market</b> of the stock exchange, and no new shares have been issued by the company.</p>
+  </div>
+
+  <h3>(ii) Loan capital</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Loan capital</b> (or <b>debt capital</b>) refers to <b>medium to long term</b> sources of <b>interest bearing finance</b> obtained from <b>commercial lenders</b>. Examples include <b>mortgages</b>, <b>business development loans</b> and <b>debentures</b>.</p>
+  </div>
+  <ul>
+    <li>Interest is charged and can be <b>fixed or variable</b>, depending on the agreement.</li>
+    <li>The money is paid back in <b>instalments</b> over a set time, such as 5, 10 or 25 years.</li>
+  </ul>
+  <table>
+    <tr><th>Type</th><th>What it is</th></tr>
+    <tr><td><b>Mortgage</b></td><td>A <b>secured loan</b> to buy property (land or buildings). If the borrower <b>defaults</b> (fails to repay), the lender can <b>repossess</b> the property.</td></tr>
+    <tr><td><b>Business development loan</b></td><td>A highly <b>flexible</b> loan made to fit the borrower's needs. It can be used to start or expand a business, buy specialist equipment and assets, or improve cash flow.</td></tr>
+    <tr><td><b>Debenture</b></td><td>A <b>long term loan issued by a business</b>. Holders (individuals, governments or other businesses) get <b>interest even if the business makes a loss</b>, and before shareholders get any dividends. Interest can be fixed or variable.</td></tr>
+  </table>
+  <ul>
+    <li>Debenture holders have <b>no ownership or voting rights</b>, so the business keeps <b>control</b>. Debentures give long term finance without the business losing control.</li>
+    <li><b>Drawback:</b> issuing debentures raises the firm's <b>gearing ratio</b> (more borrowing as a percentage of total capital employed). The firm is then <b>more at risk if interest rates rise</b>.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Real world examples</span>
+    <p><b>Kellett School, Hong Kong (2013).</b> The school sold record breaking debentures worth up to HK$10m, refundable when students leave, to help pay for a new HK$200m campus (auditorium, swimming pool, library and more). Fees ranged from HK$123,500 to HK$168,800 a year. Critics said the high cost of education could put off skilled expat families. A rival school, Harrow International, offers debentures of up to HK$3m that carry no interest. Debentures are common in international schools in Hong Kong because of the costs of capital expenditure and land.</p>
+    <p><b>Arsenal Football Club</b> used debentures to help build the Emirates Stadium in London.</p>
+  </div>
+
+  <h3>(iii) Overdrafts</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Overdrafts</b> allow a business to <b>spend in excess of the amount in its bank account</b>, up to a <b>pre determined limit</b>. They are the <b>most flexible form of borrowing</b> for most businesses in the <b>short term</b>.</p>
+  </div>
+  <ul>
+    <li>Commonly used for <b>minor cash flow problems</b>.</li>
+    <li>Interest can be relatively <b>high</b>, but overdrafts are usually <b>cheaper than bank loans</b>. This is because they are short term and interest is charged <b>daily</b> and <b>only if</b> the business is overdrawn.</li>
+    <li><b>Suitable when:</b> a large cash outflow is needed (for example a retailer stocking up for the peak season), or when the business has sold on trade credit and is waiting to be paid.</li>
+    <li><b>Disadvantage:</b> overdrafts are <b>repayable on demand</b> by the lender.</li>
+  </ul>
+
+  <h3>(iv) Trade credit</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Trade credit</b> allows a business to <b>postpone payments</b> or to "<b>buy now and pay later</b>". The credit provider does <b>not receive any cash</b> from the buyer until a later date (usually between <b>30 to 60 days</b>).</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Creditors</b> are <b>suppliers</b> who allow a business to purchase goods and/or services on trade credit. The customers who owe the money are called <b>debtors</b>.</p>
+  </div>
+  <ul>
+    <li>Postponing payments to suppliers helps to <b>ease cash flow problems</b>.</li>
+    <li><b>Credit cards</b> are similar, but the creditor is a financial institution such as a commercial bank (for example Visa or American Express). It acts as a <b>cash advance</b> to the card holder. Credit cards are a vital source for sole traders and partnerships.</li>
+  </ul>
+
+  <h3>(v) Crowdfunding</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Crowdfunding</b> is the practice of raising finance for a business venture or project by getting <b>small amounts of money</b> from a <b>large number of people</b>, usually through <b>online platforms</b>.</p>
+  </div>
+  <ul>
+    <li>It is the <b>opposite</b> of the traditional method of borrowing a large sum from a small number of lenders.</li>
+    <li>It uses online and social media platforms (which charge a hosting fee) and also networks of <b>friends, family and work colleagues</b>.</li>
+    <li><b>Donation crowdfunding:</b> people give money that the business <b>does not have to pay back</b>.</li>
+    <li>The more <b>creative or innovative</b> the idea, the more likely it is to raise funds this way.</li>
+    <li>In many countries crowdfunding is <b>heavily regulated</b> to protect donors and prevent fraud.</li>
+    <li><b>Drawback:</b> start ups that pitch for investors often <b>lose some ownership and control</b>, because investors ask for shares in the new company.</li>
+  </ul>
+
+  <h3>(vi) Leasing</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Leasing</b> is a form of <b>hiring</b> whereby a <b>lessee</b> pays <b>rental income</b> to hire assets from the <b>lessor</b>, the <b>legal owner</b> of the assets.</p>
+  </div>
+  <ul>
+    <li>It can be <b>cheaper</b> to lease assets such as machinery, equipment, computers, vehicles and buildings, especially in the short to medium term.</li>
+    <li>Suitable for businesses that do <b>not have the initial capital</b> to buy. This <b>releases cash</b> for other uses.</li>
+    <li>The <b>lessor</b> is responsible for <b>repairs and maintenance</b>.</li>
+    <li>Spending on leased assets counts as a <b>business expense</b>, which can <b>reduce the tax bill</b> of the lessee.</li>
+    <li><b>Disadvantage:</b> in the long term, leasing is <b>more expensive</b> than hire purchase or buying the asset outright.</li>
+  </ul>
+  <table>
+    <tr><th>Related method</th><th>How it works</th></tr>
+    <tr><td><b>Sale and leaseback</b></td><td>A business <b>sells a fixed asset to raise finance</b> and <b>immediately leases it back</b>. Ownership is transferred but the asset does not physically leave the business.</td></tr>
+    <tr><td><b>Hire purchase (HP)</b></td><td>The business pays for the asset in <b>instalments</b> (for example over 12 or 24 months). The asset is <b>legally owned by the creditor until the last payment</b>. A <b>deposit</b> is often needed. If the buyer <b>defaults</b>, the lender can <b>repossess</b> the asset. Interest is charged. <b>Difference from leasing:</b> the buyer <b>eventually owns</b> the asset.</td></tr>
+  </table>
+  <div class="box ex">
+    <span class="label">Real world example</span>
+    <p><b>Wizz Air.</b> In late 2013 the Hungarian low cost airline signed a sale and leaseback deal with COB Leasing Co. of China to finance six Airbus A320 aircraft. The deal raised $549 million for expansion to new routes (Barcelona, Bologna, Dortmund and Rome from 2014). In 2020, because of COVID 19, Wizz Air carried 16.6 million passengers, only 42% of the 40 million in the year before. Established in 2003, it flies to 150 destinations in 44 countries. <b>Point it shows:</b> a sale and leaseback frees up large sums tied up in assets. Police cars are another common leased asset.</p>
+  </div>
+
+  <h3>(vii) Microfinance providers</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Microfinance</b> is a type of financial service aimed at <b>entrepreneurs of small businesses</b>, especially <b>females</b> and those on <b>low incomes</b>.</p>
+  </div>
+  <ul>
+    <li>Microfinance providers are <b>social enterprises</b>. They help disadvantaged people to get essential financial services and help <b>reduce poverty</b>.</li>
+    <li>Without them, small businesses have very limited access to banking and insurance. Often the only finance comes from <b>unofficial money lenders</b> at extremely high cost.</li>
+    <li>The funds are approved for <b>microenterprise development</b>.</li>
+    <li>According to the World Bank, over 500 million people have benefited directly, yet nearly 3 billion people in low income countries have little or no access to official financial services.</li>
+  </ul>
+  <table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td><b>Accessibility:</b> helps people in poverty become financially independent. Commercial banks do not usually lend such small amounts to this group.</td><td><b>Immorality:</b> critics say it is unethical because the providers are for profit, so they profit from the poor and unemployed.</td></tr>
+    <tr><td><b>Job creation:</b> good use of microfinance creates new jobs, which helps society.</td><td><b>Limited finance:</b> only small sums are offered because of the high risk of <b>default</b> (failure to repay).</td></tr>
+    <tr><td><b>Social wellbeing:</b> successful applicants are less likely to pull their children out of school and get better access to healthcare for their families.</td><td><b>Limited eligibility:</b> not all poor people qualify. Providers are for profit, so they must make sure borrowers can repay.</td></tr>
+  </table>
+  <div class="box ex">
+    <span class="label">Real world example</span>
+    <p><b>BRAC</b> (formerly the Bangladesh Rural Advancement Committee) is the largest microfinance provider in Bangladesh. Founded in 1972 with its head office in Dhaka, it has over 97,700 staff, most of them women, and has helped more than 126 million people in 11 countries.</p>
+  </div>
+
+  <h3>(viii) Business angels</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Business angels</b> are <b>extremely wealthy individuals</b> who <b>risk their own money</b> by investing in <b>small to medium sized businesses</b> that have <b>high growth potential</b>.</p>
+  </div>
+  <ul>
+    <li>They back <b>high risk, high return</b> ventures, often firms that cannot get enough finance from commercial banks and are too small to attract shareholders.</li>
+    <li>They often take a <b>proactive role</b> in setting up or running the business, so the owner <b>loses some control</b>.</li>
+    <li>The owner may later need to <b>buy out</b> the angel's stake to regain control and ownership.</li>
+    <li><b>Advantage:</b> their <b>experience and financial backing</b> can be a major help to the survival and success of a new business.</li>
+  </ul>
+  <h3>What business angels look for</h3>
+  <table>
+    <tr><th>Criterion</th><th>Meaning</th></tr>
+    <tr><td><b>Return on investment</b></td><td>They want a positive return. Most start ups fail, so each investment needs good potential to be highly profitable.</td></tr>
+    <tr><td><b>The business plan</b></td><td>Sets out the purpose and goals of the venture. They want to see that the firm understands its market, can compete in a high growth market with few competitors, and has creative and original ideas.</td></tr>
+    <tr><td><b>People</b></td><td>No one person has all the skills, experience and contacts. Success needs a good team. Poor people management is a major cause of business failure.</td></tr>
+    <tr><td><b>Track record</b></td><td>The past record of the business and managers, such as earnings history, repaying earlier lenders on time and past achievements of the entrepreneurs.</td></tr>
+  </table>
+  <div class="box ex">
+    <span class="label">Real world examples</span>
+    <p><b>UK business angels.</b> According to the UK Business Angels Association, about 18,000 angels invest around £1.5 billion a year in the UK. A typical angel invests about £40,000, for up to eight years, and is driven by helping others succeed. Only about 5% of Britain's angel investors are female.</p>
+    <p><b>Tawfeer Market (Egypt).</b> An online grocery business founded in 2020 that delivers in Alexandria. In early 2022 it raised $500,000 from business angels. Egypt's grocery market is worth over $50 billion, so more competitors are expected.</p>
+  </div>
+
+  <h3>Which businesses can use which sources</h3>
+  <table>
+    <tr><th>Source</th><th>Sole traders</th><th>Partnerships</th><th>Private limited company</th><th>Public limited company</th><th>Non profit organization</th></tr>
+    <tr><td>Business angels</td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td></tr>
+    <tr><td>Crowdfunding</td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td></tr>
+    <tr><td>Donations / gifts</td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+    <tr><td>Leasing</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Loan capital</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Microfinance providers</td><td>✓</td><td></td><td></td><td></td><td>✓</td></tr>
+    <tr><td>Overdrafts</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Personal funds</td><td>✓</td><td>✓</td><td></td><td></td><td></td></tr>
+    <tr><td>Retained profit (surplus)</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Sale of assets</td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+    <tr><td>Share capital</td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+    <tr><td>Trade credit</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+  </table>
+  <p>As a business grows, for example from sole trader to private company to public company, it gains <b>access to more sources of finance</b>. A key reason for growth strategies such as mergers and acquisitions, takeovers and strategic alliances is to reach a <b>broader range</b> of sources.</p>
+
+  <h3>Choosing between short term and long term sources (AO3)</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Short term sources of finance</b> are those available for a period of <b>less than one year</b>, used to pay for the <b>daily or routine operations</b> of the business, such as <b>overdrafts</b> and <b>trade credit</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Long term sources of finance</b> are those available for any period of <b>more than 12 months</b> from the accounting period, used for the <b>purchase of fixed assets</b> or to finance the <b>expansion</b> of a business.</p>
+  </div>
+  <ul>
+    <li>For external finance, short term means anything that has to be repaid within the current fiscal (tax) year or the next twelve months. Examples: trade credit, overdrafts, crowdfunding.</li>
+    <li>Long term examples: mortgages, debentures, share capital, leasing, microfinance and business angels.</li>
+    <li>There is <b>no common definition</b> of short and long term. They vary between businesses, industries and countries. What matters is how they link to the business's <b>objectives</b> and purpose.</li>
+    <li>Example: businesses with heavy research and development (space technology, pharmaceuticals) may see the long term as <b>10 or more years</b>. Fast paced industries such as ICT and fashion may see <b>5 years</b> as too far ahead to plan.</li>
+  </ul>
+
+  <h3>Sources of finance by time frame</h3>
+  <table>
+    <tr><th>Source</th><th>Short term</th><th>Long term</th></tr>
+    <tr><td colspan="3"><b>Internal</b></td></tr>
+    <tr><td>Personal funds</td><td>✓</td><td></td></tr>
+    <tr><td>Retained profits</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Sale of fixed assets (divestment)</td><td>✓</td><td></td></tr>
+    <tr><td colspan="3"><b>External</b></td></tr>
+    <tr><td>Business angels</td><td></td><td>✓</td></tr>
+    <tr><td>Crowdfunding</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Debentures</td><td></td><td>✓</td></tr>
+    <tr><td>Leasing</td><td></td><td>✓</td></tr>
+    <tr><td>Loan capital</td><td></td><td>✓</td></tr>
+    <tr><td>Overdrafts</td><td>✓</td><td></td></tr>
+    <tr><td>Share capital</td><td></td><td>✓</td></tr>
+    <tr><td>Trade credit</td><td>✓</td><td>✓</td></tr>
+  </table>
+
+  <h3>SPACED: factors that affect the choice of finance</h3>
+  <p>Business failure is often linked to a lack of <b>strategic financial planning and control</b>. Managers look at several linked factors, remembered by the word <b>SPACED</b>.</p>
+  <table>
+    <tr><th>Letter</th><th>Factor</th><th>What to think about</th></tr>
+    <tr><td><b>S</b></td><td><b>Size and status of firm</b></td><td>A large, established multinational can raise finance from many more sources than a sole trader. Large firms also get <b>cheaper finance</b> through financial economies of scale, and can offer more <b>collateral</b>. Example: ICBC raised the most in any IPO up to that time (2006), despite a stock market crash that year, because consumers and businesses had full confidence in China's biggest bank.</td></tr>
+    <tr><td><b>P</b></td><td><b>Purpose of finance</b></td><td>Is the money for the <b>daily running</b> (short term) or for <b>replacing fixed assets</b> (long term)? Overdrafts suit short term cash flow problems. Leasing may suit new and expensive capital equipment.</td></tr>
+    <tr><td><b>A</b></td><td><b>Amount required</b></td><td>Large sums may come from an <b>IPO</b> or <b>secured long term loans</b>. For a small sum, retained profit or an overdraft may be enough. Lenders also check the firm's <b>gearing ratio</b> (long term external borrowing as a percentage of capital employed). High gearing means high risk, because of existing debt, and the firm is more at risk if interest rates rise.</td></tr>
+    <tr><td><b>C</b></td><td><b>Cost of finance</b></td><td>Consider the purchase cost of assets and extra costs such as admin fees and maintenance. Higher costs tend to need <b>long term</b> sources, such as a mortgage for land and buildings.</td></tr>
+    <tr><td><b>E</b></td><td><b>External factors</b></td><td>The state of the economy, <b>consumer confidence</b>, <b>interest rates</b> and <b>stock market</b> swings. Low interest rates tend to <b>encourage investment</b> because borrowing costs are lower.</td></tr>
+    <tr><td><b>D</b></td><td><b>Duration</b></td><td>For a long period, such as a new factory, use long term loans like mortgages or debentures. For working capital for the day to day running, short term sources like trade credit and overdrafts are better.</td></tr>
+  </table>
+
+  <h3>Business Management Toolkit: culture and sources of finance</h3>
+  <p>Culture affects which sources are used and available. <b>Family and friends</b> are not named in the syllabus as a source of finance, but they are popular in many cultures, especially for sole traders and partnerships. For example, in India small business owners often raise large sums from close family and friends.</p>
+  <ul>
+    <li><b>Advantage:</b> usually fairly easy and cheaper than a bank, which may ask for collateral.</li>
+    <li><b>Disadvantage:</b> very limited amounts, and borrowing from family and friends often leads to <b>conflict and disputes</b>, in any culture.</li>
+  </ul>
+
+  <h3>Sources of finance and the key concepts</h3>
+  <ul>
+    <li>All sources have the same purpose: to <b>fund business activity</b>.</li>
+    <li>Serious <b>cash flow problems</b> (being unable to pay short term debts) can cause <b>liquidation or bankruptcy</b>. This is worse if creditors chase debtors for money owed and the firm cannot repay straight away.</li>
+    <li>Any good business strategy must plan the sources of finance so there is enough to run the organization <b>sustainably</b>.</li>
+    <li>Finance needs <b>change</b> as a business grows and evolves.</li>
+    <li><b>Ethics:</b> the choice and control of finance affects financial performance. Financial accounts (profit and loss account and balance sheet, see 3.4) must be reported legally and ethically (in a transparent way).</li>
+  </ul>
+
+  <div class="box syl">
+    <span class="label">Not in textbook but there in IBDP syllabus</span>
+    <p>The syllabus asks you to judge how <b>appropriate</b> a source is (AO3). The textbook gives the SPACED factors but few disadvantages for some sources. Useful points to add:</p>
+    <ul>
+      <li><b>Trade credit:</b> you may lose discounts for paying early, and suppliers may refuse more credit if you pay late.</li>
+      <li><b>Leasing:</b> the business does not own the asset at the end of the lease.</li>
+      <li><b>Sale of assets:</b> the business loses the asset, which may cut its capacity, and it can only be done once.</li>
+      <li><b>Share capital:</b> shareholders expect dividends and a say in decisions, so finance is not "free".</li>
+      <li><b>How to score AO3:</b> recommend a source, justify it using the case facts (SPACED), and say why another source is less suitable.</li>
+    </ul>
+  </div>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Sources of finance</b>: where or how a business gets its funds.</li>
+      <li><b>Internal sources</b>: funds from within the business (personal funds, retained profit, sale of assets).</li>
+      <li><b>External sources</b>: funds from outside the business.</li>
+      <li><b>Personal funds</b>: an entrepreneur's own savings.</li>
+      <li><b>Retained profit</b>: profit kept in the business after tax and dividends.</li>
+      <li><b>Sale of assets</b>: selling dormant or obsolete assets.</li>
+      <li><b>Share capital</b>: money raised from selling shares in a limited liability company.</li>
+      <li><b>IPO</b>: first time a business sells its shares on a stock exchange.</li>
+      <li><b>Share issue (placement)</b>: an existing public company sells more shares.</li>
+      <li><b>Stock exchange</b>: regulated marketplace for buying and selling shares.</li>
+      <li><b>Loan capital (debt capital)</b>: medium to long term interest bearing finance from commercial lenders.</li>
+      <li><b>Overdraft</b>: spending more than the bank account holds, up to a limit.</li>
+      <li><b>Trade credit</b>: buy now and pay later, usually 30 to 60 days.</li>
+      <li><b>Creditor / debtor</b>: a supplier owed money / a customer who owes money.</li>
+      <li><b>Crowdfunding</b>: small amounts from many people, usually online.</li>
+      <li><b>Leasing</b>: a lessee pays rent to a lessor to hire an asset.</li>
+      <li><b>Microfinance</b>: financial services for small entrepreneurs on low incomes.</li>
+      <li><b>Business angels</b>: very wealthy individuals who invest their own money in high growth small firms.</li>
+      <li><b>Short term / long term sources</b>: under one year / over 12 months.</li>
+      <li><b>Collateral, default, gearing ratio, hire purchase, sale and leaseback, debenture, mortgage.</b></li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms to expect</span>
+    <ul>
+      <li><b>Define</b> / <b>Outline</b>: give the meaning, for example of an IPO or debentures.</li>
+      <li><b>Describe</b>: give a detailed account, for example sale and leaseback.</li>
+      <li><b>Explain</b>: give reasons, for example why a firm floats its shares or why investors buy.</li>
+      <li><b>Examine</b>: look at the elements in the case, for example the benefits to stakeholders or two alternative sources.</li>
+      <li><b>Suggest</b>: put forward a reasoned idea that fits the case.</li>
+      <li><b>Discuss</b> / <b>Evaluate</b>: balanced answer with a justified conclusion, for example the most suitable source of finance for a business.</li>
+    </ul>
+  </div>
+
+  <h3>Ideas to think about (from the textbook)</h3>
+  <ul>
+    <li>Is <b>creativity</b> compromised by a lack of access to sources of finance for many businesses?</li>
+    <li>For an organization of your choice, discuss how different sources of finance influence <b>change and creativity</b>.</li>
+    <li>How does <b>culture</b> affect the choice and availability of sources of finance?</li>
+  </ul>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> Distinguish between internal and external sources of finance.</p>
+    <p>Internal: funds generated from within the business (personal funds, retained profit, sale of assets). External: funds from outside the business (for example share capital, loans, overdrafts, trade credit, business angels).</p>
+    <p><b>2.</b> Why is an overdraft suitable for a retailer before the peak season but not for buying a new factory?</p>
+    <p>An overdraft is a flexible short term source for temporary cash flow needs and is repayable on demand. A factory is a long term capital expense and needs a long term source such as a mortgage or share capital.</p>
+    <p><b>3.</b> State the six SPACED factors.</p>
+    <p>Size and status of firm, Purpose of finance, Amount required, Cost of finance, External factors, Duration.</p>
+  </details>
+</section>
+
+<!-- ============ SUB UNIT 3.3 ============ -->
+<section class="sub" id="s3-3">
+  <h2 class="bar"><span>3.3</span>Costs and revenues</h2>
+  <p><i>Syllabus: types of cost (fixed, variable, direct, indirect or overhead) using examples (AO2). Total revenue and revenue streams, using examples (AO2).</i></p>
+
+  <h3>Cost and price are not the same</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Cost</b> refers to the <b>sum of money incurred by a business</b> in the <b>production process</b>, such as the costs of raw materials, wages and salaries, insurance, advertising and rent.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Price</b> refers to the <b>amount of money a product is sold for</b>. It is the <b>sum paid by the customer</b> to purchase a good or service.</p>
+  </div>
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <p>Remember that <b>cost</b> is the cost of production, paid by the <b>producer</b>. <b>Price</b> is the amount the product is sold for, paid by the <b>customer</b>. In everyday talk people say a shirt "cost $25". In business language, the <b>price</b> is $25.</p>
+  </div>
+
+  <h3>Set up costs and running costs</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Set up costs</b> are the <b>items of expenditure needed to start</b> a business.</p>
+    <p><b>Running costs</b> are the <b>ongoing costs of operating</b> the business.</p>
+  </div>
+  <table>
+    <tr><th>Set up costs (clothes retailer)</th><th>Running costs (clothes retailer)</th></tr>
+    <tr><td>Premises: a down payment on a mortgage or a rent deposit</td><td>Regular mortgage, rent and/or lease payments</td></tr>
+    <tr><td>Buildings: maintenance or physical changes to the property</td><td>Packaging materials such as gift boxes, tags and wrapping paper</td></tr>
+    <tr><td>Furniture, fixtures and fittings: changing rooms, signage, counters, shelving</td><td>Repairs and maintenance of buildings, furniture and fittings (damage, wear and tear)</td></tr>
+    <tr><td>Capital equipment: cash registers, phones, computers, printers, stationery</td><td>Depreciation of capital equipment and replacement of obsolete or broken equipment</td></tr>
+    <tr><td>Connection and installation of utilities, such as telephone lines and electricity</td><td>Payment of utilities (electricity and telephone bills) and insurance premiums</td></tr>
+    <tr><td>Legal and professional fees, including business registration and licensing</td><td>Marketing costs such as in store promotions and advertising</td></tr>
+    <tr><td>Initial stock of supplies (inventories)</td><td>Replenishing stock from suppliers</td></tr>
+    <tr><td>Recruitment, training and induction of new staff</td><td>Wages, salaries and other staffing costs, including staff uniforms</td></tr>
+  </table>
+
+  <h3>Types of cost in the syllabus</h3>
+
+  <h3>(i) Fixed costs</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Fixed costs</b> are the costs that <b>do not vary with the level of output</b>. They <b>exist even if there is no output</b>.</p>
+  </div>
+  <ul>
+    <li>A business must pay them <b>regardless of how much it produces or sells</b>. They are <b>independent of output or sales</b>.</li>
+    <li><b>Examples:</b> rent on leased premises, interest on bank loans, advertising, market research, management salaries, office stationery, security and professional accountancy fees.</li>
+    <li>Fixed costs <b>can change</b>, but not because of output. For example, a landlord raises the rent, or directors get higher salaries because of rising living costs.</li>
+    <li>On a graph, total fixed costs (TFC) are a <b>horizontal line</b>.</li>
+  </ul>
+
+  <h3>(ii) Variable costs</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Variable costs</b> are costs of production that <b>change in proportion to the level of output</b>, such as raw materials and hourly wages of production workers.</p>
+  </div>
+  <ul>
+    <li>If output or sales <b>double</b>, variable costs also <b>double</b>.</li>
+    <li>In theory, with <b>no production</b>, variable costs should be <b>zero</b>.</li>
+    <li><b>Examples:</b> raw materials (for a firm making curtains), sales staff commission, hourly wages of production workers, packaging tied to output.</li>
+    <li>On a graph, total variable costs (TVC) are a line that <b>starts at zero and rises</b> as output rises.</li>
+  </ul>
+
+  <h3>Total costs and average cost</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Total costs</b> are the <b>sum of all variable costs and all fixed costs</b> of production. <b>Total costs (TC) = total variable costs (TVC) + total fixed costs (TFC).</b></p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Average cost (AC)</b> refers to the <b>cost per unit of output</b>. It is calculated as <b>AC = TC ÷ Q</b>, where TC is total cost and Q is quantity (or output level).</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 520 340" role="img" aria-label="Graph of total fixed costs as a horizontal line, total variable costs rising from zero, and total costs rising from the level of fixed costs">
+      <line x1="60" y1="20" x2="60" y2="290" stroke="currentColor" stroke-width="2"/>
+      <line x1="60" y1="290" x2="490" y2="290" stroke="currentColor" stroke-width="2"/>
+      <text x="14" y="14" font-size="16" fill="currentColor">Costs ($)</text>
+      <text x="380" y="320" font-size="16" fill="currentColor">Output (units)</text>
+      <text x="38" y="308" font-size="14" fill="currentColor">0</text>
+      <!-- TFC -->
+      <line x1="60" y1="230" x2="450" y2="230" stroke="#DC2626" stroke-width="3.5"/>
+      <text x="456" y="235" font-size="17" font-weight="700" fill="#DC2626">TFC</text>
+      <!-- TVC -->
+      <line x1="60" y1="290" x2="450" y2="115" stroke="var(--curve2)" stroke-width="3.5"/>
+      <text x="456" y="120" font-size="17" font-weight="700" fill="var(--curve2)">TVC</text>
+      <!-- TC -->
+      <line x1="60" y1="230" x2="450" y2="55" stroke="var(--accent)" stroke-width="3.5"/>
+      <text x="456" y="60" font-size="17" font-weight="700" fill="var(--accent)">TC</text>
+      <!-- gap = TFC -->
+      <line x1="330" y1="109" x2="330" y2="169" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="324" y="162" font-size="15" text-anchor="end" fill="currentColor">gap = TFC</text>
+    </svg>
+    <figcaption>TFC is flat. TVC starts at zero and rises with output. TC starts at the level of TFC and is TFC above TVC at every output level.</figcaption>
+  </figure>
+
+  <div class="box ex">
+    <span class="label">Worked example</span>
+    <p>A bakery has total fixed costs of $500 a month and variable costs of $1.20 per loaf. It bakes 400 loaves.</p>
+    <p>Step 1: TVC = $1.20 × 400 = <code>$480</code>.<br>
+       Step 2: TC = TVC + TFC = $480 + $500 = <code>$980</code>.<br>
+       Step 3: AC = TC ÷ Q = $980 ÷ 400 = <code>$2.45 per loaf</code>.<br>
+       If output rises to 800 loaves, TVC doubles to $960 but TFC stays at $500. TC = $1,460 and AC falls to $1.83 (rounded), because the fixed costs are spread over more units.</p>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Common mistake</span>
+    <p>Avoid <b>circular answers</b>: do not repeat the question in your answer. When asked to distinguish fixed and variable costs, do not write "fixed costs are costs that are fixed and variable costs are costs that are variable". Say that fixed costs do not change with output, and variable costs change in proportion to output. Review any key term you cannot define clearly in your own words.</p>
+  </div>
+
+  <h3>(iii) Direct costs</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Direct costs</b> are costs <b>specifically attributed to the production or sale of a particular good or service</b>.</p>
+  </div>
+  <ul>
+    <li>Related to an individual <b>project</b> or the output of a particular product. Without it, the cost would not exist.</li>
+    <li>Direct costs can include variable costs such as raw materials. But <b>unlike variable costs, direct costs are not necessarily linked to the level of output</b>. They can be <b>fixed</b> costs.</li>
+    <li><b>Example:</b> the direct costs of buying a commercial building include consultancy costs, solicitor's fees, telephone bills, postage, photocopying and bank charges.</li>
+    <li>Direct costs can be <b>traced back</b> to the output of a product or to a specific <b>cost centre</b>.</li>
+  </ul>
+  <p><b>What is variable for one business is not always variable for another.</b> Catering on a flight with a mainstream airline such as Singapore Airlines is a <b>variable cost</b>, because more passengers need more food and drink, which are included in the ticket price. For a no frills airline such as Ryanair, easyJet or AirAsia, catering is a <b>direct cost</b>. It relates to the flight, but not every passenger buys meals, because they are paid for individually.</p>
+
+  <h3>(iv) Indirect costs (overheads)</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Indirect costs</b> (or <b>overheads</b>) are costs that <b>do not directly relate to the production or sale of a specific product</b>.</p>
+  </div>
+  <ul>
+    <li>They <b>cannot be clearly traced</b> to the production or sale of any single product. Example: rent and lighting serve all areas of the business.</li>
+    <li><b>Examples:</b> advertising, legal expenses, salaries of administrative staff, insurance premiums, security, office stationery, shipping and postage, utility bills, accounting fees.</li>
+    <li>Indirect costs <b>can be fixed costs</b>, since they do not link directly to output. But <b>unlike fixed costs, they are not easily identified with a particular activity</b> or product.</li>
+  </ul>
+
+  <h3>The four types compared</h3>
+  <table>
+    <tr><th>Type</th><th>Key idea</th><th>Examples</th></tr>
+    <tr><td><b>Fixed</b></td><td>Does not change with output</td><td>Rent, management salaries, loan interest</td></tr>
+    <tr><td><b>Variable</b></td><td>Changes in proportion to output</td><td>Raw materials, hourly production wages, sales commission</td></tr>
+    <tr><td><b>Direct</b></td><td>Can be traced to a particular product or project. May be fixed or variable.</td><td>Raw materials for one product, fees for buying a building</td></tr>
+    <tr><td><b>Indirect (overhead)</b></td><td>Cannot be traced to one product. Often shared. Usually fixed.</td><td>Rent and lighting for the whole site, admin salaries, insurance</td></tr>
+  </table>
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <p>The terms <b>direct</b> and <b>indirect</b> costs are used for businesses that make or sell <b>a range of products</b> and have <b>cost centres</b> and <b>profit centres</b>. These costs can be fixed or variable, depending on the business. The terms <b>fixed</b> and <b>variable</b> costs, as used in <b>break even analysis</b>, are used when a business sells <b>one type of product</b>.</p>
+  </div>
+
+  <h3>Revenue</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Revenue</b> is the <b>money that a business earns from the sale of goods and services</b>. It is calculated by <b>multiplying the unit price</b> of each product by the <b>quantity sold</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Total revenue</b> refers to the money <b>coming into a business</b>, usually from the sale of goods and/or services. It is calculated by multiplying the <b>price</b> of a product with the <b>quantity sold</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Average revenue (AR)</b> refers to the value of sales received from customers <b>per unit</b> of a good or service sold. It is calculated as <b>AR = TR ÷ Q = P</b>, where TR is total revenue.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Profit</b> exists if there is a <b>positive difference</b> between a firm's <b>total revenues</b> and its <b>total costs</b>.</p>
+  </div>
+  <p>Formula: <b>Sales revenue = Price × Quantity sold</b> (also written <b>TR = P × Q</b>). Note: the textbook says the revenue formulae are <b>not given</b> to candidates in the exam, so learn them.</p>
+
+  <div class="box ex">
+    <span class="label">Worked example</span>
+    <p>Church's, an English maker of luxury shoes, charges an average of $300 a pair and sells 3,000 pairs in a week.</p>
+    <p>Sales revenue = Price × Quantity sold = $300 × 3,000 = <code>$900,000</code> for that week.<br>
+       AR = TR ÷ Q = $900,000 ÷ 3,000 = <code>$300</code>, which is the same as the price.<br>
+       If total costs that week were $700,000, profit = $900,000 minus $700,000 = <code>$200,000</code>.</p>
+    <p><b>About Church's:</b> founded in 1873 by Thomas Church and his three sons, main operations in Northampton, UK. It can make up to 5,000 pairs a week, with about 70% exported. It has shops in New York, Milan, Paris, Rome, Madrid, Hong Kong, Singapore and Shanghai. It has been owned by Prada since 1999, in a deal worth $170 million.</p>
+  </div>
+
+  <h3>Revenue streams</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>revenue stream</b> refers to the <b>money coming into a business from its various business activities</b>, such as <b>sponsorship deals</b>, <b>merchandise</b> and receipt of <b>royalty payments</b>.</p>
+  </div>
+  <p>Revenue does not only come from selling goods and services. The mix of revenue streams depends on the type of firm and its activities. For example, the IB itself earns from: annual fees from IB World Schools, authorization and evaluation fees, donations, examination fees, IB global and regional conferences, royalties from publications and workshops (training events for teachers).</p>
+
+  <table>
+    <tr><th>Revenue stream</th><th>What it is</th><th>Examples from the textbook</th></tr>
+    <tr><td><b>Advertising revenue</b></td><td>Money from selling advertising space. Platforms may charge <b>cost per click</b> (advertiser pays only when a customer clicks) or <b>cost per thousand impressions</b> (pays for the number of times the advert is shown).</td><td>Over 80% of Twitter's revenue comes from text and display advertising. Google and Facebook rely heavily on advertising.</td></tr>
+    <tr><td><b>Transaction fees</b></td><td>Fees charged on payments and extras.</td><td>Ryanair charged €7 ($9.5) plus 2% commission for paying by American Express. AirAsia and easyJet charge for checked baggage, seat choice, excess baggage and onboard shopping. Low cost airlines earn about 20% of revenue from these extras (Wall Street Journal).</td></tr>
+    <tr><td><b>Franchise fees and royalties</b></td><td>A franchisee pays a <b>fee</b> to the franchisor for the right to use its brand name, logo and trademarks, plus a <b>royalty</b> based on the franchisee's sales revenue. Holders of patents and copyrights also receive royalties.</td><td>McDonald's, Burger King, KFC. The IB earns royalties on textbooks printed and sold by the publishers it endorses.</td></tr>
+    <tr><td><b>Sponsorship revenue</b></td><td>A form of <b>below the line promotion</b>. The sponsor pays an organization in return for prominent display of its brand and exclusive advertising rights.</td><td>Arsenal's deal with Emirates: €132 million ($178.4m) in 2006 for 15 years, extended in 2012 with $242m and in 2018 with $200m. Shirts carry the "Fly Emirates" and "Fly Better" slogans until 2024 and the stadium has the Emirates name until 2028.</td></tr>
+    <tr><td><b>Subscription fees</b></td><td>Charges on customers who use or access a good or service, under a formal agreement.</td><td>Yearly gym memberships, credit card annual fees, monthly phone service fees, Netflix and Spotify. Manchester United has run its own subscription TV channel since 1998.</td></tr>
+    <tr><td><b>Merchandise</b></td><td>Selling goods alongside the main service.</td><td>Popcorn, drinks and souvenirs at cinemas, concerts, theatres and theme parks. Facebook's gift card service lets users spend at stores such as Burger King, Outback Steakhouse, Staples and Target.</td></tr>
+    <tr><td><b>Interest earnings</b></td><td>Interest on a positive cash balance held at a commercial bank. For cash rich firms it can be an important stream.</td><td>In 2021 Pfizer held $12.2bn in cash, Apple $63bn, Microsoft $130bn and Google $137bn. $1bn at 1% interest a year earns $27,397 a day.</td></tr>
+    <tr><td><b>Dividends</b></td><td>Owning shares in other companies entitles a business to any dividends declared. Dividends are a share of net profits paid to shareholders at the end of the tax year.</td><td>Volkswagen holds shares in Porsche, Suzuki and Scania.</td></tr>
+    <tr><td><b>Donations</b></td><td>Financial gifts from individuals or other organizations. Usually no direct benefit to the donor, though some come with conditions such as recognition of the donor's name. Not common for private sector businesses.</td><td>Charities and non profit organizations such as schools, hospitals and universities.</td></tr>
+    <tr><td><b>Subventions</b></td><td>Government <b>subsidies</b> to certain businesses to help cut their costs of production. Usually given to organizations that benefit society, and to help fund research and development.</td><td>Private schools and hospitals.</td></tr>
+  </table>
+
+  <h3>Case study: revenue streams in the budget airline industry</h3>
+  <ul>
+    <li>SpiceJet charges for hot meals, snacks and drinks.</li>
+    <li>Jetstar and Scoot lend iPads to passengers for a fee.</li>
+    <li>AirAsia customers can pay to sit in a children free "quiet zone".</li>
+    <li>Ryanair failed in its attempt to charge for toilet use, but sells advertising space on its planes, including on the wing tips.</li>
+  </ul>
+
+  <h3>World's most expensive football shirt sponsorship deals (2021, £ million)</h3>
+  <table>
+    <tr><th>Club</th><th>Shirt sponsor</th><th>£ million</th></tr>
+    <tr><td>Real Madrid</td><td>Emirates</td><td>413</td></tr>
+    <tr><td>Tottenham Hotspur</td><td>AIA</td><td>400</td></tr>
+    <tr><td>Manchester United</td><td>TeamViewer</td><td>325</td></tr>
+    <tr><td>FC Barcelona</td><td>Rakuten</td><td>324</td></tr>
+    <tr><td>Bayern Munich</td><td>Deutsche Telekom</td><td>283</td></tr>
+    <tr><td>Arsenal FC</td><td>Emirates</td><td>280</td></tr>
+    <tr><td>Liverpool FC</td><td>Standard Chartered</td><td>221</td></tr>
+    <tr><td>Paris Saint Germain</td><td>Accor</td><td>171</td></tr>
+    <tr><td>Chelsea FC</td><td>Three</td><td>166</td></tr>
+    <tr><td>Juventus</td><td>Jeep</td><td>159</td></tr>
+  </table>
+  <p><i>Source in the textbook: Statista, 2021.</i></p>
+
+  <div class="box ex">
+    <span class="label">Real world example: Manchester United</span>
+    <p>In 2013 Manchester United became the first sports club valued at over $3 billion. Match day income is under 30% of its revenue. The rest comes from <b>broadcasting rights, sponsorship and merchandise</b> around the world. In 2015 it signed a 10 year Adidas shirt deal worth about $108m a year. In 2021 it signed a five year deal with TeamViewer worth about $340m. It has also had deals with the Commercial Bank of Qatar, Emirates NBD Bank and Pepsi. <b>Ethics:</b> in 2006 the club turned down a four year deal worth over $100m from an online gambling company, Mansion, and chose a four year deal with AIG worth $90.5m. <b>Point it shows:</b> a business can choose a smaller revenue stream because of its image and values.</p>
+  </div>
+
+  <h3>Costs, revenues and the key concepts</h3>
+  <ul>
+    <li>Knowing costs lets managers <b>stay in control</b> of finances, especially in times of <b>change</b> and uncertainty. <b>Cost control</b> is crucial to keep or improve <b>profitability</b>.</li>
+    <li>Large businesses benefit from measuring the <b>financial performance of each division</b>. They use <b>cost and profit centres</b>, <b>budgets</b> and <b>variance analysis</b> (later chapters).</li>
+    <li><b>Cost cutting does not automatically raise profitability</b>, but it helps to keep costs under control.</li>
+    <li>How much a business focuses on cost control depends on its <b>organizational culture</b> and <b>management preferences</b>.</li>
+    <li>Cost cutting can be justified if it leads to <b>sustained efficiency and profitability</b>.</li>
+    <li><b>Ethics:</b> problems arise if cost cutting harms staff, for example <b>poorer working conditions</b>, limited <b>training</b>, <b>pay cuts</b> or <b>job losses</b>.</li>
+    <li><b>Raising revenue is just as important, if not more so.</b> The UK Institute of Management suggests successful businesses spend about <b>80%</b> of their strategy on raising revenue and only <b>20%</b> on cutting costs. Forward looking, creative businesses can spend more if revenue and profit allow it. Example: Kering bought Gucci and Yves Saint Laurent to earn more revenue, not to save costs.</li>
+    <li>Some businesses use the <b>FORCE</b> approach (Focus On Reducing Costs Everywhere) to stay competitive.</li>
+    <li><b>Business Management Toolkit:</b> contribution analysis (later chapter) can help businesses control costs better.</li>
+  </ul>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Cost</b>: money a business spends in the production process.</li>
+      <li><b>Price</b>: amount a customer pays for the product.</li>
+      <li><b>Set up costs</b>: spending needed to start a business.</li>
+      <li><b>Running costs</b>: ongoing costs of operating.</li>
+      <li><b>Fixed costs</b>: do not vary with output.</li>
+      <li><b>Variable costs</b>: change in proportion to output.</li>
+      <li><b>Total costs</b>: TVC + TFC.</li>
+      <li><b>Average cost</b>: TC ÷ Q.</li>
+      <li><b>Direct costs</b>: attributed to a particular product or service.</li>
+      <li><b>Indirect costs (overheads)</b>: not directly related to a specific product.</li>
+      <li><b>Revenue</b> / <b>Total revenue</b>: price × quantity sold.</li>
+      <li><b>Average revenue</b>: TR ÷ Q, equal to price.</li>
+      <li><b>Profit</b>: total revenue minus total costs, when positive.</li>
+      <li><b>Revenue stream</b>: money coming in from a business activity.</li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms to expect</span>
+    <ul>
+      <li><b>Distinguish</b>: show the differences, for example direct and indirect costs, in the context given.</li>
+      <li><b>Classify</b> / <b>Identify</b>: sort costs into fixed or variable using the case.</li>
+      <li><b>Calculate</b>: give the answer with the working shown, for example revenue, cost and profit.</li>
+      <li><b>Outline</b> / <b>Define</b>: give the meaning, for example sales volume or revenue streams.</li>
+      <li><b>Explain</b>: give reasons, for example the shape of the cost curves or why a sponsor pays.</li>
+      <li><b>Examine</b>: weigh up a decision, for example whether choosing a lower paying sponsor was correct.</li>
+    </ul>
+  </div>
+
+  <h3>Ideas to think about (from the textbook)</h3>
+  <ul>
+    <li>What role does <b>creativity</b> have in developing the revenue streams of a business?</li>
+    <li>Discuss the extent to which <b>cost cutting</b> is sustainable.</li>
+    <li>Examine how <b>change</b> and <b>ethics</b> affect the costs and revenues of an organization you choose.</li>
+  </ul>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> A firm sells 2,000 units at $15 each. Its total fixed costs are $8,000 and variable costs are $6 per unit. Calculate total revenue, total costs and profit.</p>
+    <p>Total revenue = $15 × 2,000 = $30,000. TVC = $6 × 2,000 = $12,000, so TC = $12,000 + $8,000 = $20,000. Profit = $30,000 minus $20,000 = $10,000.</p>
+    <p><b>2.</b> Why can a direct cost be a fixed cost?</p>
+    <p>A direct cost is linked to a particular product or project, not to the level of output. Fees for buying a building are direct but do not change with output, so they are fixed.</p>
+    <p><b>3.</b> State two revenue streams other than sales.</p>
+    <p>Any two of: advertising, transaction fees, franchise fees and royalties, sponsorship, subscriptions, merchandise, interest, dividends, donations, subventions.</p>
+  </details>
+</section>
+
+<!-- ============ SUB UNIT 3.4 ============ -->
+<section class="sub" id="s3-4">
+  <h2 class="bar"><span>3.4</span>Final accounts</h2>
+  <p><i>Syllabus: the purpose of accounts to different stakeholders (AO2). Final accounts: profit and loss account and balance sheet (AO2, AO4). Different types of intangible assets (AO2). HL only: depreciation by the straight line method and the units of production method (AO2, AO4), and the appropriateness of each method (AO3).</i></p>
+
+  <h3>The purpose of final accounts</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Final accounts</b> are the <b>published annual financial statements</b> that all <b>limited liability companies</b> are <b>legally obliged to report</b>, namely the <b>balance sheet</b> and the <b>P&amp;L account</b>.</p>
+  </div>
+  <ul>
+    <li>All businesses need to keep <b>financial records</b>. Good accounts give better financial control and planning, and may be a <b>legal requirement</b>.</li>
+    <li>Where ownership and control are separate (see Unit 1), much of the finance may come from <b>shareholders</b>. Financial reporting accounts for the money of the business, whether it belongs to owners, investors or lenders.</li>
+    <li>Final accounts make sure all payments and receipts are <b>officially accounted for</b>, and give <b>transparency</b> in the use of a company's funds.</li>
+    <li>Most countries require companies to have their final accounts <b>audited</b> by independent, chartered accountants, who certify that they are <b>accurate and truthful</b>.</li>
+    <li>There is <b>no universal format</b>. Companies have some flexibility, as long as they follow the rules of their country.</li>
+    <li><b>Internal stakeholders</b> (executives, directors) use accounts to manage the business and make strategic decisions. For <b>external stakeholders</b> the purpose is to support <b>evaluative judgements</b>, such as whether the firm can pay suppliers or repay lenders.</li>
+  </ul>
+
+  <h3>Who uses final accounts and why</h3>
+  <table>
+    <tr><th>Stakeholder</th><th>Purpose of final accounts to them</th></tr>
+    <tr><td><b>Shareholders</b></td><td>Owners of a company. They want to see where their money was spent and the <b>return on investment</b>. They decide whether to <b>hold, sell or buy more</b> shares.</td></tr>
+    <tr><td><b>Employees</b></td><td>To judge the chance of a <b>pay rise</b> or to argue for one, and to judge <b>job security</b> from the firm's financial position.</td></tr>
+    <tr><td><b>Managers</b></td><td>To judge <b>operational efficiency</b>, set <b>targets</b> and do <b>strategic planning</b>.</td></tr>
+    <tr><td><b>Competitors</b></td><td>To <b>compare</b> their own financial performance with the business.</td></tr>
+    <tr><td><b>Government</b></td><td>The tax authority checks that the right amount of <b>corporate tax</b> is paid, especially by large multinationals.</td></tr>
+    <tr><td><b>Financiers</b></td><td>Banks and business angels examine accounts before approving funds, to judge <b>creditworthiness</b>.</td></tr>
+    <tr><td><b>Suppliers</b></td><td>To decide how much <b>trade credit</b> to give. They need to know the client is financially stable and will pay.</td></tr>
+    <tr><td><b>Potential investors</b></td><td>Use final accounts and <b>ratio analysis</b> (profitability, gearing, liquidity) to decide if investing is worthwhile.</td></tr>
+  </table>
+
+  <div class="box ex">
+    <span class="label">Real world example</span>
+    <p><b>Enron.</b> A huge US energy company with sales of over $100 billion and over 20,000 staff. Its dishonest accounting practices made it go bankrupt in December 2001, and some top executives were jailed for accounting fraud. Its share price fell from over $90 to under $1 before bankruptcy. <b>Point it shows:</b> why accounts must be honest and audited. The "father" of accounting, Luca Pacioli, wrote about accounting principles and ethics as early as 1494.</p>
+  </div>
+
+  <h3>The profit and loss account</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>The <b>profit and loss (P&amp;L) account</b> (or <b>income statement</b>) is a <b>financial statement of a firm's trading activities over a period of time</b>, usually one year. It shows the <b>revenues and expenses</b> of a business at the end of a set accounting period, and so the value of <b>profit or loss</b>.</p>
+  </div>
+  <ul>
+    <li><b>Revenues</b> are inflows of money from ordinary trading: cash sales, credit sales, fees and royalties.</li>
+    <li><b>Costs</b> are outflows of money from operations: wages, salaries, rents and purchases of stock (inventories).</li>
+    <li>Profit gives most businesses an <b>incentive</b> to do well. Even non profit and public sector bodies need a <b>surplus</b> to survive.</li>
+    <li>There are three sections: (i) the <b>trading account</b>, (ii) the <b>profit and loss account</b> and (iii) the <b>appropriation account</b>.</li>
+  </ul>
+
+  <h3>(i) The trading account: gross profit</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Gross profit</b> is the <b>difference between the sales revenue</b> of a business and its <b>direct costs</b> incurred in making or purchasing the products that have been sold to its customers.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Cost of goods sold (COGS)</b>, also known as <b>cost of sales (COS)</b>, refers to the <b>direct costs of producing or purchasing stock that has been sold</b> to customers.</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Formulae</span>
+    <p><b>Gross profit = Sales revenue minus Cost of goods sold</b></p>
+    <p><b>COGS = Opening stock + Purchases minus Closing stock</b></p>
+  </div>
+  <div class="box ex">
+    <span class="label">Worked example (from the textbook)</span>
+    <p>A business opens with $5,000 of stock (at cost). It buys $25,000 more. At the end it has $3,800 of stock left. It sells stock for three times its cost.</p>
+    <p>Step 1: COGS = $5,000 + $25,000 minus $3,800 = <code>$26,200</code>.<br>
+       Step 2: Sales revenue = $26,200 × 3 = <code>$78,600</code>.<br>
+       Step 3: Gross profit = $78,600 minus $26,200 = <code>$52,400</code>.</p>
+    <table>
+      <tr><th colspan="3">Statement of profit or loss for the year ended 1st April 20XX</th></tr>
+      <tr><td><b>Sales revenue</b></td><td></td><td>78,600</td></tr>
+      <tr><td>Cost of goods sold: Opening stock</td><td>5,000</td><td></td></tr>
+      <tr><td>Purchases</td><td>25,000</td><td></td></tr>
+      <tr><td>Closing stock</td><td>(3,800)</td><td>(26,200)</td></tr>
+      <tr><td><b>Gross profit</b></td><td></td><td><b>52,400</b></td></tr>
+    </table>
+  </div>
+
+  <h3>(ii) The profit and loss account: profit</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Profit</b> is the <b>surplus</b> (if any) that a business earns <b>after all expenses have been paid for from the firm's gross profit</b>.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Expenses</b> are the <b>indirect or fixed costs of production</b>, such as administration charges, management salaries, insurance premiums and rent.</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Formula</span>
+    <p><b>Net profit = Gross profit minus Expenses</b></p>
+  </div>
+  <p>Net profit is the actual profit earned from the firm's <b>normal trading activities</b>. Negative numbers (costs and expenses) are shown in <b>brackets</b>.</p>
+
+  <div class="box ex">
+    <span class="label">Worked example (from the textbook)</span>
+    <p>Florists R Us sold stock with a cost of $230,000 for $460,000 in the year ended 31 December 2022. Rent was $90,000, utility bills $60,000 and other overheads $15,000.</p>
+    <table>
+      <tr><th colspan="3">Profit statement for Florists R Us, year ended 31 December 2022</th></tr>
+      <tr><td><b>Sales revenue</b></td><td></td><td>460,000</td></tr>
+      <tr><td>Cost of goods sold</td><td></td><td>(230,000)</td></tr>
+      <tr><td><b>Gross profit</b></td><td></td><td><b>230,000</b></td></tr>
+      <tr><td>Less expenses: Rents</td><td>(90,000)</td><td></td></tr>
+      <tr><td>Utility bills</td><td>(60,000)</td><td></td></tr>
+      <tr><td>Other overheads</td><td>(15,000)</td><td>(165,000)</td></tr>
+      <tr><td><b>Net profit</b></td><td></td><td><b>65,000</b></td></tr>
+    </table>
+  </div>
+
+  <h3>How a business might cut expenses to raise profit</h3>
+  <ul>
+    <li><b>Rent:</b> negotiate lower rent, or move to cheaper premises (relocation may be hard because of <b>industrial inertia</b>).</li>
+    <li><b>Fuel:</b> use less heating, air conditioning and lighting. This lowers bills and helps the environment.</li>
+    <li><b>Administration:</b> review clerical work, combine jobs, employ fewer people or <b>outsource</b> some jobs.</li>
+  </ul>
+
+  <h3>Interest and tax</h3>
+  <ul>
+    <li>Interest and tax are expenses, but they are shown <b>separately</b>. This is because interest rates and tax rates <b>change over time</b> and are <b>outside the firm's control</b>. Profit may be lower this year only because rates rose.</li>
+    <li>Showing <b>profit before interest and tax</b> lets firms compare like with like and compare over time.</li>
+    <li><b>Interest</b> is the charge or fee paid to financiers such as banks. <b>Corporate tax</b> is the levy payable on a company's profits.</li>
+  </ul>
+  <p><b>Example:</b> Florists R Us pays $10,000 interest and corporate tax of 10%. Profit before interest and tax is $65,000. Minus interest $10,000 = profit before tax $55,000. Tax = 10% × $55,000 = $5,500. Profit after interest and tax = <b>$49,500</b>.</p>
+
+  <h3>(iii) The appropriation account: dividends and retained profit</h3>
+  <p>This is the final section. It shows how the net profit <b>after interest and tax</b> is shared out.</p>
+  <ul>
+    <li><b>Dividends:</b> the part paid to the owners (shareholders). The proportion is decided by the <b>Board of Directors</b> and approved at the <b>Annual General Meeting</b>. Dividends are usually paid twice a year: an <b>interim dividend</b> about halfway through the year and a <b>final dividend</b> at the end of the fiscal year.</li>
+    <li><b>Retained profit:</b> how much of the profit after interest and tax the business <b>keeps</b> for its own use, as an <b>internal source of finance</b>, for example to reinvest or expand. For non profit organizations the term is <b>retained surplus</b>. It is transferred to the <b>Equity</b> section of the balance sheet as <b>retained earnings</b>.</li>
+  </ul>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Retained profit</b> is the amount of profit <b>after interest, tax and dividends</b> have been paid. It is then <b>reinvested in the business</b> for its own use.</p>
+  </div>
+
+  <h3>The full P&amp;L account (IB format)</h3>
+  <p>In reality the three parts are joined into one account. If Florists R Us gives 30% of profit after interest and tax to shareholders and keeps the rest:</p>
+  <table>
+    <tr><th>Profit and loss account for Florists R Us, year ended 31 December 2022</th><th>$</th><th>Section</th></tr>
+    <tr><td>Sales revenue</td><td>460,000</td><td rowspan="3">Trading account</td></tr>
+    <tr><td>Cost of sales</td><td>(230,000)</td></tr>
+    <tr><td><b>Gross profit</b></td><td><b>230,000</b></td></tr>
+    <tr><td>Expenses</td><td>(165,000)</td><td rowspan="6">Profit and loss account</td></tr>
+    <tr><td><b>Profit before interest and tax</b></td><td><b>65,000</b></td></tr>
+    <tr><td>Interest</td><td>(10,000)</td></tr>
+    <tr><td>Profit before tax</td><td>55,000</td></tr>
+    <tr><td>Tax (10%)</td><td>(5,500)</td></tr>
+    <tr><td><b>Profit after interest and tax</b></td><td><b>49,500</b></td></tr>
+    <tr><td>Dividends (30%)</td><td>(14,850)</td><td rowspan="2">Appropriation account</td></tr>
+    <tr><td>Retained profit (70%)</td><td>34,650</td></tr>
+  </table>
+
+  <h3>IB format for a profit making organization (Table 17.1, $m)</h3>
+  <table>
+    <tr><th colspan="2">Statement of profit or loss for (Company name), for the year ended (date)</th></tr>
+    <tr><td>Sales revenue</td><td>700</td></tr>
+    <tr><td>Cost of sales</td><td>(350)</td></tr>
+    <tr><td><b>Gross profit</b></td><td><b>350</b></td></tr>
+    <tr><td>Less expenses</td><td>(200)</td></tr>
+    <tr><td><b>Profit before interest and tax</b></td><td><b>150</b></td></tr>
+    <tr><td>Less interest</td><td>(10)</td></tr>
+    <tr><td>Profit before tax</td><td>140</td></tr>
+    <tr><td>Less tax</td><td>(25)</td></tr>
+    <tr><td><b>Profit for period</b></td><td><b>115</b></td></tr>
+    <tr><td>Dividends</td><td>(35)</td></tr>
+    <tr><td><b>Retained profit</b></td><td><b>80</b></td></tr>
+  </table>
+  <p><b>Non profit organization (Table 17.2):</b> the same layout, but the words change to <b>gross surplus</b>, <b>surplus before interest and tax</b>, <b>surplus before tax</b>, <b>surplus for period</b> and <b>retained surplus</b>. There are no dividends, so the retained surplus equals the surplus for the period ($115m in the textbook example).</p>
+
+  <div class="box ex">
+    <span class="label">Worked example (full P&amp;L)</span>
+    <p>Hilltop Bakes Ltd: opening stock $4,000, purchases $12,000, closing stock $3,000, sales revenue $30,000, expenses $12,000, interest $500, tax 20%, dividends 25% of profit after interest and tax.</p>
+    <p>COGS = $4,000 + $12,000 minus $3,000 = <code>$13,000</code>.<br>
+       Gross profit = $30,000 minus $13,000 = <code>$17,000</code>.<br>
+       Profit before interest and tax = $17,000 minus $12,000 = <code>$5,000</code>.<br>
+       Profit before tax = $5,000 minus $500 = <code>$4,500</code>. Tax = 20% × $4,500 = <code>$900</code>.<br>
+       Profit after interest and tax = $4,500 minus $900 = <code>$3,600</code>.<br>
+       Dividends = 25% × $3,600 = <code>$900</code>. Retained profit = $3,600 minus $900 = <code>$2,700</code>.</p>
+  </div>
+
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <p>You will <b>not</b> be asked about the trading account, profit statement and appropriation account <b>separately</b>. Questions use the <b>P&amp;L account in its entirety</b>. Use the IB format above and give it an appropriate <b>title</b> (company name and "for the year ended" date). The IB uses the term "profit and loss account" in assessment. Existing firms often report <b>two years</b> side by side so you can compare over time.</p>
+  </div>
+
+  <h3>Limitations of the P&amp;L account</h3>
+  <ul>
+    <li>It shows <b>historical</b> performance. Past success does not guarantee future performance.</li>
+    <li>There is <b>no international standard format</b>, so comparing firms in different countries or industries is hard.</li>
+    <li><b>Window dressing</b> can occur (see below). For example, including the sale of fixed assets or non operating income to boost profit and impress shareholders.</li>
+  </ul>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Window dressing</b> refers to the <b>legal act of creative accounting</b> by manipulating financial data to make the results appear <b>more appealing</b>.</p>
+  </div>
+  <p>The P&amp;L account is still important because it shows the profit or loss after <b>all costs</b>. If expenses are higher than gross profit, the business makes an overall loss and cannot survive for long.</p>
+
+  <h3>The balance sheet</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>balance sheet</b> (or <b>statement of financial position</b>) contains financial information about an organization's <b>assets</b>, <b>liabilities</b> and the <b>capital invested by the owners</b>, showing a <b>snapshot</b> of the firm's financial situation.</p>
+  </div>
+  <ul>
+    <li>All limited liability companies must produce one for auditing.</li>
+    <li>It shows the position on <b>one day only</b>, usually the last day of the accounting year.</li>
+    <li>It "balances" because it shows <b>where the money came from</b> (sources of finance, shown as <b>equity</b>) and <b>what it was spent on</b> (<b>net assets</b>).</li>
+    <li>Example: a building has a market value of $550,000 and an outstanding mortgage of $350,000. The $200,000 difference is the firm's <b>equity</b> in the property.</li>
+    <li>Established businesses often report <b>two years</b> of figures (a legal requirement in many countries) so stakeholders can compare.</li>
+    <li>It has three parts: <b>(i) assets</b>, <b>(ii) liabilities</b>, <b>(iii) equity</b>.</li>
+  </ul>
+
+  <h3>(i) Assets</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Assets</b> are <b>items of monetary value that are owned</b> by a business, such as cash, stocks and property (premises).</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Noncurrent assets</b> are items owned by a business, <b>not intended for sale within the next twelve months</b>, but <b>used repeatedly to generate revenue</b>, such as property, plant and equipment.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>current asset</b> refers to <b>cash or any other liquid asset</b> that is likely to be turned into cash <b>within 12 months</b> of the balance sheet date. Examples include <b>cash</b>, <b>debtors</b> and <b>stocks</b>.</p>
+  </div>
+  <table>
+    <tr><th>Current asset</th><th>Meaning</th></tr>
+    <tr><td><b>Cash</b></td><td>Money held in the business or at the bank.</td></tr>
+    <tr><td><b>Debtors</b></td><td>People or organizations that <b>owe money to the business</b> because they bought on credit. It is a current asset because the money belongs to the business.</td></tr>
+    <tr><td><b>Stocks</b></td><td>Unsold raw materials, semi finished goods (work in progress) and finished goods. Finished stocks are <b>more liquid</b> than raw materials.</td></tr>
+  </table>
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <p>An asset <b>belongs</b> to a business, but that does not mean it has been <b>paid for</b>. A building worth millions may be mostly funded by debt (a mortgage), with the rest being equity.</p>
+  </div>
+
+  <h3>(ii) Liabilities</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>A <b>liability</b> is a <b>legal obligation</b> of a business to <b>repay its lenders or suppliers at a later date</b>. Liabilities are the amount of money <b>owed</b> by the business.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Noncurrent liabilities</b> (long term liabilities) are the debts owed by a business that are expected to take <b>longer than a year</b> from the balance sheet date to repay. Examples: mortgages, bank loans, debentures.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Current liabilities</b> are debts that must be <b>settled within one year</b> of the balance sheet date. Examples include <b>bank overdrafts</b>, <b>trade creditors</b> and other short term loans.</p>
+  </div>
+  <ul>
+    <li><b>Bank overdrafts:</b> must be repaid quickly because the interest rate tends to be very high.</li>
+    <li><b>Trade creditors:</b> suppliers who must be repaid for goods bought on trade credit, usually within 30 to 60 days.</li>
+    <li><b>Other short term loans:</b> loans that fall due within 12 months.</li>
+  </ul>
+
+  <h3>Net assets and (iii) equity</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Net assets</b> show the value of a business to its owners by calculating the value of <b>all its assets minus its liabilities</b>. This figure must <b>match the equity</b> of the business in the balance sheet.</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Formulae</span>
+    <p><b>Net assets = (Noncurrent assets + Current assets) minus (Noncurrent liabilities + Current liabilities)</b></p>
+    <p>or <b>Net assets = Total assets minus Total liabilities</b></p>
+    <p>So: <b>Total assets minus Total liabilities = Net assets = Total equity</b></p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Equity</b> (also called <b>capital and reserves</b>) refers to the value of the business that <b>belongs to the owners</b>. For limited liability companies, it is made up of <b>share capital</b> and <b>retained earnings</b>. For sole traders and partnerships, only retained earnings are recorded, because there are no shareholders.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Share capital</b> refers to the <b>amount of money raised through the sale of shares</b>. It shows the value raised when the shares were <b>first sold</b>, rather than their current market value.</p>
+  </div>
+  <ul>
+    <li><b>Retained earnings</b> are the total accumulated profit after interest, tax and dividends have been paid, reinvested for the business's own use. They belong to the owners, so they appear under <b>owners' equity</b> or <b>shareholders' equity</b>. The figures come from the P&amp;L accounts.</li>
+  </ul>
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <p><b>Retained profit appears in both</b> the P&amp;L account and the balance sheet. In the P&amp;L it shows the profit after interest and tax kept in the business instead of paid as dividends. In the balance sheet it appears in the <b>equity</b> section as <b>retained earnings</b>, because it is an internal source of finance.</p>
+  </div>
+
+  <h3>Example: Bellamkonda Restaurants Ltd (from the textbook, $'000)</h3>
+  <table>
+    <tr><th colspan="3">Statement of financial position as at 31 October 20XX</th></tr>
+    <tr><td><b>Noncurrent assets</b></td><td></td><td></td></tr>
+    <tr><td>Property, plant and equipment</td><td>1,700</td><td></td></tr>
+    <tr><td>Machinery and equipment</td><td>500</td><td>2,200</td></tr>
+    <tr><td>Accumulated depreciation</td><td></td><td>(200)</td></tr>
+    <tr><td><b>Noncurrent assets (net)</b></td><td></td><td><b>2,000</b></td></tr>
+    <tr><td><b>Current assets</b>: Cash</td><td>250</td><td></td></tr>
+    <tr><td>Debtors</td><td>30</td><td></td></tr>
+    <tr><td>Stocks</td><td>200</td><td>480</td></tr>
+    <tr><td><b>Total assets</b></td><td></td><td><b>2,480</b></td></tr>
+    <tr><td><b>Current liabilities</b>: Bank overdraft</td><td>15</td><td></td></tr>
+    <tr><td>Trade creditors</td><td>250</td><td></td></tr>
+    <tr><td>Other short term loans</td><td>55</td><td>320</td></tr>
+    <tr><td><b>Noncurrent liabilities</b>: Borrowings (long term)</td><td>500</td><td>500</td></tr>
+    <tr><td><b>Total liabilities</b></td><td></td><td><b>820</b></td></tr>
+    <tr><td><b>Net assets</b> (total assets minus total liabilities)</td><td></td><td><b>1,660</b></td></tr>
+    <tr><td><b>Equity</b>: Share capital</td><td>1,000</td><td></td></tr>
+    <tr><td>Retained earnings</td><td>660</td><td></td></tr>
+    <tr><td><b>Total equity</b></td><td></td><td><b>1,660</b></td></tr>
+  </table>
+  <ul>
+    <li><b>Accumulated depreciation</b> is the allowance made for the fall in value of noncurrent assets over time, for example wear and tear on restaurant machinery. Noncurrent assets after this deduction are the <b>net</b> value.</li>
+    <li>The restaurants' noncurrent assets are the premises, tables, chairs, fridges, cash registers, drinks machines and air conditioning. The long term borrowing includes mortgages (to buy the restaurants) and bank loans for machinery.</li>
+    <li>Current assets are items likely to turn into cash within a year, such as stocks of food and drink, and debtors (customers who paid by cheque or credit card).</li>
+  </ul>
+  <div class="box tip">
+    <span class="label">Textbook check</span>
+    <p>In the textbook's version of this table, the 1,660 line is labelled "Total assets" and a stray "160" sits next to the noncurrent liabilities heading. Both are printing slips. The 1,660 is <b>net assets</b> (2,480 minus 820), and noncurrent liabilities are 500.</p>
+  </div>
+
+  <h3>IB format for a balance sheet (Table 17.3, $m)</h3>
+  <table>
+    <tr><th colspan="3">Statement of financial position for (Company name) as at (date)</th></tr>
+    <tr><td><b>Noncurrent assets</b>: Property, plant and equipment</td><td>500</td><td></td></tr>
+    <tr><td>Accumulated depreciation</td><td>(20)</td><td></td></tr>
+    <tr><td><i>Total noncurrent assets</i></td><td></td><td>480</td></tr>
+    <tr><td><b>Current assets</b>: Cash</td><td>10</td><td></td></tr>
+    <tr><td>Debtors</td><td>12</td><td></td></tr>
+    <tr><td>Stocks</td><td>35</td><td></td></tr>
+    <tr><td><i>Total current assets</i></td><td></td><td>57</td></tr>
+    <tr><td><b>Total assets</b></td><td></td><td><b>537</b></td></tr>
+    <tr><td><b>Current liabilities</b>: Bank overdraft</td><td>5</td><td></td></tr>
+    <tr><td>Trade creditors</td><td>15</td><td></td></tr>
+    <tr><td>Other short term loans</td><td>22</td><td></td></tr>
+    <tr><td><i>Total current liabilities</i></td><td></td><td>42</td></tr>
+    <tr><td><b>Noncurrent liabilities</b>: Borrowings (long term)</td><td>300</td><td></td></tr>
+    <tr><td><i>Total noncurrent liabilities</i></td><td></td><td>300</td></tr>
+    <tr><td><b>Total liabilities</b></td><td></td><td><b>342</b></td></tr>
+    <tr><td><b>Net assets</b></td><td></td><td><b>195</b></td></tr>
+    <tr><td><b>Equity</b>: Share capital*</td><td>110</td><td></td></tr>
+    <tr><td>Accumulated retained profit</td><td>85</td><td></td></tr>
+    <tr><td><b>Total equity</b></td><td></td><td><b>195</b></td></tr>
+  </table>
+  <p>*For sole traders, partnerships and non profit entities, no share capital is recorded.</p>
+  <div class="box tip">
+    <span class="label">Textbook check</span>
+    <p>The textbook prints "Total assets 342" in this table. But 480 + 57 = <b>537</b>, and 537 minus 342 = 195, which matches net assets and equity. So 537 is correct and the printed 342 is a slip (342 is the total liabilities figure). I have shown 537 above.</p>
+  </div>
+
+  <div class="box ex">
+    <span class="label">Worked example (building a balance sheet)</span>
+    <p>Data ($'000): property, plant and equipment 800, accumulated depreciation 100, cash 50, debtors 40, stocks 60, overdraft 20, trade creditors 60, long term loan 300, share capital 300. Find retained earnings.</p>
+    <p>Step 1: noncurrent assets = 800 minus 100 = <code>700</code>.<br>
+       Step 2: current assets = 50 + 40 + 60 = <code>150</code>. Total assets = 700 + 150 = <code>850</code>.<br>
+       Step 3: current liabilities = 20 + 60 = <code>80</code>. Total liabilities = 80 + 300 = <code>380</code>.<br>
+       Step 4: net assets = 850 minus 380 = <code>470</code>.<br>
+       Step 5: equity must equal net assets, so retained earnings = 470 minus 300 = <code>170</code>.</p>
+  </div>
+
+  <h3>Sole traders, partnerships and non profit entities</h3>
+  <ul>
+    <li>Their balance sheets differ slightly from those of limited liability companies.</li>
+    <li>They cannot sell shares, so there is <b>no share capital</b>. Money put in by owners is recorded as <b>owners' equity</b> or <b>owners' capital</b>.</li>
+    <li>There are <b>no dividends</b>. Instead the sole trader or partners may take money out for personal use, called <b>drawings</b>.</li>
+    <li>Limited companies can sell shares and debentures (debentures are recorded under long term liabilities). Neither appears on the balance sheet of an unincorporated business.</li>
+  </ul>
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <p>The main difference between the balance sheets of <b>incorporated</b> and <b>unincorporated</b> businesses is that unincorporated ones have <b>no share capital</b> in equity. Most IB questions ask you to interpret the balance sheet of a <b>limited liability company</b>. Use the format in Table 17.3 and add a title.</p>
+  </div>
+
+  <h3>Limitations of balance sheets</h3>
+  <ul>
+    <li><b>Static</b>: it shows one day only. The position can change the next day, for example when funds are used for expansion.</li>
+    <li>Figures are only <b>estimates</b>. The <b>market value</b> of an asset is not the same as its <b>book value</b>. The true market value of a noncurrent asset is only known when it is sold. The statement also lacks a detailed breakdown of assets.</li>
+    <li><b>No universal format</b>, so comparing firms (even in one industry) is hard.</li>
+    <li><b>Not all assets are included</b>, especially intangible assets and <b>human capital</b>. A sports club does not put its players or its manager on the balance sheet, even though they have a market value. If employees really are a firm's most valuable asset, the balance sheet does not show the firm's true position.</li>
+  </ul>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Book value</b> is the value of an asset as shown on a balance sheet. The market value of assets can be higher than its book value because of intangible assets such as the brand value or goodwill.</p>
+  </div>
+
+  <h3>Intangible assets</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Intangible assets</b> are <b>noncurrent assets that do not exist in a physical form</b> but are of <b>monetary value</b>, such as goodwill, copyrights, brand names and registered trademarks.</p>
+  </div>
+  <ul>
+    <li>They are non physical fixed assets that can <b>earn revenue</b>. They are protected by laws called <b>intellectual property rights (IPR)</b>.</li>
+    <li>They can be a large part of a firm's value, but it is hard to put an <b>objective and accurate price</b> on them.</li>
+    <li>The main types: (i) branding, (ii) patents, (iii) copyrights, (iv) goodwill, (v) registered trademarks.</li>
+  </ul>
+  <table>
+    <tr><th>Type</th><th>Meaning and points</th><th>Example</th></tr>
+    <tr><td><b>Branding</b></td><td>Brand recognition and brand value drive sales year after year. It is an <b>indefinite asset</b>, because recognition and loyalty stay as long as the company exists.</td><td>Apple brand worth $264bn in 2021 (Statista), more than any other global brand.</td></tr>
+    <tr><td><b>Patents</b></td><td>Legal protection for inventors against copying for a <b>fixed number of years</b>. They give <b>exclusive rights</b> to commercial production and are an <b>incentive to innovate</b>. Others must apply and pay a fee to use the invention.</td><td>Compact discs were patented by Philips.</td></tr>
+    <tr><td><b>Copyrights</b></td><td>Legal protection for the <b>original artistic work</b> of a creator (author, photographer, painter, musician). Newspapers, recordings, software and films are covered. Others need permission, usually for a fee.</td><td>A textbook's contents are shared by the author and the publisher.</td></tr>
+    <tr><td><b>Goodwill</b></td><td>Exists when the <b>value of a firm exceeds its book value</b> (the value of its net assets). It includes reputation, corporate image and business connections. It is the sum of <b>customer and employee loyalty</b> and can give a strong competitive edge.</td><td>Boots (UK health and beauty retailer) was put up for sale in 2022. Analysts struggled to value it, from about £5bn to £12bn.</td></tr>
+    <tr><td><b>Registered trademarks</b></td><td>Distinctive signs (names, symbols, phrases or images) that uniquely identify a brand, product or business. They protect against copying and can be <b>sold</b> (ownership transferred for a fee), which shows in the balance sheet.</td><td>The Nike "swoosh" and the Audi four rings. Volkswagen bought the Bentley brand in 1998 for £430m ($615m).</td></tr>
+  </table>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Goodwill</b> is an intangible asset which exists when the value of a firm <b>exceeds its book value</b> (the value of the firm's net assets).</p>
+  </div>
+  <h3>Valuing intangible assets</h3>
+  <ul>
+    <li>Intangible assets are <b>not always recorded</b> on the balance sheet because their value is so hard to measure objectively. No two firms would value the Google brand, or the goodwill of employees in a school, in the same way.</li>
+    <li>Goodwill is only truly <b>realised</b> when a takeover happens and the buyer pays a <b>premium</b>. That premium is the goodwill: the difference between the value of the business and the purchase price.</li>
+    <li>Adding intangible assets can be a form of <b>window dressing</b> to inflate a firm's value. This is legal but can distort the true health of the business. Example: in 2006 Vodafone turned an €11 billion loss into a €10 billion profit by legally including goodwill.</li>
+    <li>Intangible assets do add value beyond book value. The problem is the <b>uncertainty over how to value them</b>.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Real world examples</span>
+    <p><b>Google's brand value.</b> In 2014 Forbes estimated it at about $47bn, but Interbrand estimated over $93bn. This large gap shows how subjective brand values are. In early 2020 Google became the third US company worth $1 trillion by market value (after Apple and Microsoft).</p>
+    <p><b>Harry Potter.</b> J.K. Rowling wrote the first book in 1994. Warner Bros bought the film rights in 1998, and "Harry Potter World" was announced in 2007. Her books have sold over 400 million copies in over 65 languages. TIME values the Harry Potter brand at over $25bn, so Rowling, her publishers and Warner Bros protect their intangible assets, including the international copyrights.</p>
+  </div>
+
+  <h3>Limitations of final accounts</h3>
+  <ul>
+    <li>One year of accounts alone is of little use. A <b>series</b> of accounts shows <b>trends</b>.</li>
+    <li>You also need other firms' accounts to <b>benchmark</b> against competitors, which takes time.</li>
+    <li><b>Human resources are ignored</b>: skills, loyalty, goodwill and motivation of employees. Failing to keep or motivate staff can hurt future finances.</li>
+    <li>They show nothing about <b>non financial matters</b> such as organizational culture and contribution to local communities. <b>Qualitative factors</b> matter in decisions too, for example ethical objectives and location.</li>
+    <li>Accounts must be produced lawfully, but they do <b>not reveal the whole truth</b>. Firms limit (within reason) what they disclose because the accounts are public and competitors can see them.</li>
+    <li>They are <b>historical</b> and show one point in time. Past performance is not a guide to current or future performance.</li>
+  </ul>
+
+  <h3>Depreciation (Higher Level only)</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p><b>Depreciation</b> is the <b>fall in the value of noncurrent assets over time</b>, caused by <b>wear and tear</b> (due to the asset being used) or <b>obsolescence</b> (out dated).</p>
+  </div>
+  <ul>
+    <li>The opposite is <b>appreciation</b>: a rise in the value of a noncurrent asset. Land and property tend to rise in value, but most noncurrent assets depreciate.</li>
+    <li><b>Wear and tear:</b> computers and vehicles wear out, maintenance costs rise and value falls.</li>
+    <li><b>Obsolescence:</b> newer, better products make older assets (old vehicles, computers, smartphones, software) less valuable.</li>
+    <li>Depreciation <b>spreads the historic cost</b> of a fixed asset over its useful life. The fall in value shows on the balance sheet as <b>accumulated depreciation</b>.</li>
+  </ul>
+  <h3>Why depreciation is recorded</h3>
+  <ul>
+    <li>To <b>calculate the value of the business more accurately</b>. Depreciating assets lowers net assets to a truer value. Revaluing assets that have appreciated raises it.</li>
+    <li>To <b>assess the value of noncurrent assets realistically over time</b>, since the historic cost is unlikely to equal today's market value.</li>
+    <li>To <b>plan for replacing assets</b>. Depreciation is also recorded in the P&amp;L account as an <b>expense</b>, because the asset will eventually need to be replaced.</li>
+  </ul>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>The <b>historic cost</b> refers to the <b>purchase cost</b> of a particular fixed asset. It is used in the calculation of depreciation.</p>
+  </div>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>The <b>residual value</b> (or <b>scrap value</b>) is an <b>estimate of the value of the noncurrent asset at the end of its useful life</b>.</p>
+  </div>
+  <p>The IB syllabus names two methods. Which one is used matters less than being <b>consistent</b>, so that comparisons over time are meaningful.</p>
+
+  <h3>(i) Straight line method</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>The <b>straight line method</b> is a means of calculating depreciation that <b>reduces the value of a fixed asset by the same value each year</b> throughout its useful life.</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Formula</span>
+    <p><b>Annual depreciation = Purchase cost ÷ Lifespan</b></p>
+    <p>With a residual value: <b>Annual depreciation = (Purchase cost minus Residual value) ÷ Lifespan</b></p>
+  </div>
+  <ul>
+    <li>Three variables: the <b>life expectancy</b> of the asset, the <b>scrap (residual) value</b> and the <b>historic cost</b>.</li>
+    <li>It is the easier method and the <b>most commonly used</b>.</li>
+    <li>Many firms use a <b>zero</b> residual value because estimates can be very inaccurate. But most fixed assets can still fetch a small price when sold.</li>
+  </ul>
+  <div class="box ex">
+    <span class="label">Worked example (from the textbook)</span>
+    <p>An electronic security system costs $25,000 and is expected to last 5 years.</p>
+    <p>Annual depreciation = $25,000 ÷ 5 = <code>$5,000</code> a year.<br>
+       If it can be sold for $5,000 after 5 years: ($25,000 minus $5,000) ÷ 5 = <code>$4,000</code> a year, which is $1,000 a year less than with no residual value.</p>
+    <table>
+      <tr><th>Year end</th><th>Depreciation ($)</th><th>Book value ($)</th><th>Accumulated depreciation ($)</th></tr>
+      <tr><td>0</td><td>0</td><td>25,000</td><td>0</td></tr>
+      <tr><td>1</td><td>5,000</td><td>20,000</td><td>5,000</td></tr>
+      <tr><td>2</td><td>5,000</td><td>15,000</td><td>10,000</td></tr>
+      <tr><td>3</td><td>5,000</td><td>10,000</td><td>15,000</td></tr>
+      <tr><td>4</td><td>5,000</td><td>5,000</td><td>20,000</td></tr>
+      <tr><td>5</td><td>5,000</td><td>0</td><td>25,000</td></tr>
+    </table>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 520 340" role="img" aria-label="Straight line depreciation: book value falls by the same amount each year from 25,000 dollars to zero over five years">
+      <line x1="80" y1="24" x2="80" y2="290" stroke="currentColor" stroke-width="2"/>
+      <line x1="80" y1="290" x2="490" y2="290" stroke="currentColor" stroke-width="2"/>
+      <text x="14" y="14" font-size="16" fill="currentColor">Book value ($)</text>
+      <text x="400" y="326" font-size="16" fill="currentColor">Year</text>
+      <line x1="80" y1="40" x2="400" y2="290" stroke="var(--accent)" stroke-width="3.5"/>
+      <circle cx="80" cy="40" r="5" fill="var(--accent)"/>
+      <circle cx="144" cy="90" r="5" fill="var(--accent)"/>
+      <circle cx="208" cy="140" r="5" fill="var(--accent)"/>
+      <circle cx="272" cy="190" r="5" fill="var(--accent)"/>
+      <circle cx="336" cy="240" r="5" fill="var(--accent)"/>
+      <circle cx="400" cy="290" r="5" fill="var(--accent)"/>
+      <text x="22" y="46" font-size="14" fill="currentColor">25,000</text>
+      <text x="22" y="96" font-size="14" fill="currentColor">20,000</text>
+      <text x="22" y="146" font-size="14" fill="currentColor">15,000</text>
+      <text x="22" y="196" font-size="14" fill="currentColor">10,000</text>
+      <text x="30" y="246" font-size="14" fill="currentColor">5,000</text>
+      <text x="76" y="308" font-size="14" fill="currentColor">0</text>
+      <text x="140" y="308" font-size="14" fill="currentColor">1</text>
+      <text x="204" y="308" font-size="14" fill="currentColor">2</text>
+      <text x="268" y="308" font-size="14" fill="currentColor">3</text>
+      <text x="332" y="308" font-size="14" fill="currentColor">4</text>
+      <text x="396" y="308" font-size="14" fill="currentColor">5</text>
+    </svg>
+    <figcaption>Straight line depreciation of a $25,000 asset with no residual value. The book value falls by the same $5,000 every year, so the line is straight.</figcaption>
+  </figure>
+
+  <table>
+    <tr><th>Straight line: advantage</th><th>Straight line: weaknesses</th></tr>
+    <tr><td><b>Simple</b> to calculate and understand.</td><td>Equal depreciation each year is <b>not realistic</b>. For example, motor vehicles lose a much larger share of their value early on.</td></tr>
+    <tr><td></td><td>It does not allow for <b>loss of efficiency</b> or <b>higher repair costs</b> as an asset ages.</td></tr>
+  </table>
+
+  <h3>(ii) Units of production method</h3>
+  <div class="box def">
+    <span class="label">Definition</span>
+    <p>The <b>units of production method</b> of calculating depreciation <b>allocates an equal amount of depreciation to each unit of output</b> rendered by a noncurrent asset.</p>
+  </div>
+  <p>It uses <b>physical output</b>, so it fits assets whose fall in value depends on <b>usage</b> rather than time. For example, vehicles depreciate with more miles. The same applies to photocopiers, printers and other machinery. It is also called the units of output method.</p>
+  <div class="box ex">
+    <span class="label">Formulae (two steps)</span>
+    <p><b>Step 1: Depreciation per unit = (Purchase cost minus Scrap value) ÷ Expected number of units over lifetime</b></p>
+    <p><b>Step 2: Depreciation expense = Depreciation per unit × Number of units produced</b></p>
+  </div>
+  <div class="box ex">
+    <span class="label">Worked example (from the textbook)</span>
+    <p>A printing machine costs $500,000. It is expected to last 5,000 hours over 5 years, and then be sold for $100,000.</p>
+    <p>Depreciation per hour = ($500,000 minus $100,000) ÷ 5,000 = <code>$80 per hour</code>.<br>
+       The machine runs 1,500 hours in year 1: depreciation expense = $80 × 1,500 = <code>$120,000</code>.<br>
+       This reduction in value is shown as <b>accumulated depreciation</b> (a negative amount) on the balance sheet.</p>
+  </div>
+  <div class="box ex">
+    <span class="label">Worked example (extra practice)</span>
+    <p>A delivery van costs $40,000, has a scrap value of $10,000 and is expected to drive 300,000 km. In year 1 it drives 45,000 km.</p>
+    <p>Depreciation per km = ($40,000 minus $10,000) ÷ 300,000 = <code>$0.10 per km</code>.<br>
+       Year 1 expense = $0.10 × 45,000 = <code>$4,500</code>. Book value at end of year 1 = $40,000 minus $4,500 = <code>$35,500</code>.</p>
+  </div>
+  <p>This method is <b>more cumbersome</b> than straight line, because the depreciation must be worked out for each period from the usage rate. But the extra effort gives <b>better insight into the true running cost</b> of machinery and other capital equipment, and shows how fast the asset's value is being used up. This can help firms that seek <b>external funding</b> for growth.</p>
+
+  <div class="box ex">
+    <span class="label">Worked example (straight line, with book value)</span>
+    <p>A machine costs $60,000, has a residual value of $6,000 and a life of 6 years.</p>
+    <p>Annual depreciation = ($60,000 minus $6,000) ÷ 6 = <code>$9,000</code>.<br>
+       Accumulated depreciation after 2 years = 2 × $9,000 = $18,000. Book value = $60,000 minus $18,000 = <code>$42,000</code>.</p>
+  </div>
+
+  <div class="box syl">
+    <span class="label">Not in textbook but there in IBDP syllabus</span>
+    <p><b>Appropriateness of each depreciation method (HL, AO3).</b> The textbook gives the pros and cons but not a clear "when to use which". Useful points:</p>
+    <ul>
+      <li><b>Straight line suits:</b> assets that lose value fairly evenly over time or are not used heavily (buildings, office furniture), small assets, and firms that want a simple method.</li>
+      <li><b>Units of production suits:</b> assets whose value falls mainly with use, and where use varies a lot from year to year (machines in a factory, vehicles), and where an accurate asset value matters for pricing or funding decisions.</li>
+      <li><b>For AO3:</b> recommend a method, use facts from the case (how the asset is used, how big the asset is, how easy tracking usage is), and weigh the benefit of accuracy against the extra work.</li>
+    </ul>
+  </div>
+
+  <div class="box syl">
+    <span class="label">Not in textbook but there in IBDP syllabus</span>
+    <p><b>Terms in the current IB guide.</b> The IB guide for first exams in 2024 uses slightly different words from the textbook in places: <b>cost of sales</b> (COS) instead of cost of goods sold, <b>noncurrent assets</b> and <b>noncurrent liabilities</b> instead of fixed assets and long term liabilities, and <b>profit</b> instead of net profit. The IB format for the P&amp;L is also titled "statement of profit or loss". Use the IB wording in exam answers. I could not confirm whether the formula booklet gives the depreciation formulae in your exam, so check the booklet your school gives you.</p>
+  </div>
+
+  <h3>Final accounts and the key concepts</h3>
+  <ul>
+    <li>Final accounts give <b>disclosure</b> and <b>accountability</b>. Used properly and ethically, they show the financial health and profitability of a business and help with <b>strategic planning</b> and <b>change management</b>.</li>
+    <li>If profit comes from a <b>one off sale of noncurrent assets</b> (land or property), profitability is probably low. Window dressing is not illegal but raises <b>ethical</b> questions.</li>
+    <li>The balance sheet shows the <b>liquidity</b> position, which is the ability to meet daily running costs. Both statements are used to <b>secure external funding</b> for growth and sustainability.</li>
+    <li><b>Intellectual property rights (IPRs)</b> such as patents and copyrights are noncurrent assets. They can act as a <b>barrier to entry</b>, protecting market share. Coca Cola, Toyota and Disney use IPRs this way. Many firms now see IPRs as an <b>offensive</b> strategy, not just a defensive one.</li>
+    <li><b>Creativity</b> and new product development matter for long term survival. Legal protection of new products, designs and processes can raise the firm's value on its balance sheet.</li>
+    <li><b>Ethics:</b> different countries have different laws and cultural norms about final accounts, but all business decisions, including financial reporting, have ethical effects on stakeholders. Wrongdoing, even if not illegal, is unethical. Professional bodies monitor ethical standards, for example the Australian Accounting Standards Board, the Accounting Standards Committee of Germany and America's Financial Accounting Standards Board. Accountants must be <b>open, transparent and honest</b>. Most businesses have an <b>annual audit</b> to check integrity.</li>
+  </ul>
+  <div class="box tip">
+    <span class="label">Exam tip</span>
+    <p>Look <b>beyond the financial data</b>. Final accounts are only one part of the quantitative analysis. Budgeting matters for daily operations and investment appraisal for growth plans. Also consider <b>qualitative</b> issues such as objectives, the state of the economy and corporate culture. Treat any single statement with some caution.</p>
+  </div>
+
+  <div class="box key">
+    <span class="label">Key terms</span>
+    <ul>
+      <li><b>Final accounts</b>: the published annual statements (P&amp;L account and balance sheet).</li>
+      <li><b>P&amp;L account</b>: statement of revenues, costs and profit over a period.</li>
+      <li><b>Cost of goods sold (cost of sales)</b>: direct costs of the stock actually sold.</li>
+      <li><b>Gross profit</b>: sales revenue minus cost of goods sold.</li>
+      <li><b>Expenses</b>: indirect or fixed costs such as rent and salaries.</li>
+      <li><b>Profit</b>: surplus after all expenses are paid from gross profit.</li>
+      <li><b>Retained profit</b>: profit after interest, tax and dividends, kept in the business.</li>
+      <li><b>Window dressing</b>: legal creative accounting to make results look better.</li>
+      <li><b>Balance sheet</b>: snapshot of assets, liabilities and owners' capital.</li>
+      <li><b>Noncurrent / current asset</b>: lasts over 12 months / turns to cash within 12 months.</li>
+      <li><b>Noncurrent / current liability</b>: repaid after / within 12 months.</li>
+      <li><b>Net assets</b>: total assets minus total liabilities, equal to equity.</li>
+      <li><b>Equity</b>: share capital plus retained earnings.</li>
+      <li><b>Share capital</b>: money raised by first selling shares.</li>
+      <li><b>Creditors</b>: suppliers owed money. <b>Debtors</b>: customers who owe money.</li>
+      <li><b>Book value</b>: the value of an asset on the balance sheet.</li>
+      <li><b>Intangible assets</b>: non physical noncurrent assets such as goodwill, brands, patents, copyrights and trademarks.</li>
+      <li><b>Goodwill</b>: when a firm's value exceeds its book value.</li>
+      <li><b>Depreciation</b>: fall in the value of noncurrent assets over time.</li>
+      <li><b>Historic cost, residual value</b>: purchase cost, and estimated value at the end of its life.</li>
+      <li><b>Straight line / units of production</b>: equal depreciation each year / equal depreciation per unit of output.</li>
+    </ul>
+  </div>
+
+  <div class="box cmd">
+    <span class="label">Command terms to expect</span>
+    <ul>
+      <li><b>Define</b> / <b>Outline</b>: give the meaning, for example closing stock, overdraft or noncurrent asset.</li>
+      <li><b>Identify</b>: name an item, for example two stakeholder groups, or an example of a noncurrent asset.</li>
+      <li><b>Calculate</b>: show every step, for example annual depreciation or depreciation per unit.</li>
+      <li><b>Construct</b>: build a trading account, P&amp;L account or balance sheet in the IB format.</li>
+      <li><b>Explain</b>: give reasons, for example why copyrights are worth protecting.</li>
+      <li><b>Examine</b>: look at importance from the point of view of each stakeholder.</li>
+      <li><b>Discuss</b>: balanced answer, for example whether performance can be judged on figures alone, or whether owners would be pleased.</li>
+      <li><b>Comment</b>: give a short judgement, for example on how subjective valuations affect a brand's value.</li>
+    </ul>
+  </div>
+
+  <h3>Ideas to think about (from the textbook)</h3>
+  <ul>
+    <li>TOK: can anyone know if a company's finances are <b>truly and completely truthful</b> in its final accounts?</li>
+    <li>TOK: can financial data reflect the truth about an organization's <b>corporate culture</b>?</li>
+    <li>TOK: Forbes and Interbrand valued Google's brand very differently. Is there any substance in <b>knowledge claims about brand values</b>?</li>
+    <li>TOK: "You may prove anything by figures" (Thomas Carlyle). How far does this apply to Business Management?</li>
+    <li>TOK: can <b>creativity in financial reporting</b> ever be seen as not unethical?</li>
+    <li>Discuss how <b>change</b> has affected the final accounts of an organization you choose, and the importance of <b>creativity</b> for business success when IPRs are noncurrent assets.</li>
+    <li>Business Management Toolkit: discuss why <b>product portfolio management</b> directly affects a firm's final accounts (the Boston Consulting Group matrix is covered in a later chapter).</li>
+    <li>Research skills: look up Interbrand's annual ranking of "Best Global Brands" and find the criteria it uses to value brands.</li>
+  </ul>
+
+  <details><summary>Quick check</summary>
+    <p><b>1.</b> A firm has total assets of $900,000 and total liabilities of $400,000. Share capital is $350,000. Find net assets and retained earnings.</p>
+    <p>Net assets = $900,000 minus $400,000 = $500,000. Equity must equal net assets, so retained earnings = $500,000 minus $350,000 = $150,000.</p>
+    <p><b>2.</b> A machine costs $30,000, has a scrap value of $3,000 and lasts 9 years. Find the annual straight line depreciation.</p>
+    <p>($30,000 minus $3,000) ÷ 9 = $3,000 a year.</p>
+    <p><b>3.</b> State two limitations of the balance sheet.</p>
+    <p>Any two of: it is a snapshot of one day only, figures are estimates and book value may differ from market value, there is no universal format, intangible assets and human capital are often left out.</p>
+    <p><b>4.</b> Why do banks and suppliers read a firm's final accounts?</p>
+    <p>Banks (financiers) check whether the firm can repay loans. Suppliers check whether it is stable enough to be given trade credit and to pay on time.</p>
+  </details>
+</section>
+
+</main>
+</div>
+<script>
+/* Highlight the sub unit in the sidebar while scrolling */
+(function(){
+  var links = document.querySelectorAll('nav.side a');
+  var secs = document.querySelectorAll('section.sub');
+  function onScroll(){
+    var pos = window.scrollY + 120, cur = secs[0] && secs[0].id;
+    secs.forEach(function(s){ if (s.offsetTop <= pos) cur = s.id; });
+    links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
+
